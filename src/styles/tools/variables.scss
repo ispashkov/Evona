@@ -1,0 +1,58 @@
+$grid-breakpoints: (
+	xs: 0, /* телефон 320-375 */
+	sm: 768px, /* 768-1024 - планшет */
+	md: 1000px, /* ноутбук 1280-1366 */
+	lg: 1260px, /* большой ноутбук 1440-1680 */
+	xl: 1420px, /* 1920 */
+	hd: 1820px
+);
+
+$container-max-widths: (
+	xs: 640px,
+	sm: 740px,
+	md: 980px,
+	lg: 1240px,
+	xl: 1400px,
+	hd: 1800px
+);
+
+// Fonts
+$font-family-base: "Segoe UI", -apple-system, system-ui, Roboto, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+$font-size-base: 1rem;
+
+$colorPrimary: #0088bb;
+$colorAccent: #dd4455;
+$colorWait: #778899;
+$colorBlack: #223344;
+$colorGray: #667788;
+$colorGrayLight: #f2f4f7;
+$colorGreen: #99bb11;
+$colorText: #667788;
+$colorWhite: #fff;
+$colorBlueLight: #c6e0e8;
+$footerItemTitleBefore: #394857;
+$footerItemContent: #bcbfc3;
+
+@mixin transition($x: .3s) {
+	transition: all $x ease;
+}
+
+@mixin icon($url, $width: $spacer, $height: $spacer) {
+	content: '';
+	display: inline-block;
+	width: $width * $spacer;
+	height: $height * $spacer;
+	background: {
+		image: url($url);
+		size: contain;
+		repeat: no-repeat;
+		position: center center;
+	};
+}
+
+
+
+//Z-INDEX
+$z-index-base: 10;
+$z-index-overlay: 90;
+$z-index-modal: 100;
