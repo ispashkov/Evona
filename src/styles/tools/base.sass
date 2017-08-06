@@ -82,58 +82,56 @@ a
 	display: inline-flex
 	align-items: center
 	justify-content: center
-	height: 2rem
-	padding: 0 $spacer
+	height: 2.375rem
+	padding: 0 0.75*$spacer
+	margin: 0
 	
-	background-color: $colorGray
-	border: 1px solid $colorGray
-	border-radius: 3px
-	color: $colorWhite
+	background-color: transparent
+	border: 2px solid $colorPrimary
+	border-radius: 0
+	color: $colorAccent
+
+	font:
+		family: $font-family-base
+		size: $font-size-base
+		weight: 700
 	
-	font-family: $font-family-base
-	font-size: 0.875*$font-size-base
 	line-height: $spacer
+	text-transform: uppercase
 	text-decoration: none
+	white-space: nowrap
 	
 	cursor: pointer
 	appearance: none
 	+transition()
+	
 	&_primary
 		background-color: $colorPrimary
 		border-color: $colorPrimary
-		color: $colorWhite
+		color: $colorAccent
 		&:hover
-			background-color: darken($colorPrimary, 5%)
-			border-color: darken($colorPrimary, 5%)
-	
-	&_wait
-		background-color: $colorWait
-		border-color: $colorWait
-		color: $colorWhite
+			background-color: lighten($colorPrimary, 5%)
+			border-color: lighten($colorPrimary, 5%)
+			color: $colorAccent
+			
+	&_accent
+		background-color: $colorAccent
+		border-color: $colorAccent
+		color: $colorPrimary
 		&:hover
-			background-color: darken($colorWait, 5%)
-			border-color: darken($colorWait, 5%)
+			background-color: lighten($colorAccent, 5%)
+			border-color: lighten($colorAccent, 5%)
+			color: $colorPrimary
+			
+	&_inverse
+		background-color: transparent
+			
+	&_xl
+		width: 18.75rem
+		height: 4rem
+		font-size: 1.25*$font-size-base
 	
-	&_dark
-		background-color: $colorBlack
-		border-color: $colorBlack
-		color: $colorWhite
-		&:hover
-			background-color: $colorAccent
-			border-color: $colorAccent
-			color: $colorWhite
-	
-	&_block
+	&_wide
 		width: 100%
 	
-	&_outline
-		background-color: transparent
-		
-		&-primary
-			color: $colorPrimary
-			border-color: $colorPrimary
-			
-			&:hover
-				background-color: darken($colorPrimary, 5%)
-				border-color: darken($colorPrimary, 5%)
-				color: $colorWhite
+	

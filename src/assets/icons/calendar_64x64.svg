@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="svg-calendar" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="65px" height="64px" viewBox="0 0 65 64" enable-background="new 0 0 65 64" xml:space="preserve">
+<g>
+	<rect fill="none" width="65" height="64"/>
+	<g>
+		<path fill="#BD9131" d="M62,5H52V2c0-1.104-0.896-2-2-2s-2,0.896-2,2v3H35V2c0-1.104-0.896-2-2-2s-2,0.896-2,2v3H17V2
+			c0-1.104-0.896-2-2-2c-1.104,0-2,0.896-2,2v3H3C1.345,5,0,6.32,0,7.95v53.099C0,62.679,1.345,64,3,64h59c1.657,0,3-1.321,3-2.951
+			V7.95C65,6.32,63.657,5,62,5z M61,60H4V9h9v3c0,1.104,0.896,2,2,2c1.104,0,2-0.896,2-2V9h14v3c0,1.104,0.896,2,2,2s2-0.896,2-2V9
+			h13v3c0,1.104,0.896,2,2,2s2-0.896,2-2V9h9V60z"/>
+		<rect x="13" id="calendar-square-1" class="calendar__squares" y="21" fill="#BD9131" width="8" height="7"/>
+		<rect x="29" id="calendar-square-2" class="calendar__squares" y="21" fill="#BD9131" width="8" height="7"/>
+		<rect x="44" id="calendar-square-3" class="calendar__squares" y="21" fill="#BD9131" width="8" height="7"/>
+		<rect x="13" id="calendar-square-7" class="calendar__squares" y="45" fill="#BD9131" width="8" height="7"/>
+		<rect x="29" id="calendar-square-8" class="calendar__squares" y="45" fill="#BD9131" width="8" height="7"/>
+		<rect x="44" id="calendar-square-9" class="calendar__squares" y="45" fill="#BD9131" width="8" height="7"/>
+		<rect x="13" id="calendar-square-4" class="calendar__squares" y="33" fill="#BD9131" width="8" height="7"/>
+		<rect x="29" id="calendar-square-5" class="calendar__squares" y="33" fill="#BD9131" width="8" height="7"/>
+		<rect x="44" id="calendar-square-6" class="calendar__squares" y="33" fill="#BD9131" width="8" height="7"/>
+	</g>
+</g>
+</svg>

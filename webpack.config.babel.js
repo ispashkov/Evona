@@ -55,7 +55,8 @@ export default {
 		contentBase: path.resolve(__dirname, "build/"),
 		port: 3000,
 		noInfo: true,
-		// hot: true
+		overlay: true,
+		hot: true
 	},
 	devtool: 'source-map',
 	module: {
@@ -64,7 +65,7 @@ export default {
 			{
 				test: /\.(js|jsx)?$/,
 				use: [ 'babel-loader' ],
-				include: path.join(__dirname, '/src'),
+				include: path.join(__dirname, './src'),
 			},
 			//---------------------VUE----------------------//
 			{
@@ -97,7 +98,6 @@ export default {
 					})
 					: [ 'style-loader', 'css-loader?sourceMap=true', 'autoprefixer-loader','sass-loader?sourceMap=true']
 			},
-			
 			//--------------------Fonts--------------------//
 			{
 				test: /\.(woff2|ttf|eot)$/,
@@ -108,10 +108,15 @@ export default {
 				test: /\.(png|jpg|jpeg|gif)$/,
 				use: 'file-loader?name=assets/images/[name].[ext]&publicPath=../'
 			},
-			// //--------------------SVG--------------------//
+			//--------------------Video--------------------//
+			{
+				test: /\.mp4$/,
+				use: 'file-loader?name=assets/video/[name].[ext]&publicPath=../'
+			},
+			//---------------------SVG---------------------//
 			{
 				test: /\.svg$/,
-				include: path.join(__dirname, 'src/assets/icons'),
+				include: path.join(__dirname, './src/assets/icons'),
 				use: [
 					'svg-sprite-loader?' + JSON.stringify({
 						name: '[name]',
@@ -119,8 +124,12 @@ export default {
 					}),
 					'svgo-loader?' + JSON.stringify({
 						plugins: [
+							{ addClassesToSVGElement: {
+									className: 'icon'
+								}
+							},
 							{ removeTitle: true },
-							{ convertPathData: false },
+							{ convertPathData: true },
 							{ removeUselessStrokeAndFill: true }
 						]
 					})
@@ -129,6 +138,6 @@ export default {
 		]
 	},
 	resolve: {
-		modules: ['node_modules', 'src']
+		modules: ['node_modules', 'assets']
 	}
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="arrow-download-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="42px" height="64px" viewBox="0 0 42 64" enable-background="new 0 0 42 64" xml:space="preserve">
+<g>
+	<path fill="#BE9134" d="M41,62H1c-0.553,0-1,0.447-1,1c0,0.555,0.447,1,1,1h40c0.553,0,1-0.445,1-1C42,62.447,41.553,62,41,62z"/>
+	<path fill="#BE9134" id="arrow-download" d="M20.293,54.705C20.486,54.902,20.743,55,21,55c0.256,0,0.512-0.098,0.708-0.295l17.996-18.064
+		c0.391-0.393,0.391-1.028,0-1.419c-0.39-0.393-1.03-0.393-1.421,0L21.984,51.573V0h-2v51.573L3.701,35.222
+		c-0.392-0.393-1.021-0.393-1.41,0c-0.392,0.391-0.39,1.026,0.002,1.419L20.293,54.705z"/>
+</g>
+</svg>

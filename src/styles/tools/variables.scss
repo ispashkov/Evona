@@ -17,15 +17,17 @@ $container-max-widths: (
 );
 
 // Fonts
-$font-family-base: "Segoe UI", -apple-system, system-ui, Roboto, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+$font-family-base: 'Ubuntu', -apple-system, system-ui, BlinkMacSystemFont, Arial, sans-serif;
+$font-family-second: 'Helvetica Neue', -apple-system, system-ui, BlinkMacSystemFont, Arial, sans-serif;
+$font-family-accent: 'Bodoni', -apple-system, system-ui, BlinkMacSystemFont, Arial, sans-serif;
 $font-size-base: 1rem;
 
-$colorPrimary: #0088bb;
-$colorAccent: #dd4455;
+$colorPrimary: #bf9138;
+$colorAccent: #202020;
 $colorWait: #778899;
 $colorBlack: #223344;
-$colorGray: #667788;
-$colorGrayLight: #f2f4f7;
+$colorGray: #666666;
+$colorGrayLight: #ededed;
 $colorGreen: #99bb11;
 $colorText: #667788;
 $colorWhite: #fff;

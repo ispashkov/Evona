@@ -1,0 +1,344 @@
+.header
+	position: relative
+	
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	height: 100vh
+	padding-bottom: 3.75*$spacer
+	@include media-breakpoint-down(xl)
+		padding-bottom: 2*$spacer
+	
+	overflow: hidden
+	
+	&__button
+		background-color: transparent
+		color: $colorWhite
+		&_b2b
+			margin-right: 3*$spacer
+	
+	
+	&__overlay
+		position: absolute
+		
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		
+		display: block
+		width: 100%
+		height: 100%
+		
+		background-color: rgba($colorAccent, 0.4)
+		
+
+	&-bg
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		z-index: -$z-index-base
+		
+		background:
+			image: url(../assets/images/screen.jpg)
+			size: cover
+			position: center top
+		
+
+		&__video
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			
+			min-width: 100%
+			min-height: 100%
+			pointer-events: none
+			
+	
+	&__phone
+		display: inline-block
+		margin: 0 0 $spacer 0
+		
+		color: $colorWhite
+		font-family: $font-family-second
+		font-size: 1.4*$font-size-base
+		font-weight: 100
+		line-height: 1.5*$font-size-base
+		text-transform: uppercase
+		text-decoration: none
+		
+		b
+			font-weight: 500
+	
+	
+	&-logo
+		display: flex
+		align-items: flex-start
+		justify-content: space-around
+		flex: 1
+		margin-top: auto
+		
+		fill: $colorWhite
+	
+	
+	&-languages
+		&__link
+			position: relative
+			
+			display: inline-flex
+			align-items: center
+			justify-content: center
+			height: 2.375rem
+			padding: 0 0.5*$spacer
+			margin: 0 0.5*$spacer
+			border-bottom: 2px solid transparent
+			
+			color: $colorWhite
+			font-family: $font-family-base
+			font-size: $font-size-base
+			font-weight: 300
+			line-height: $font-size-base
+			text-transform: uppercase
+			text-decoration: none
+			
+			&_active
+				border-bottom-color: $colorPrimary
+				font-weight: 700
+			
+			&:last-child
+				margin-right: 0
+				&:before
+					content: ''
+					position: absolute
+					width: 1px
+					height: $spacer
+					background-color: #9b9b9b
+					top: calc(50% - 0.5rem)
+					left: -0.5rem
+	
+	
+	&-menu
+		display: flex
+		align-items: center
+		justify-content: space-between
+		margin-top: 4.75*$spacer
+		
+		&_center
+			justify-content: center
+		
+		&__link
+			color: #fff
+			font-family: $font-family-second
+			font-size: 1.5*$font-size-base
+			font-weight: 300
+			line-height: 1.5*$font-size-base
+			text-decoration: none
+
+	
+	&-top
+		height: 15*$spacer
+		padding: 2*$spacer 0 0 0
+		
+		background:
+			image: url(../assets/images/header-bg.png)
+			repeat: no-repeat
+			position: center
+		
+		&__left
+			display: flex
+			flex-direction: column
+			align-items: flex-start
+		
+		&__center
+			display: flex
+			align-items: end
+			justify-content: center
+			
+		&__right
+			display: flex
+			align-items: center
+			justify-content: flex-end
+			
+		&.top-header_scroll
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18)
+			height: 82px
+			position: fixed
+			top: 0
+			left: 0
+			right: 0
+			z-index: 10
+			padding-top: 0
+			& .icon-menu
+				display: block
+				margin-right: 40px
+			& .top-header-left
+				display: flex
+				justify-content: flex-start
+				align-items: center
+				flex-direction: row
+			& .top-header-menu-row
+				display: none
+			& .top-header-left-number
+				color: #898989
+				margin: 0 20px 0 0
+			& .top-header-left-number__font
+				color: #202020
+			& .top-header-order-call__button
+				color: #202020
+			& #svg-logo-nysense
+				fill: #202020
+			& #svg-logo-evona
+				fill: #202020
+			& #svg-evona
+				transition: 0.2s
+				width: 130px
+			& #svg-nysense
+				transition: 0.2s
+				width: 150px
+			& .top-header-right__b2b
+				color: #202020
+			& .top-header-right-languages__select_active
+				color: #202020
+			& .evono-logo
+				margin-left: 65px
+			& .nysense-logo
+				margin-right: 65px
+			
+	
+	&-content
+		&__title
+			display: block
+			margin: 0 0 6.75*$spacer 0
+			
+			color: $colorWhite
+			font-family: $font-family-accent
+			font-size: 3.75*$font-size-base
+			font-weight: 400
+			line-height: 4.5*$font-size-base
+			text-decoration: none
+			text-shadow: 0 0 36px rgba(0, 0, 0, 0.65)
+			text-align: center
+			
+			@include media-breakpoint-down(xl)
+				margin-bottom: 4*$spacer
+				
+			@include media-breakpoint-down(lg)
+				margin-bottom: 2.5*$spacer
+				font-size: 2.5*$font-size-base
+				line-height: 3.25*$font-size-base
+	
+	
+	&-download
+		position: relative
+		
+		display: inline-flex
+		height: 5.25*$spacer
+		padding: 0 2*$spacer
+		background-color: $colorGrayLight
+		
+		text-decoration: none
+		@include transition()
+		&:hover
+			background-color: lighten($colorGrayLight, 10%)
+			
+			.header-download__title
+				color: $colorPrimary
+			
+		@include media-breakpoint-down(lg)
+			height: 4*$spacer
+			padding: 0 $spacer
+		
+		&__icon
+			display: block
+			margin-right: 1.25*$spacer
+			
+			fill: $colorPrimary
+			
+			@include media-breakpoint-down(lg)
+				height: 3*$spacer
+		
+		&__content
+			display: flex
+			flex-direction: column
+			align-items: flex-start
+			align-self: center
+			
+		&__title
+			display: block
+			margin: 0 0 0.75*$spacer 0
+			color: $colorAccent
+			font-family: $font-family-base
+			font-size: 1.125*$font-size-base
+			font-weight: 700
+			line-height: 1.125*$font-size-base
+			text-transform: uppercase
+			
+			@include transition()
+			
+			@include media-breakpoint-down(lg)
+				margin-bottom: 0.5*$spacer
+				font-size: 0.875*$font-size-base
+				line-height: 0.875*$font-size-base
+		
+		&__text
+			display: inline-flex
+			align-items: center
+			justify-content: flex-start
+			color: $colorGray
+			font-family: $font-family-second
+			font-size: 1.125*$font-size-base
+			font-weight: 100
+			line-height: 1.125*$font-size-base
+			
+			@include media-breakpoint-down(lg)
+				font-size: 0.875*$font-size-base
+				line-height: 0.875*$font-size-base
+			
+		&__spacer
+			display: inline-block
+			height: 1.125*$font-size-base
+			width: 1px
+			margin: 0 0.5*$spacer
+			
+			background-color: $colorGray
+			
+	
+	&__scroll
+		padding: 0
+		margin: 0
+		background-color: transparent
+		border: none
+		cursor: pointer
+		@include transition()
+		&:hover
+			opacity: 0.8
+	
+	
+	&-social
+		
+		.social__link
+			&:first-child
+				margin-left: 0
+			
+			
+.social
+	display: flex
+	
+	&__link
+		display: inline-flex
+		align-items: center
+		justify-content: center
+		margin: 0.5*$spacer
+		
+		fill: $colorPrimary
+		
+		&:hover
+			fill: $colorWhite
+			
+
+.icon path
+	fill: inherit
