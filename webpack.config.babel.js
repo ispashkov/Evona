@@ -14,7 +14,7 @@ const plugins = [
 	}),
 	new webpack.optimize.UglifyJsPlugin({
 		sourceMap: true,
-		compress: { warnings: false}
+		compress: {warnings: false}
 	}),
 	new webpack.NamedModulesPlugin(),
 	new HtmlWebpackPlugin({
@@ -34,7 +34,7 @@ const plugins = [
 		},
 		target: {
 			image: path.resolve(__dirname, './src/assets/sprite.png'),
-			css: path.resolve(__dirname, './src/styles/tools/sprite.sass')
+			css: path.resolve(__dirname, './src/styles/tools/sprite.scss')
 		},
 		apiOptions: {
 			cssImageRef: "~sprite.png"
@@ -45,14 +45,14 @@ const plugins = [
 isProd ? plugins.push(new ExtractTextPlugin("css/styles.[hash].css"), new CleanWebpackPlugin(['./build'])) : null;
 
 export default {
-	entry: path.resolve(__dirname, './src/app.js'),
+	entry: path.join(__dirname, './src/app.js'),
 	output: {
-		path: path.resolve(__dirname, './build/'),
+		path: path.join(__dirname, './build/'),
 		filename: 'js/bundle.[hash].js'
 	},
 	plugins,
 	devServer: {
-		contentBase: path.resolve(__dirname, "build/"),
+		contentBase: path.join(__dirname, "./build/"),
 		port: 3000,
 		noInfo: true,
 		overlay: true,
@@ -64,8 +64,8 @@ export default {
 			//---------------------JS----------------------//
 			{
 				test: /\.(js|jsx)?$/,
-				use: [ 'babel-loader' ],
-				include: path.join(__dirname, './src'),
+				use: ['babel-loader'],
+				include: path.join(__dirname, '/src'),
 			},
 			//---------------------VUE----------------------//
 			{
@@ -76,27 +76,43 @@ export default {
 			{
 				test: /\.pug$/,
 				loader: 'pug-loader',
-				options: { pretty: true }
+				options: {pretty: true}
 			},
 			//---------------------CSS---------------------//
 			{
 				test: /\.css$/,
-				use:  isProd ?
+				use: isProd ?
 					ExtractTextPlugin.extract({
 						fallback: "style-loader",
-						use: [ 'css-loader', 'autoprefixer-loader']
+						use: [
+							{loader: 'css-loader', options: {sourceMap: true}},
+							{loader: 'postcss-loader', options: {sourceMap: true}}
+						]
 					})
-					: [ 'style-loader', 'css-loader?sourceMap=true', 'autoprefixer-loader']
+					: [
+						{loader: 'style-loader', options: {sourceMap: true}},
+						{loader: 'css-loader', options: {sourceMap: true}},
+						{loader: 'postcss-loader', options: {sourceMap: true}}
+					]
 			},
 			//---------------------SASS---------------------//
 			{
 				test: /\.(sass|scss)$/,
-				use:  isProd ?
+				use: isProd ?
 					ExtractTextPlugin.extract({
 						fallback: "style-loader",
-						use: [ 'css-loader', 'autoprefixer-loader', 'sass-loader?' ]
+						use: [
+							{loader: 'css-loader', options: {sourceMap: true}},
+							{loader: 'postcss-loader', options: {sourceMap: true}},
+							{loader: 'sass-loader', options: {sourceMap: true}}
+						]
 					})
-					: [ 'style-loader', 'css-loader?sourceMap=true', 'autoprefixer-loader','sass-loader?sourceMap=true']
+					: [
+						{loader: 'style-loader', options: {sourceMap: true}},
+						{loader: 'css-loader', options: {sourceMap: true}},
+						{loader: 'postcss-loader', options: {sourceMap: true}},
+						{loader: 'sass-loader', options: {sourceMap: true}}
+					]
 			},
 			//--------------------Fonts--------------------//
 			{
@@ -124,13 +140,14 @@ export default {
 					}),
 					'svgo-loader?' + JSON.stringify({
 						plugins: [
-							{ addClassesToSVGElement: {
+							{
+								addClassesToSVGElement: {
 									className: 'icon'
 								}
 							},
-							{ removeTitle: true },
-							{ convertPathData: true },
-							{ removeUselessStrokeAndFill: true }
+							{removeTitle: true},
+							{convertPathData: false},
+							{removeUselessStrokeAndFill: true}
 						]
 					})
 				]

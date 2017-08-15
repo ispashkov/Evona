@@ -1,6 +1,6 @@
 import './components/Header/Header'
 
 import './index.pug'
-import './styles/app.sass'
+import './styles/app.scss'
 
 

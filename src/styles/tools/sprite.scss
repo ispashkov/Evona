@@ -1,0 +1,420 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$angle-lb-name: 'angle-lb';
+$angle-lb-x: 3573px;
+$angle-lb-y: 1215px;
+$angle-lb-offset-x: -3573px;
+$angle-lb-offset-y: -1215px;
+$angle-lb-width: 36px;
+$angle-lb-height: 36px;
+$angle-lb-total-width: 3840px;
+$angle-lb-total-height: 1796px;
+$angle-lb-image: '~sprite.png';
+$angle-lb: (3573px, 1215px, -3573px, -1215px, 36px, 36px, 3840px, 1796px, '~sprite.png', 'angle-lb',);
+$angle-lt-name: 'angle-lt';
+$angle-lt-x: 3465px;
+$angle-lt-y: 1215px;
+$angle-lt-offset-x: -3465px;
+$angle-lt-offset-y: -1215px;
+$angle-lt-width: 36px;
+$angle-lt-height: 36px;
+$angle-lt-total-width: 3840px;
+$angle-lt-total-height: 1796px;
+$angle-lt-image: '~sprite.png';
+$angle-lt: (3465px, 1215px, -3465px, -1215px, 36px, 36px, 3840px, 1796px, '~sprite.png', 'angle-lt',);
+$angle-rb-name: 'angle-rb';
+$angle-rb-x: 3537px;
+$angle-rb-y: 1215px;
+$angle-rb-offset-x: -3537px;
+$angle-rb-offset-y: -1215px;
+$angle-rb-width: 36px;
+$angle-rb-height: 36px;
+$angle-rb-total-width: 3840px;
+$angle-rb-total-height: 1796px;
+$angle-rb-image: '~sprite.png';
+$angle-rb: (3537px, 1215px, -3537px, -1215px, 36px, 36px, 3840px, 1796px, '~sprite.png', 'angle-rb',);
+$angle-rt-name: 'angle-rt';
+$angle-rt-x: 3501px;
+$angle-rt-y: 1215px;
+$angle-rt-offset-x: -3501px;
+$angle-rt-offset-y: -1215px;
+$angle-rt-width: 36px;
+$angle-rt-height: 36px;
+$angle-rt-total-width: 3840px;
+$angle-rt-total-height: 1796px;
+$angle-rt-image: '~sprite.png';
+$angle-rt: (3501px, 1215px, -3501px, -1215px, 36px, 36px, 3840px, 1796px, '~sprite.png', 'angle-rt',);
+$arrow-russia-name: 'arrow-russia';
+$arrow-russia-x: 3639px;
+$arrow-russia-y: 1215px;
+$arrow-russia-offset-x: -3639px;
+$arrow-russia-offset-y: -1215px;
+$arrow-russia-width: 27px;
+$arrow-russia-height: 30px;
+$arrow-russia-total-width: 3840px;
+$arrow-russia-total-height: 1796px;
+$arrow-russia-image: '~sprite.png';
+$arrow-russia: (3639px, 1215px, -3639px, -1215px, 27px, 30px, 3840px, 1796px, '~sprite.png', 'arrow-russia',);
+$astlogo-name: 'astlogo';
+$astlogo-x: 3609px;
+$astlogo-y: 1215px;
+$astlogo-offset-x: -3609px;
+$astlogo-offset-y: -1215px;
+$astlogo-width: 30px;
+$astlogo-height: 30px;
+$astlogo-total-width: 3840px;
+$astlogo-total-height: 1796px;
+$astlogo-image: '~sprite.png';
+$astlogo: (3609px, 1215px, -3609px, -1215px, 30px, 30px, 3840px, 1796px, '~sprite.png', 'astlogo',);
+$bg-about-product-name: 'bg-about-product';
+$bg-about-product-x: 0px;
+$bg-about-product-y: 0px;
+$bg-about-product-offset-x: 0px;
+$bg-about-product-offset-y: 0px;
+$bg-about-product-width: 1920px;
+$bg-about-product-height: 899px;
+$bg-about-product-total-width: 3840px;
+$bg-about-product-total-height: 1796px;
+$bg-about-product-image: '~sprite.png';
+$bg-about-product: (0px, 0px, 0px, 0px, 1920px, 899px, 3840px, 1796px, '~sprite.png', 'bg-about-product',);
+$bg-form-partner-name: 'bg-form-partner';
+$bg-form-partner-x: 1920px;
+$bg-form-partner-y: 0px;
+$bg-form-partner-offset-x: -1920px;
+$bg-form-partner-offset-y: 0px;
+$bg-form-partner-width: 1920px;
+$bg-form-partner-height: 497px;
+$bg-form-partner-total-width: 3840px;
+$bg-form-partner-total-height: 1796px;
+$bg-form-partner-image: '~sprite.png';
+$bg-form-partner: (1920px, 0px, -1920px, 0px, 1920px, 497px, 3840px, 1796px, '~sprite.png', 'bg-form-partner',);
+$bg-russia-name: 'bg-russia';
+$bg-russia-x: 0px;
+$bg-russia-y: 899px;
+$bg-russia-offset-x: 0px;
+$bg-russia-offset-y: -899px;
+$bg-russia-width: 1920px;
+$bg-russia-height: 897px;
+$bg-russia-total-width: 3840px;
+$bg-russia-total-height: 1796px;
+$bg-russia-image: '~sprite.png';
+$bg-russia: (0px, 899px, 0px, -899px, 1920px, 897px, 3840px, 1796px, '~sprite.png', 'bg-russia',);
+$brand1-name: 'brand1';
+$brand1-x: 3565px;
+$brand1-y: 734px;
+$brand1-offset-x: -3565px;
+$brand1-offset-y: -734px;
+$brand1-width: 270px;
+$brand1-height: 481px;
+$brand1-total-width: 3840px;
+$brand1-total-height: 1796px;
+$brand1-image: '~sprite.png';
+$brand1: (3565px, 734px, -3565px, -734px, 270px, 481px, 3840px, 1796px, '~sprite.png', 'brand1',);
+$brand2-name: 'brand2';
+$brand2-x: 3295px;
+$brand2-y: 734px;
+$brand2-offset-x: -3295px;
+$brand2-offset-y: -734px;
+$brand2-width: 270px;
+$brand2-height: 481px;
+$brand2-total-width: 3840px;
+$brand2-total-height: 1796px;
+$brand2-image: '~sprite.png';
+$brand2: (3295px, 734px, -3295px, -734px, 270px, 481px, 3840px, 1796px, '~sprite.png', 'brand2',);
+$camera-name: 'camera';
+$camera-x: 3471px;
+$camera-y: 1254px;
+$camera-offset-x: -3471px;
+$camera-offset-y: -1254px;
+$camera-width: 50px;
+$camera-height: 50px;
+$camera-total-width: 3840px;
+$camera-total-height: 1796px;
+$camera-image: '~sprite.png';
+$camera: (3471px, 1254px, -3471px, -1254px, 50px, 50px, 3840px, 1796px, '~sprite.png', 'camera',);
+$catalog-image1-name: 'catalog-image1';
+$catalog-image1-x: 3012px;
+$catalog-image1-y: 734px;
+$catalog-image1-offset-x: -3012px;
+$catalog-image1-offset-y: -734px;
+$catalog-image1-width: 283px;
+$catalog-image1-height: 520px;
+$catalog-image1-total-width: 3840px;
+$catalog-image1-total-height: 1796px;
+$catalog-image1-image: '~sprite.png';
+$catalog-image1: (3012px, 734px, -3012px, -734px, 283px, 520px, 3840px, 1796px, '~sprite.png', 'catalog-image1',);
+$catalog-image2-name: 'catalog-image2';
+$catalog-image2-x: 2729px;
+$catalog-image2-y: 734px;
+$catalog-image2-offset-x: -2729px;
+$catalog-image2-offset-y: -734px;
+$catalog-image2-width: 283px;
+$catalog-image2-height: 520px;
+$catalog-image2-total-width: 3840px;
+$catalog-image2-total-height: 1796px;
+$catalog-image2-image: '~sprite.png';
+$catalog-image2: (2729px, 734px, -2729px, -734px, 283px, 520px, 3840px, 1796px, '~sprite.png', 'catalog-image2',);
+$catalog-popup-image-name: 'catalog-popup-image';
+$catalog-popup-image-x: 2372px;
+$catalog-popup-image-y: 734px;
+$catalog-popup-image-offset-x: -2372px;
+$catalog-popup-image-offset-y: -734px;
+$catalog-popup-image-width: 357px;
+$catalog-popup-image-height: 663px;
+$catalog-popup-image-total-width: 3840px;
+$catalog-popup-image-total-height: 1796px;
+$catalog-popup-image-image: '~sprite.png';
+$catalog-popup-image: (2372px, 734px, -2372px, -734px, 357px, 663px, 3840px, 1796px, '~sprite.png', 'catalog-popup-image',);
+$catalog-popup-img1-mini-name: 'catalog-popup-img1-mini';
+$catalog-popup-img1-mini-x: 3409px;
+$catalog-popup-img1-mini-y: 1308px;
+$catalog-popup-img1-mini-offset-x: -3409px;
+$catalog-popup-img1-mini-offset-y: -1308px;
+$catalog-popup-img1-mini-width: 64px;
+$catalog-popup-img1-mini-height: 64px;
+$catalog-popup-img1-mini-total-width: 3840px;
+$catalog-popup-img1-mini-total-height: 1796px;
+$catalog-popup-img1-mini-image: '~sprite.png';
+$catalog-popup-img1-mini: (3409px, 1308px, -3409px, -1308px, 64px, 64px, 3840px, 1796px, '~sprite.png', 'catalog-popup-img1-mini',);
+$catalog-popup-img2-mini-name: 'catalog-popup-img2-mini';
+$catalog-popup-img2-mini-x: 3281px;
+$catalog-popup-img2-mini-y: 1308px;
+$catalog-popup-img2-mini-offset-x: -3281px;
+$catalog-popup-img2-mini-offset-y: -1308px;
+$catalog-popup-img2-mini-width: 64px;
+$catalog-popup-img2-mini-height: 64px;
+$catalog-popup-img2-mini-total-width: 3840px;
+$catalog-popup-img2-mini-total-height: 1796px;
+$catalog-popup-img2-mini-image: '~sprite.png';
+$catalog-popup-img2-mini: (3281px, 1308px, -3281px, -1308px, 64px, 64px, 3840px, 1796px, '~sprite.png', 'catalog-popup-img2-mini',);
+$catalog-popup-img3-mini-name: 'catalog-popup-img3-mini';
+$catalog-popup-img3-mini-x: 3345px;
+$catalog-popup-img3-mini-y: 1308px;
+$catalog-popup-img3-mini-offset-x: -3345px;
+$catalog-popup-img3-mini-offset-y: -1308px;
+$catalog-popup-img3-mini-width: 64px;
+$catalog-popup-img3-mini-height: 64px;
+$catalog-popup-img3-mini-total-width: 3840px;
+$catalog-popup-img3-mini-total-height: 1796px;
+$catalog-popup-img3-mini-image: '~sprite.png';
+$catalog-popup-img3-mini: (3345px, 1308px, -3345px, -1308px, 64px, 64px, 3840px, 1796px, '~sprite.png', 'catalog-popup-img3-mini',);
+$close-name: 'close';
+$close-x: 3666px;
+$close-y: 1215px;
+$close-offset-x: -3666px;
+$close-offset-y: -1215px;
+$close-width: 23px;
+$close-height: 22px;
+$close-total-width: 3840px;
+$close-total-height: 1796px;
+$close-image: '~sprite.png';
+$close: (3666px, 1215px, -3666px, -1215px, 23px, 22px, 3840px, 1796px, '~sprite.png', 'close',);
+$evona-logo-name: 'evona-logo';
+$evona-logo-x: 3295px;
+$evona-logo-y: 1215px;
+$evona-logo-offset-x: -3295px;
+$evona-logo-offset-y: -1215px;
+$evona-logo-width: 170px;
+$evona-logo-height: 38px;
+$evona-logo-total-width: 3840px;
+$evona-logo-total-height: 1796px;
+$evona-logo-image: '~sprite.png';
+$evona-logo: (3295px, 1215px, -3295px, -1215px, 170px, 38px, 3840px, 1796px, '~sprite.png', 'evona-logo',);
+$header-bg-name: 'header-bg';
+$header-bg-x: 1920px;
+$header-bg-y: 497px;
+$header-bg-offset-x: -1920px;
+$header-bg-offset-y: -497px;
+$header-bg-width: 1920px;
+$header-bg-height: 237px;
+$header-bg-total-width: 3840px;
+$header-bg-total-height: 1796px;
+$header-bg-image: '~sprite.png';
+$header-bg: (1920px, 497px, -1920px, -497px, 1920px, 237px, 3840px, 1796px, '~sprite.png', 'header-bg',);
+$header-stick-bg-name: 'header-stick-bg';
+$header-stick-bg-x: 1920px;
+$header-stick-bg-y: 1409px;
+$header-stick-bg-offset-x: -1920px;
+$header-stick-bg-offset-y: -1409px;
+$header-stick-bg-width: 1920px;
+$header-stick-bg-height: 86px;
+$header-stick-bg-total-width: 3840px;
+$header-stick-bg-total-height: 1796px;
+$header-stick-bg-image: '~sprite.png';
+$header-stick-bg: (1920px, 1409px, -1920px, -1409px, 1920px, 86px, 3840px, 1796px, '~sprite.png', 'header-stick-bg',);
+$lookbook-name: 'lookbook';
+$lookbook-x: 1920px;
+$lookbook-y: 734px;
+$lookbook-offset-x: -1920px;
+$lookbook-offset-y: -734px;
+$lookbook-width: 452px;
+$lookbook-height: 675px;
+$lookbook-total-width: 3840px;
+$lookbook-total-height: 1796px;
+$lookbook-image: '~sprite.png';
+$lookbook: (1920px, 734px, -1920px, -734px, 452px, 675px, 3840px, 1796px, '~sprite.png', 'lookbook',);
+$marker-name: 'marker';
+$marker-x: 3521px;
+$marker-y: 1254px;
+$marker-offset-x: -3521px;
+$marker-offset-y: -1254px;
+$marker-width: 24px;
+$marker-height: 33px;
+$marker-total-width: 3840px;
+$marker-total-height: 1796px;
+$marker-image: '~sprite.png';
+$marker: (3521px, 1254px, -3521px, -1254px, 24px, 33px, 3840px, 1796px, '~sprite.png', 'marker',);
+$nysense-logo-name: 'nysense-logo';
+$nysense-logo-x: 3281px;
+$nysense-logo-y: 1254px;
+$nysense-logo-offset-x: -3281px;
+$nysense-logo-offset-y: -1254px;
+$nysense-logo-width: 190px;
+$nysense-logo-height: 54px;
+$nysense-logo-total-width: 3840px;
+$nysense-logo-total-height: 1796px;
+$nysense-logo-image: '~sprite.png';
+$nysense-logo: (3281px, 1254px, -3281px, -1254px, 190px, 54px, 3840px, 1796px, '~sprite.png', 'nysense-logo',);
+$thumb1-name: 'thumb1';
+$thumb1-x: 2729px;
+$thumb1-y: 1254px;
+$thumb1-offset-x: -2729px;
+$thumb1-offset-y: -1254px;
+$thumb1-width: 92px;
+$thumb1-height: 138px;
+$thumb1-total-width: 3840px;
+$thumb1-total-height: 1796px;
+$thumb1-image: '~sprite.png';
+$thumb1: (2729px, 1254px, -2729px, -1254px, 92px, 138px, 3840px, 1796px, '~sprite.png', 'thumb1',);
+$thumb2-name: 'thumb2';
+$thumb2-x: 2913px;
+$thumb2-y: 1254px;
+$thumb2-offset-x: -2913px;
+$thumb2-offset-y: -1254px;
+$thumb2-width: 92px;
+$thumb2-height: 138px;
+$thumb2-total-width: 3840px;
+$thumb2-total-height: 1796px;
+$thumb2-image: '~sprite.png';
+$thumb2: (2913px, 1254px, -2913px, -1254px, 92px, 138px, 3840px, 1796px, '~sprite.png', 'thumb2',);
+$thumb3-name: 'thumb3';
+$thumb3-x: 3005px;
+$thumb3-y: 1254px;
+$thumb3-offset-x: -3005px;
+$thumb3-offset-y: -1254px;
+$thumb3-width: 92px;
+$thumb3-height: 138px;
+$thumb3-total-width: 3840px;
+$thumb3-total-height: 1796px;
+$thumb3-image: '~sprite.png';
+$thumb3: (3005px, 1254px, -3005px, -1254px, 92px, 138px, 3840px, 1796px, '~sprite.png', 'thumb3',);
+$thumb4-name: 'thumb4';
+$thumb4-x: 3097px;
+$thumb4-y: 1254px;
+$thumb4-offset-x: -3097px;
+$thumb4-offset-y: -1254px;
+$thumb4-width: 92px;
+$thumb4-height: 138px;
+$thumb4-total-width: 3840px;
+$thumb4-total-height: 1796px;
+$thumb4-image: '~sprite.png';
+$thumb4: (3097px, 1254px, -3097px, -1254px, 92px, 138px, 3840px, 1796px, '~sprite.png', 'thumb4',);
+$thumb5-name: 'thumb5';
+$thumb5-x: 2821px;
+$thumb5-y: 1254px;
+$thumb5-offset-x: -2821px;
+$thumb5-offset-y: -1254px;
+$thumb5-width: 92px;
+$thumb5-height: 138px;
+$thumb5-total-width: 3840px;
+$thumb5-total-height: 1796px;
+$thumb5-image: '~sprite.png';
+$thumb5: (2821px, 1254px, -2821px, -1254px, 92px, 138px, 3840px, 1796px, '~sprite.png', 'thumb5',);
+$thumb6-name: 'thumb6';
+$thumb6-x: 3189px;
+$thumb6-y: 1254px;
+$thumb6-offset-x: -3189px;
+$thumb6-offset-y: -1254px;
+$thumb6-width: 92px;
+$thumb6-height: 138px;
+$thumb6-total-width: 3840px;
+$thumb6-total-height: 1796px;
+$thumb6-image: '~sprite.png';
+$thumb6: (3189px, 1254px, -3189px, -1254px, 92px, 138px, 3840px, 1796px, '~sprite.png', 'thumb6',);
+$spritesheet-width: 3840px;
+$spritesheet-height: 1796px;
+$spritesheet-image: '~sprite.png';
+$spritesheet-sprites: ($angle-lb, $angle-lt, $angle-rb, $angle-rt, $arrow-russia, $astlogo, $bg-about-product, $bg-form-partner, $bg-russia, $brand1, $brand2, $camera, $catalog-image1, $catalog-image2, $catalog-popup-image, $catalog-popup-img1-mini, $catalog-popup-img2-mini, $catalog-popup-img3-mini, $close, $evona-logo, $header-bg, $header-stick-bg, $lookbook, $marker, $nysense-logo, $thumb1, $thumb2, $thumb3, $thumb4, $thumb5, $thumb6,);
+$spritesheet: (3840px, 1796px, '~sprite.png', $spritesheet-sprites,);
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+	width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+	height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+	$sprite-offset-x: nth($sprite, 3);
+	$sprite-offset-y: nth($sprite, 4);
+	background-position: $sprite-offset-x $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+	$sprite-image: nth($sprite, 9);
+	background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+	@include sprite-image($sprite);
+	@include sprite-position($sprite);
+	@include sprite-width($sprite);
+	@include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+	@each $sprite in $sprites {
+		$sprite-name: nth($sprite, 10);
+		.#{$sprite-name} {
+			@include sprite($sprite);
+		}
+	}
+}

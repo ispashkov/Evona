@@ -12,3 +12,11 @@ import '../../assets/video/video.mp4'
 //IMAGES
 import '../../assets/images/screen.jpg'
 import '../../assets/images/header-bg.png'
+import '../../assets/images/header-stick-bg.png'
+
+
+const headerTop = document.querySelector('.js-headerScroll');
+
+window.addEventListener('scroll', function () {
+	this.scrollY > 0 ? headerTop.classList.add('header_scroll') : headerTop.classList.remove('header_scroll')
+});

@@ -1,17 +1,17 @@
-header.header
+header.header.js-headerScroll
 	div.header__overlay
 	div.header-bg
 		video.header-bg__video(poster="./assets/images/screen.jpg" autoplay muted loop="" preload="none")
 			source(src="./assets/video/video.mp4" type="video/mp4")
-	div.header-top.js-headerTop
+	div.header-top
 		div.container
 			div.row
 				div.col-4
 					div.header-top__left
-						div.icon-menu
-							i.first
-							i.second
-							i.third
+						div.header-hamburger
+							span.header-hamburger__line
+							span.header-hamburger__line
+							span.header-hamburger__line
 						a.header__phone(href="tel:+74951090459") + 7 495
 							=" "
 							b 109-04-59
@@ -19,9 +19,9 @@ header.header
 				div.col-4.header-top__center
 					div.header-logo
 						a.header-logo__item(href="javascript:void(0)")
-							+svgIcon(170, 38, '', '#evona_white')
+							+svgIcon(170, 38, 'header-logo__icon header-logo__icon_evona', '#evona_white')
 						a.header-logo__item(href="javascript:void(0)")
-							+svgIcon(190, 54, '', '#nysense_white')
+							+svgIcon(190, 54, 'header-logo__icon header-logo__icon_nysense', '#nysense_white')
 				div.col-4.header-top__right
 						a.button.button_primary.header__button.header__button_b2b(href="javascript:void(0)") B2B
 						div.header-languages
