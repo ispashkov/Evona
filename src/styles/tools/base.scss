@@ -1,5 +1,5 @@
-@import "variables";
-@import "vendors";
+@import 'variables';
+@import 'vendors';
 
 * {
 	box-sizing: border-box;
@@ -24,7 +24,7 @@ footer {
 
 .clearfix {
 	&:after {
-		content: "";
+		content: '';
 		display: table;
 		clear: both;
 	}

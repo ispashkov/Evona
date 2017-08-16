@@ -7,7 +7,7 @@
 		"dev": "NODE_ENV=development webpack-dev-server",
 		"build": "NODE_ENV=production webpack",
 		"lint:js": "eslint ./src/**/*.js --fix",
-		"lint:css": "stylelint './src/**/*.scss' --syntax scss"
+		"lint:css": "stylelint './src/**/*.scss' --fix"
 	},
 	"author": "Ilya Pashkov",
 	"license": "ISC",
@@ -50,7 +50,7 @@
 		"webpack-svgstore-plugin": "^4.0.1"
 	},
 	"dependencies": {
-		"bootstrap": "4.0.0-alpha.6",
+		"bootstrap": "4.0.0-beta",
 		"jquery": "^3.2.1",
 		"lodash": "^4.17.4"
 	}

@@ -2,6 +2,6 @@
 	"rules": {
 		"indentation": "tab",
 		"number-leading-zero": null,
-		"string-quotes": "double"
+		"string-quotes": "single"
 	}
 }

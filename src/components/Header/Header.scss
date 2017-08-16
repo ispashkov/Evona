@@ -1,4 +1,4 @@
-@import "../../styles/tools/variables";
+@import '../../styles/tools/variables';
 
 .header {
 	position: relative;
@@ -219,7 +219,7 @@
 			&:last-child {
 				margin-right: 0;
 				&:before {
-					content: "";
+					content: '';
 					position: absolute;
 					width: 1px;
 					height: $spacer;
