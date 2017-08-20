@@ -41,7 +41,7 @@ new Vue ({
 	},
 	methods: {
 		scroll() {
-			window.scrollY > 0 ? this.active = true : this.active = false;
+			window.scrollY > 100 ? this.active = true : this.active = false;
 		},
 		
 		showPopupCallback() {

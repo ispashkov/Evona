@@ -7,8 +7,7 @@ export default {
 	},
 	methods: {
 		close() {
-			console.log(this)
-			// this.$store.dispatch('closePopupCallback');
+			this.$store.dispatch('closePopupCallback');
 		}
 	}
 }
