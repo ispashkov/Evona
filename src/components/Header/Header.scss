@@ -1,4 +1,5 @@
 @import '../../styles/tools/variables';
+@import '../../styles/tools/vendors';
 
 .header {
 	position: relative;
@@ -21,10 +22,10 @@
 			padding: 0;
 			
 			background: {
-				image: url(../assets/images/header-stick-bg.png);
+				image: url(./images/header-stick-bg.png);
 				color: $colorWhite;
-				box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
 			};
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
 		}
 		
 		& .header-hamburger {
@@ -53,6 +54,11 @@
 		& .header__phone {
 			color: $colorGray;
 			margin: 0 20px 0 0;
+			
+			@include media-breakpoint-down(xl) {
+				font-size: $font-size-base;
+			}
+			
 			b {
 				color: $colorAccent;
 			}
@@ -70,11 +76,17 @@
 		& .header-logo__icon_evona {
 			width: 8.125*$spacer;
 			margin-left: 4*$spacer;
+			@include media-breakpoint-down(xl) {
+				margin-left: 2*$spacer;
+			}
 		}
 		
 		& .header-logo__icon_nysense {
 			width: 9.375*$spacer;
 			margin-right: 4*$spacer;
+			@include media-breakpoint-down(xl) {
+				margin-right: 2*$spacer;
+			}
 		}
 		
 	
@@ -94,6 +106,10 @@
 		margin-right: 2.5*$spacer;
 		cursor: pointer;
 		@include transition();
+		
+		@include media-breakpoint-down(xl) {
+			margin-right: 2*$spacer;
+		}
 		
 		&:hover {
 			background-color: $colorPrimary;
@@ -115,10 +131,10 @@
 	&__button {
 		background-color: transparent;
 		color: $colorWhite;
-	}
-	
-	&_b2b {
-		margin-right: 3*$spacer;
+		
+		&_b2b {
+			margin-right: 3*$spacer;
+		}
 	}
 	
 	&__overlay {
@@ -144,7 +160,7 @@
 		z-index: -$z-index-base;
 		
 		background: {
-			image: url(../assets/images/screen.jpg);
+			image: url(./images/screen.jpg);
 			size: cover;
 			position: center top;
 		};
@@ -173,6 +189,10 @@
 		line-height: 1.5*$font-size-base;
 		text-transform: uppercase;
 		text-decoration: none;
+		@include media-breakpoint-down(xl) {
+			font-size: 1.25*$font-size-base;
+		}
+		
 		b {
 			font-weight: 500
 		}
@@ -211,6 +231,11 @@
 			text-transform: uppercase;
 			text-decoration: none;
 			
+			@include media-breakpoint-down(xl) {
+				height: 2.125*$spacer;
+				font-size: 0.875*$font-size-base;
+			}
+			
 			&_active {
 				border-bottom-color: $colorPrimary;
 				font-weight: 700;
@@ -248,6 +273,11 @@
 			font-weight: 300;
 			line-height: 1.5*$font-size-base;
 			text-decoration: none;
+			
+			@include media-breakpoint-down(xl) {
+				font-size: 1.25*$font-size-base;
+				line-height: 1.25*$font-size-base;
+			}
 		}
 	}
 	
@@ -262,7 +292,7 @@
 		padding: 2*$spacer 0 0 0;
 		
 		background: {
-			image: url(../assets/images/header-bg.png);
+			image: url(./images/header-bg.png);
 			repeat: no-repeat;
 			position: center;
 		};
@@ -273,6 +303,9 @@
 			display: flex;
 			flex-direction: column;
 			align-items: flex-start;
+			@include media-breakpoint-down(xl) {
+				padding-right: 0 !important;
+			}
 		}
 		
 		&__center {
@@ -286,6 +319,9 @@
 			display: flex;
 			align-items: center;
 			justify-content: flex-end;
+			@include media-breakpoint-down(xl) {
+				padding-left: 0 !important;
+			}
 		}
 	}
 	
@@ -314,7 +350,6 @@
 			}
 		}
 	}
-	
 	
 	&-download {
 		position: relative;
@@ -402,7 +437,6 @@
 		}
 		
 	}
-	
 	
 	&__scroll {
 		padding: 0;

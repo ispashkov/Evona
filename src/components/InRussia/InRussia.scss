@@ -1,0 +1,11 @@
+@import '../../styles/tools/variables';
+@import '../../styles/tools/vendors';
+
+.in-russia {
+	background: {
+		image: url("./bg-russia.png");
+		size: cover;
+		position: center top;
+		repeat: no-repeat;
+	};
+}

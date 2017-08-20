@@ -27,13 +27,13 @@ $colorAccent: #202020;
 $colorWait: #778899;
 $colorBlack: #223344;
 $colorGray: #666666;
+$colorLight: #f0f0f0;
 $colorGrayLight: #ededed;
+$colorHr: #d8d8d8;
 $colorGreen: #99bb11;
 $colorText: #667788;
+$colorTextDark: #bab9bf;
 $colorWhite: #fff;
-$colorBlueLight: #c6e0e8;
-$footerItemTitleBefore: #394857;
-$footerItemContent: #bcbfc3;
 
 @mixin transition($x: .3s) {
 	transition: $x;
@@ -58,3 +58,4 @@ $footerItemContent: #bcbfc3;
 $z-index-base: 10;
 $z-index-overlay: 90;
 $z-index-modal: 100;
+$z-index-modal-close: 110;

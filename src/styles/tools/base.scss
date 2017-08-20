@@ -10,6 +10,8 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	
+	background-color: $colorLight;
 	font-family: $font-family-base;
 	font-size: $font-size-base;
 }
@@ -20,14 +22,6 @@ main {
 
 footer {
 	flex-shrink: 1;
-}
-
-.clearfix {
-	&:after {
-		content: '';
-		display: table;
-		clear: both;
-	}
 }
 
 h1, h2, h3, h4, h5, h6, .heading {
@@ -103,69 +97,31 @@ a {
 	}
 }
 
-//КНОПКИ
-.button {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	height: 2.375rem;
-	padding: 0 0.75*$spacer;
-	margin: 0;
-	
-	background-color: transparent;
-	border: 2px solid $colorPrimary;
-	border-radius: 0;
+.hr {
+	margin: 3.75*$spacer 0;
+	border: {
+		top: none;
+		left: none;
+		right: none;
+		bottom: 1px solid $colorHr;
+	};
+}
+
+.link {
 	color: $colorAccent;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: $z-index-overlay;
 	
-	font: {
-		family: $font-family-base;
-		size: $font-size-base;
-		weight: 700;
-	}
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	
-	line-height: $spacer;
-	text-transform: uppercase;
-	text-decoration: none;
-	white-space: nowrap;
-	
-	cursor: pointer;
-	appearance: none;
-	@include transition();
-	
-	&_primary {
-		background-color: $colorPrimary;
-		border-color: $colorPrimary;
-		color: $colorAccent;
-		
-		&:hover {
-			background-color: lighten($colorPrimary, 5%);
-			border-color: lighten($colorPrimary, 5%);
-			color: $colorAccent;
-		}
-	}
-	
-	&_accent {
-		background-color: $colorAccent;
-		border-color: $colorAccent;
-		color: $colorPrimary;
-		&:hover {
-			background-color: lighten($colorAccent, 5%);
-			border-color: lighten($colorAccent, 5%);
-			color: $colorPrimary;
-		}
-	}
-	
-	&_inverse {
-		background-color: transparent;
-	}
-	
-	&_xl {
-		width: 18.75*$spacer;
-		height: 4*$spacer;
-		font-size: 1.25*$font-size-base;
-	}
-	
-	&_wide {
-		width: 100%;
-	}
+	background-color: rgba($colorAccent, 0.7);
 }

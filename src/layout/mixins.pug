@@ -1,3 +1,10 @@
 mixin svgIcon(width, height, className, id)
 	svg(class=className width=width height=height)
 		use(xlink:href=id)
+
+mixin heading(title, desc)
+	div.page-section-heading
+		h2.heading.heading_2.page-section-heading__title= title
+		- if (desc) {
+			span.page-section-heading__desc= desc
+		- }

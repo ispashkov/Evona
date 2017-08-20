@@ -13,8 +13,13 @@ html
 		block title
 
 	body
+		div#app.app
+			include ../components/Header/Header
 
-		include ../components/Header/Header
+			main.main
+				block main
 
-		main.main
-			block main
+			include ../components/Footer/Footer
+			popup-wrapper(v-if="this.$store.getters.getShowPopupCallback")
+				popup-callback
+

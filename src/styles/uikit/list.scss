@@ -1,0 +1,32 @@
+.list {
+	padding: 0;
+	
+	&__item {
+		position: relative;
+		
+		display: block;
+		margin-bottom: $spacer;
+		padding-left: 1.25*$spacer;
+		
+		color: $colorAccent;
+		font-size: $font-size-base;
+		font-weight: 400;
+		line-height: 1.5*$font-size-base;
+		list-style-type: none;
+		
+		
+		&:before {
+			position: absolute;
+			top: 0.5*$spacer;
+			left: 0;
+			
+			
+			content: '';
+			display: block;
+			height: 0.5*$spacer;
+			width: 0.5*$spacer;
+			background-color: $colorPrimary;
+			border-radius: 50%;
+		}
+	}
+}

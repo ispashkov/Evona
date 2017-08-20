@@ -1,0 +1,27 @@
+.heading-b2b {
+	position: relative;
+	
+	display: block;
+	padding: 0 0 1.25*$spacer 0;
+	margin: 0 0 1.25*$spacer 0;
+	
+	color: $colorAccent;
+	font-family: $font-family-accent;
+	font-size: 1.875*$font-size-base;
+	font-weight: 400;
+	line-height: 1.875*$font-size-base;
+	text-transform: uppercase;
+	text-align: left;
+	
+	&:before {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		
+		content: '';
+		display: block;
+		width: 9.375*$spacer;
+		height: 1px;
+		background-color: $colorPrimary;
+	}
+}

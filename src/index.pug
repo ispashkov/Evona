@@ -3,3 +3,25 @@ block title
 	title Frontend Start Template
 
 block main
+	include components/Steps/Steps
+	include components/FormPartners/FormPartners
+
+	div.page-section.page-section_light
+		div.container
+			div.row
+				div.col-12
+					+heading('Evona, Nysense Paris', 'Атмосфера французской романтики – моды всего мира')
+
+					include components/History/History
+
+					hr.hr
+
+					include components/Info/Info
+
+	include components/Profits/Profits
+	include components/InRussia/InRussia
+	include components/Session/Session
+	include components/FormAccess/FormAccess
+	include components/Cooperation/Cooperation
+	include components/FormMeeting/FormMeeting
+	include components/Contacts/Contacts

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Double_Chevron_Down-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="54px" height="54px" viewBox="0 0 54 54" enable-background="new 0 0 54 54" xml:space="preserve">
+<g>
+	<g>
+		<circle fill="#BF9138" id="header-double-chevron" cx="27" cy="27" r="27"/>
+	</g>
+	<g id="Double_Chevron_Down" id="double-chevron-down">
+		<path fill="#252229" d="M33.285,26.35L27,32.544l-6.285-6.194c-0.395-0.392-1.033-0.392-1.428,0c-0.395,0.391-0.395,1.022,0,1.412
+			l6.999,6.899c0.379,0.375,1.048,0.377,1.429,0l6.999-6.899c0.394-0.391,0.394-1.023,0-1.414
+			C34.318,25.958,33.68,25.958,33.285,26.35z"/>
+		<path fill="#252229" d="M26.286,27.662c0.379,0.375,1.048,0.377,1.429,0l6.999-6.898c0.394-0.391,0.394-1.023,0-1.414
+			c-0.394-0.391-1.034-0.391-1.428,0L27,25.544l-6.285-6.194c-0.395-0.391-1.033-0.391-1.428,0s-0.395,1.024,0,1.414L26.286,27.662z
+			"/>
+	</g>
+</g>
+</svg>

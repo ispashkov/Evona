@@ -1,0 +1,89 @@
+.page-section {
+	position: relative;
+	
+	padding: 5*$spacer 0;
+	overflow: hidden;
+	
+	&:before {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: -8*$spacer;
+		
+		content: attr(data-place);
+		display: block;
+		color: $colorWhite;
+		font-family: $font-family-accent;
+		font-size: 32*$font-size-base;
+		font-weight: 400;
+		line-height: 22*$font-size-base;
+		text-transform: uppercase;
+		
+		text-align: center;
+	}
+	
+	&_dark {
+		background-color: $colorAccent;
+		
+		.page-section-heading__title,
+		.page-section-heading__desc {
+			color: $colorWhite;
+		}
+		
+		.step__text,
+		.list__item {
+			color: $colorTextDark;
+		}
+		
+		.hr {
+			border-color: $colorPrimary;
+		}
+	}
+	
+	&_light {
+		background-color: $colorLight;
+	}
+	
+	&_white {
+		background-color: $colorWhite;
+	}
+	
+	&_light, &_white {
+		.page-section-heading__title,
+		.page-section-heading__desc {
+			color: $colorAccent;
+		}
+	}
+	
+	&_form {
+		background: {
+			image: url("../assets/images/bg-form.png");
+			size: cover;
+			repeat: no-repeat;
+			position: center top;
+		}
+	}
+	
+	&-heading {
+		display: block;
+		margin: 0 0 5*$spacer 0;
+		
+		&__title {
+			display: block;
+			margin: 0 0 $spacer 0;
+			font-family: $font-family-accent;
+			font-size: 3*$font-size-base;
+			font-weight: 400;
+			text-transform: uppercase;
+			text-align: center;
+		}
+		
+		&__desc {
+			display: block;
+			font-family: $font-family-second;
+			font-size: 2*$font-size-base;
+			font-weight: 100;
+			text-align: center;
+		}
+	}
+}

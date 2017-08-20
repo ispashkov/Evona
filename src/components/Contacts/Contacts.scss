@@ -1,0 +1,45 @@
+@import '../../styles/tools/variables';
+@import '../../styles/tools/vendors';
+
+.contacts {
+	
+	.row {
+		height: 40*$spacer;
+		margin: 0;
+	}
+	
+	&__map {
+		height: 100%;
+	}
+	
+	&-info {
+		padding: 3*$spacer;
+	}
+	
+	&-target {
+		display: block;
+		margin: 0 0 2*$spacer;
+
+		color: #bf9138;
+		font-family: $font-family-second;
+		font-size: 1.625*$font-size-base;
+		font-weight: 100;
+		line-height: 2*$font-size-base;
+		text-transform: uppercase;
+		
+		&__name {
+			display: block;
+			font-weight: 500;
+		}
+	}
+	
+	&-adres {
+		display: block;
+		margin: 0 0 2.5*$spacer;
+		color: $colorAccent;
+		font-family: $font-family-base;
+		font-size: 1.25*$spacer;
+		font-weight: 400;
+		line-height: 1.875*$font-size-base;
+	}
+}

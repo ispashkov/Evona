@@ -4,9 +4,12 @@ import ExtractTextPlugin from "extract-text-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import SpritesmithPlugin from "webpack-spritesmith";
 import CleanWebpackPlugin from "clean-webpack-plugin";
+import SpriteLoaderPlugin from 'svg-sprite-loader/plugin';
+
 
 const isProd = (process.env.NODE_ENV === "production");
 const plugins = [
+	new SpriteLoaderPlugin(),
 	new webpack.HotModuleReplacementPlugin(),
 	new webpack.optimize.CommonsChunkPlugin({
 		name: "commons",
@@ -20,7 +23,7 @@ const plugins = [
 	new HtmlWebpackPlugin({
 		filename: "index.html",
 		chunks: ["main", "commons"],
-		template: path.join(__dirname, "/src/index.pug")
+		template: path.join(__dirname, "./src/index.pug")
 	}),
 	new webpack.ProvidePlugin({
 		$: "jquery",
@@ -64,13 +67,14 @@ export default {
 			//---------------------JS----------------------//
 			{
 				test: /\.(js|jsx)?$/,
-				use: ["babel-loader"],
-				include: path.join(__dirname, "/src"),
+				use: "babel-loader",
+				include: path.join(__dirname, "./src"),
 			},
 			//---------------------VUE----------------------//
 			{
-				test: /\.vue?$/,
+				test: /\.vue$/,
 				use: "vue-loader",
+				include: path.join(__dirname, "./src")
 			},
 			//--------------------PUG--------------------//
 			{
@@ -85,7 +89,7 @@ export default {
 					ExtractTextPlugin.extract({
 						fallback: "style-loader",
 						use: [
-							{loader: "css-loader", options: {sourceMap: true}},
+							{loader: "css-loader", options: {sourceMap: true, minimize: true}},
 							{loader: "postcss-loader", options: {sourceMap: true}},
 							{loader: "sass-loader", options: {sourceMap: true}}
 						]
@@ -115,11 +119,14 @@ export default {
 			//---------------------SVG---------------------//
 			{
 				test: /\.svg$/,
-				include: path.join(__dirname, "./src/assets/icons"),
 				use: [
 					"svg-sprite-loader?" + JSON.stringify({
 						name: "[name]",
-						prefixize: true
+						prefixize: true,
+						options: {
+							extract: true,
+							spriteFilename: 'svg-sprite.svg'
+						}
 					}),
 					"svgo-loader?" + JSON.stringify({
 						plugins: [
@@ -138,6 +145,6 @@ export default {
 		]
 	},
 	resolve: {
-		modules: ["node_modules", "assets"]
+		modules: ["node_modules", "assets", "src"]
 	}
 };

@@ -1,0 +1,15 @@
+@import '../../styles/tools/variables';
+@import '../../styles/tools/vendors';
+
+.footer {
+	background-color: $colorAccent;
+	padding: 2.5*$spacer 0;
+	
+	&__cooperating {
+		display: block;
+		color: $colorGray;
+		font-family: $font-family-base;
+		font-size: $font-size-base;
+		font-weight: 400;
+	}
+}

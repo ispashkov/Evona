@@ -1,4 +1,4 @@
-header.header.js-headerScroll
+header(:class="[ active ? 'header header_scroll' : 'header' ]")
 	div.header__overlay
 	div.header-bg
 		video.header-bg__video(poster="./assets/images/screen.jpg" autoplay muted loop="" preload="none")
@@ -6,16 +6,15 @@ header.header.js-headerScroll
 	div.header-top
 		div.container
 			div.row
-				div.col-4
-					div.header-top__left
-						div.header-hamburger
-							span.header-hamburger__line
-							span.header-hamburger__line
-							span.header-hamburger__line
-						a.header__phone(href="tel:+74951090459") + 7 495
-							=" "
-							b 109-04-59
-						button.button.button_primary.header__button(type='button') Заказать звонок
+				div.col-4.header-top__left
+					div.header-hamburger
+						span.header-hamburger__line
+						span.header-hamburger__line
+						span.header-hamburger__line
+					a.header__phone(href="tel:+74951090459") + 7 495
+						=" "
+						b 109-04-59
+					button.button.button_primary.header__button.js-popupShow(type='button' @click="showPopupCallback()") Заказать звонок
 				div.col-4.header-top__center
 					div.header-logo
 						a.header-logo__item(href="javascript:void(0)")
@@ -25,8 +24,8 @@ header.header.js-headerScroll
 				div.col-4.header-top__right
 						a.button.button_primary.header__button.header__button_b2b(href="javascript:void(0)") B2B
 						div.header-languages
-							a.header-languages__link(href="javascript:void(0)") RU
-							a.header-languages__link.header-languages__link_active(href="javascript:void(0)") EN
+							a.header-languages__link.header-languages__link_active(href="javascript:void(0)") RU
+							a.header-languages__link(href="javascript:void(0)") EN
 			div.row
 				div.col
 					div.header-menu
@@ -60,7 +59,7 @@ header.header.js-headerScroll
 			div.row
 				div.col-12.d-flex.align-items-center.justify-content-center
 					a.header-download(href="#")
-						+svgIcon(42, 64, 'header-download__icon', '#Arrow_Download')
+						+svgIcon(42, 64, 'header-download__icon', '#download')
 						div.header-download__content
 							span.header-download__title Скачать презентацию
 							span.header-download__text PDF
@@ -81,4 +80,4 @@ header.header.js-headerScroll
 
 				div.col-4.d-flex.align-items-center.justify-content-center
 					button.header__scroll.js-scroll(type='button')
-						+svgIcon(54, 54, 'social__icon', '#DoubleChevronDown')
+						+svgIcon(54, 54, 'social__icon', '#arrow-double')
