@@ -5,12 +5,24 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import SpritesmithPlugin from "webpack-spritesmith";
 import CleanWebpackPlugin from "clean-webpack-plugin";
 import SpriteLoaderPlugin from 'svg-sprite-loader/plugin';
+import ManifestPlugin from 'webpack-manifest-plugin'
 
 
 const isProd = (process.env.NODE_ENV === "production");
 const plugins = [
 	new SpriteLoaderPlugin(),
-	new webpack.HotModuleReplacementPlugin(),
+	// new webpack.HotModuleReplacementPlugin(),
+	new ManifestPlugin({
+		fileName: 'manifest.json',
+		basePath: './build/',
+		seed: {
+		  name: 'Evona & Nysense App'
+		}
+	}),
+	new webpack.optimize.CommonsChunkPlugin({
+		name: "manifest",
+		minChunks: Infinity
+	}),
 	new webpack.optimize.CommonsChunkPlugin({
 		name: "commons",
 		filename: "js/commons.[hash].js",
@@ -51,7 +63,8 @@ export default {
 	entry: path.join(__dirname, "./src/app.js"),
 	output: {
 		path: path.join(__dirname, "./build/"),
-		filename: "js/bundle.[hash].js"
+		filename: "js/[name].[hash].js",
+		chunkFilename: "app"
 	},
 	plugins,
 	devServer: {
@@ -59,7 +72,7 @@ export default {
 		port: 3000,
 		noInfo: true,
 		overlay: true,
-		hot: true
+		// hot: true
 	},
 	devtool: "source-map",
 	module: {
