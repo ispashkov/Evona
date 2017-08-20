@@ -1,1 +1,3 @@
-import './FormAccess'
+export default {
+    name: 'FormAccess'
+}

@@ -1,1 +1,3 @@
-import './FormMeeting.pug'
+export default {
+    name: 'FormMeeting'
+}

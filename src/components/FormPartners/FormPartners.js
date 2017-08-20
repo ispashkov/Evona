@@ -1,1 +1,3 @@
-import './FormPartners.pug'
+export default {
+    name: 'FormPartners'
+}

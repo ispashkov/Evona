@@ -63,8 +63,7 @@ export default {
 	entry: path.join(__dirname, "./src/app.js"),
 	output: {
 		path: path.join(__dirname, "./build/"),
-		filename: "js/[name].[hash].js",
-		chunkFilename: "app"
+		filename: "js/[name].[hash].js"
 	},
 	plugins,
 	devServer: {
