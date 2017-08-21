@@ -6,15 +6,11 @@
                     form.form
                         div.row.mb-4
                             div.col
-                                div.form-group
-                                    label.form-group__label(for='userName') ФИО
-                                    input.form-group__field(type="text" id='userName' autocomplete='off')
+                                field(type='text' name='userNameMeeting' label='ФИО')
 
                         div.row.mb-5
                             div.col
-                                div.form-group
-                                    label.form-group__label(for='userPhoneMeeting') Телефон
-                                    input.form-group__field(type="tel" id='userPhoneMeeting' autocomplete='off')
+                                field(type='tel' name='userPhoneMeeting' label='Телефон')
 
                         div.row.justify-content-center
                             button.button.button_primary.button_xl(type='submit') Назначить встречу

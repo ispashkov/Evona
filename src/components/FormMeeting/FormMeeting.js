@@ -1,3 +1,6 @@
+import Field from '../Field.vue'
+
 export default {
-    name: 'FormMeeting'
+    name: 'FormMeeting',
+    components: {Field}
 }

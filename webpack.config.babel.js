@@ -11,7 +11,7 @@ import ManifestPlugin from 'webpack-manifest-plugin'
 const isProd = (process.env.NODE_ENV === "production");
 const plugins = [
 	new SpriteLoaderPlugin(),
-	// new webpack.HotModuleReplacementPlugin(),
+	new webpack.HotModuleReplacementPlugin(),
 	new ManifestPlugin({
 		fileName: 'manifest.json',
 		basePath: './build/',
@@ -34,8 +34,13 @@ const plugins = [
 	new webpack.NamedModulesPlugin(),
 	new HtmlWebpackPlugin({
 		filename: "index.html",
-		chunks: ["main", "commons"],
+		chunks: ["app", "commons"],
 		template: path.join(__dirname, "./src/index.pug")
+	}),
+	new HtmlWebpackPlugin({
+		filename: "b2b.html",
+		chunks: ["b2b", "commons"],
+		template: path.join(__dirname, "./src/b2b.pug")
 	}),
 	new webpack.ProvidePlugin({
 		$: "jquery",
@@ -60,7 +65,10 @@ const plugins = [
 isProd ? plugins.push(new ExtractTextPlugin("css/styles.[hash].css"), new CleanWebpackPlugin(["./build"])) : null;
 
 export default {
-	entry: path.join(__dirname, "./src/app.js"),
+	entry: {
+		app: './src/app.js',
+		b2b: './src/b2b.js'
+	},
 	output: {
 		path: path.join(__dirname, "./build/"),
 		filename: "js/[name].[hash].js"
@@ -71,7 +79,7 @@ export default {
 		port: 3000,
 		noInfo: true,
 		overlay: true,
-		// hot: true
+		hot: true
 	},
 	devtool: "source-map",
 	module: {

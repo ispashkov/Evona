@@ -1,0 +1,244 @@
+@import '../../styles/tools/variables';
+@import '../../styles/tools/vendors';
+
+.header {
+    position: sticky;
+    top: 0;
+    height: 5*$spacer;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+	
+	&_scroll {
+		& .header-top {
+            height: 100%;
+			padding: 0;
+			
+			background: {
+				image: url(./images/header-stick-bg.png);
+				color: $colorWhite;
+			};
+		}
+		
+		& .header-hamburger {
+			display: flex;
+		}
+		
+		& .container, .row {
+			height: 100%;
+		}
+		
+	
+		& .header-top__left {
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			flex-direction: row;
+			height: 100%;
+		}
+		
+	
+		& .header-menu {
+			display: none;
+		}
+	
+	
+		& .header__phone {
+			color: $colorGray;
+			margin: 0 20px 0 0;
+			
+			@include media-breakpoint-down(xl) {
+				font-size: $font-size-base;
+			}
+			
+			b {
+				color: $colorAccent;
+			}
+		}
+		
+	
+		& .header__button {
+			color: $colorAccent;
+		}
+		
+		& .header-logo {
+			fill: $colorAccent;
+		}
+		
+		& .header-logo__icon_evona {
+			width: 8.125*$spacer;
+			margin-left: 4*$spacer;
+			@include media-breakpoint-down(xl) {
+				margin-left: 2*$spacer;
+			}
+		}
+		
+		& .header-logo__icon_nysense {
+			width: 9.375*$spacer;
+			margin-right: 4*$spacer;
+			@include media-breakpoint-down(xl) {
+				margin-right: 2*$spacer;
+			}
+		}
+		
+	
+		& .header-languages__link {
+			color: $colorAccent;
+		}
+		
+	}
+	
+	&-hamburger {
+		display: none;
+		align-items: stretch;
+		justify-content: space-between;
+		flex-direction: column;
+		height: 2.5*$spacer;
+		padding: 0.5*$spacer;
+		margin-right: 2.5*$spacer;
+		cursor: pointer;
+		@include transition();
+		
+		@include media-breakpoint-down(xl) {
+			margin-right: 2*$spacer;
+		}
+		
+		&:hover {
+			background-color: $colorPrimary;
+			
+			.header-hamburger__line {
+				background-color: $colorWhite;
+			}
+		}
+		
+		&__line {
+			display: block;
+			height: 3px;
+			width: 1.75*$spacer;
+			background-color: $colorPrimary;
+			@include transition();
+		}
+	}
+	
+	&__button {
+		background-color: transparent;
+		color: $colorWhite;
+		
+		&_b2b {
+			margin-right: 3*$spacer;
+		}
+	}
+	
+	&__phone {
+		display: inline-block;
+		margin: 0 0 $spacer 0;
+		
+		color: $colorWhite;
+		font-family: $font-family-second;
+		font-size: 1.4*$font-size-base;
+		font-weight: 100;
+		line-height: 1.5*$font-size-base;
+		text-transform: uppercase;
+		text-decoration: none;
+		@include media-breakpoint-down(xl) {
+			font-size: 1.25*$font-size-base;
+		}
+		
+		b {
+			font-weight: 500
+		}
+	}
+	
+	&-logo {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-around;
+		flex: 1;
+		margin-top: auto;
+		
+		fill: $colorWhite;
+		
+		&__icon {
+			@include transition()
+		}
+	}
+	
+	&-languages {
+		&__link {
+			position: relative;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			height: 2.375*$spacer;
+			padding: 0 0.5*$spacer;
+			margin: 0 0.5*$spacer;
+			border-bottom: 2px solid transparent;
+			
+			color: $colorWhite;
+			font-family: $font-family-base;
+			font-size: $font-size-base;
+			font-weight: 300;
+			line-height: $font-size-base;
+			text-transform: uppercase;
+			text-decoration: none;
+			
+			@include media-breakpoint-down(xl) {
+				height: 2.125*$spacer;
+				font-size: 0.875*$font-size-base;
+			}
+			
+			&_active {
+				border-bottom-color: $colorPrimary;
+				font-weight: 700;
+			}
+			
+			&:last-child {
+				margin-right: 0;
+				&:before {
+					content: '';
+					position: absolute;
+					width: 1px;
+					height: $spacer;
+					background-color: #9b9b9b;
+					top: calc(50% - 0.5rem);
+					left: -0.5rem;
+				}
+			}
+		}
+	}
+	
+	&-top {
+		
+		background: {
+			repeat: no-repeat;
+			position: center;
+		};
+		
+		overflow: hidden;
+		
+		&__left {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			@include media-breakpoint-down(xl) {
+				padding-right: 0 !important;
+			}
+		}
+		
+		&__center {
+			display: flex;
+			align-items: end;
+			justify-content: center;
+		}
+		
+		
+		&__right {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			@include media-breakpoint-down(xl) {
+				padding-left: 0 !important;
+			}
+		}
+	}
+
+}

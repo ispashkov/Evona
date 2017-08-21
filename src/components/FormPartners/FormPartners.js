@@ -1,3 +1,6 @@
+import Field from '../Field.vue'
+
 export default {
-    name: 'FormPartners'
+    name: 'FormPartners',
+    components: {Field}
 }

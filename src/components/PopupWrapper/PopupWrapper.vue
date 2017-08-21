@@ -1,6 +1,7 @@
 <template lang="pug">
 	include ../../layout/mixins
 	
+	
 	div.overlay(@click="close()")
 		div.popup(@click.stop="")
 			form

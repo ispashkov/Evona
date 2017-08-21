@@ -53,6 +53,7 @@
 		"webpack-svgstore-plugin": "^4.0.1"
 	},
 	"dependencies": {
+		"animate.css": "^3.5.2",
 		"bootstrap": "4.0.0-beta",
 		"jquery": "^3.2.1",
 		"lodash": "^4.17.4",

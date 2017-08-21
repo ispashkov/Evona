@@ -13,15 +13,4 @@ html
 		block title
 
 	body
-		div#app.app
-			include ../components/Header/Header
-
-			main.main
-				block main
-
-			include ../components/Footer/Footer
-
-			transition(name='fade')
-				popup-wrapper(v-if="this.$store.getters.getShowPopupCallback")
-					popup-callback
-
+		div#app

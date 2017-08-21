@@ -10,8 +10,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	
-	background-color: $colorLight;
 	font-family: $font-family-base;
 	font-size: $font-size-base;
 }
@@ -124,4 +122,8 @@ a {
 	align-items: center;
 	
 	background-color: rgba($colorAccent, 0.7);
+}
+
+.icon path {
+	fill: inherit;
 }

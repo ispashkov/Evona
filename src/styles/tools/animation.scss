@@ -1,0 +1,9 @@
+.fade {
+    &-enter-active {
+        animation: fadeIn .3s;
+    }
+
+    &-leave-active {
+        animation: fadeOut .3s;
+    }
+}

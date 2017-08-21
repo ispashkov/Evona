@@ -1,6 +1,13 @@
 
 .form {
 	
+	&_singup,
+	&_singin {
+		& .form__title {
+			color: $colorAccent;
+		}
+	}
+
 	&__title {
 		display: block;
 		margin: 0 0 3*$spacer 0;

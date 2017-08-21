@@ -63,6 +63,11 @@
 			position: center top;
 		}
 	}
+
+	&_wrap {
+		padding: 3*$spacer 4*$spacer;
+		height: 100%;
+	}
 	
 	&-heading {
 		display: block;

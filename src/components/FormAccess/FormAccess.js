@@ -1,3 +1,8 @@
+import Field from '../Field.vue'
+
 export default {
-    name: 'FormAccess'
+    name: 'FormAccess',
+    components: {
+        Field
+    }
 }
