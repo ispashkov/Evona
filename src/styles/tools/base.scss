@@ -127,3 +127,9 @@ a {
 .icon path {
 	fill: inherit;
 }
+
+.ajs-error {
+    background-color: $colorPrimary !important;
+    font-family: $font-family-second !important;
+    color: $colorWhite;
+}
