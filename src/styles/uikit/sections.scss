@@ -43,6 +43,10 @@
 	&_light {
 		background-color: $colorLight;
 	}
+
+	&_gray {
+		background-color: $colorGrayForm;
+	}
 	
 	&_white {
 		background-color: $colorWhite;
@@ -67,6 +71,48 @@
 	&_wrap {
 		padding: 3*$spacer 4*$spacer;
 		height: 100%;
+	}
+
+	&_angle-left {
+		position: relative;
+
+		&:before, &:after {
+			position: absolute;
+			left: 0;
+			right: auto;
+			content: '';
+		}
+		
+		&:before {
+			top: 0;
+			@include sprite($angle-lt)
+		}
+
+		&:after {
+			bottom: 0;
+			@include sprite($angle-lb)
+		}
+	}
+
+	&_angle-right {
+		position: relative;
+
+		&:before, &:after {
+			position: absolute;
+			right: 0;
+			left: auto;
+			content: '';
+		}
+		
+		&:before {
+			top: 0;
+			@include sprite($angle-rt)
+		}
+
+		&:after {
+			bottom: 0;
+			@include sprite($angle-rb)
+		}
 	}
 	
 	&-heading {

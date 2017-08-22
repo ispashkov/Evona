@@ -20,6 +20,8 @@ import Loading from './components/Loading/Loading.vue'
 import FormPartners from './components/FormPartners/FormPartners.vue'
 import PopupWrapper from './components/PopupWrapper/PopupWrapper.vue'
 import PopupCallback from './components/PopupCallback/PopupCallback.vue'
+import MobileMenu from './components/MobileMenu/MobileMenu.vue'
+
 
 new Vue ({
 	el: '#app',
@@ -29,12 +31,18 @@ new Vue ({
 		PopupWrapper,
 		PopupCallback,
 		FormPartners,
+		MobileMenu,
 		'form-access': () => import('./components/FormAccess/FormAccess.vue'),
 		'form-meeting': () => import('./components/FormMeeting/FormMeeting.vue')
 	},
 	data() {
 		return {
 			active: false,
+		}
+	},
+	computed: {
+		menu() {
+			return this.$store.state.MobileMenu.show
 		}
 	},
 	mounted: function () {
@@ -47,6 +55,10 @@ new Vue ({
 		
 		showPopupCallback() {
 			this.$store.dispatch('showPopupCallback');
+		},
+
+		showMenu() {
+			this.$store.dispatch('showMenu');
 		}
 	}
 });

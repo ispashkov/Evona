@@ -7,3 +7,26 @@
         animation: fadeOut .3s;
     }
 }
+
+.slideInLeft {
+    &-enter-active {
+        animation: slideInLeft .5s;
+    }
+
+    &-leave-active {
+        animation: slideOutLeft .5s;
+    }
+}
+
+@keyframes menuLinks {
+    0% {
+        opacity: 0;
+        transform: translate(-1rem, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+

@@ -1,7 +1,7 @@
 <template lang='pug'>
      div(:class="[ active ? 'form-group form-group_valid' : 'form-group' ]")
         label.form-group__label(:for='name') {{ label }}
-        input.form-group__field(:type='type' :id='name' :name='name' autocomplete='off' ref='field' @focus='onFocus()' @blur='onBlur()')
+        input.form-group__field(:type='type' :id='name' :name='name' autocomplete='off' ref='field' @focus='onFocus()' @blur='onBlur()' @input='onInput()')
 </template>
 
 <script>
@@ -33,7 +33,11 @@
 
             onBlur() {
                 this.$refs.field.value ? this.active = true : this.active = false
-            }
+            },
+
+            onInput(value) {
+                this.$emit('input', event.target.value)
+            },
         }
     }
 </script>

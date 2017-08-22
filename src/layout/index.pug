@@ -16,6 +16,9 @@ html
 		div#app.app
 			include ../components/Header/Header
 
+			transition(name='slideInLeft')
+				mobile-menu(v-if='menu')
+
 			main.main
 				block main
 

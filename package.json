@@ -53,10 +53,13 @@
 		"webpack-svgstore-plugin": "^4.0.1"
 	},
 	"dependencies": {
+		"alertifyjs": "^1.11.0",
 		"animate.css": "^3.5.2",
 		"bootstrap": "4.0.0-beta",
+		"firebase": "^4.3.0",
 		"jquery": "^3.2.1",
 		"lodash": "^4.17.4",
+		"noty": "^3.1.2",
 		"vue": "^2.4.2",
 		"vue-router": "^2.7.0",
 		"vuex": "^2.3.1"

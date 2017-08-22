@@ -6,7 +6,7 @@
             div.container
                 div.row
                     div.col-4.header-top__left
-                        div.header-hamburger
+                        div.header-hamburger(@click='showMenu()')
                             span.header-hamburger__line
                             span.header-hamburger__line
                             span.header-hamburger__line
@@ -37,6 +37,10 @@
         methods: {
             showPopupCallback() {
                 this.$store.dispatch('showPopupCallback');
+            },
+
+            showMenu() {
+                this.$store.dispatch('showMenu');
             }
         }
     }

@@ -9,4 +9,12 @@
 @import '~bootstrap/scss/bootstrap-grid';
 
 @import '~animate.css/animate';
+@import '~alertifyjs/build/css/alertify';
+
+
+.ajs-error {
+    background-color: $colorPrimary !important;
+    font-family: $font-family-second !important;
+    color: $colorWhite;
+}
 

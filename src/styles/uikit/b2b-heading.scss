@@ -24,4 +24,27 @@
 		height: 1px;
 		background-color: $colorPrimary;
 	}
+
+	&_form {
+		text-align: center;
+		text-transform: none;
+
+		&:before {
+			left: calc(50% - 4.6875rem)
+		}
+	}
+
+	&__page-title {
+		display: block;
+		margin: 0 0 2*$spacer 0;
+
+		color: $colorAccent;
+		font-family: $font-family-accent;
+		font-size: 2*$font-size-base;
+		font-weight: 400;
+		line-height: 2*$font-size-base;
+
+		text-align: center;
+		text-transform: uppercase;
+	}
 }

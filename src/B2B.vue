@@ -4,39 +4,11 @@
     
     div.app
         Header-Component
+        transition(name='slideInLeft')
+            MobileMenu(v-if='menu')
         
-        main.main
-            div.container
-                div.row.justify-content-center
-                    div.col-10.col-lg-8.col-xl-6
-                        div.row.no-gutters
-                            div.col-6
-                                div.page-section.page-section_wrap.page-section_light
-                                    form.form.form_singup
-                                        h2.form__title Регистрация
-                                        
-                                        field(type='text' name='userNameSingup' label='ФИО' class='mb-4')
-                                        
-                                        field(type='email' name='userEmailSingup' label='E-mail' class='mb-4')
-                                       
-                                        field(type='password' name='userPassSingup' label='Пароль' class='mb-4')
-                                        
-                                        field(type='password' name='userRepassSingup' label='Пароль*' class='mb-5')
-                                        
-                                        div.d-flex.justify-content-center
-                                            button.button.button_primary.button_lg(type='submit') Зарегистрироваться
-                                    
-                            div.col-6
-                                div.page-section.page-section_wrap.page-section_light
-                                    form.form.form_singup
-                                        h2.form__title Авторизация
-                                        
-                                        field(type='email' name='userEmailSingin' label='E-mail' class='mb-4')
-                                       
-                                        field(type='password' name='userPassSingin' label='Пароль' class='mb-5')
-                                        
-                                        div.d-flex.justify-content-center
-                                            button.button.button_primary.button_lg(type='submit') Авторизоваться
+        main(:class='[ auth ? "main main_center" : "main" ]')
+            router-view
 
 
         include ./components/Footer/Footer
@@ -50,17 +22,37 @@
 <script>
 
     import HeaderComponent from './components/HeaderB2B/HeaderB2B.vue'
+    import MobileMenu from './components/MobileMenu/MobileMenu.vue'
     import PopupWrapper from './components/PopupWrapper/PopupWrapper.vue'
     import PopupCallback from './components/PopupCallback/PopupCallback.vue'
-    import Field from './components/Field.vue'
+    import Auth from './components/Auth/Auth.vue'
 
     export default {
         name: 'Application',
         components: {
             HeaderComponent,
+            MobileMenu,
             PopupWrapper,
             PopupCallback,
-            Field
+            Auth
+        },
+        computed: {
+            menu() {
+                return this.$store.state.MobileMenu.show
+            },
+
+            auth() {
+                return this.$route.path == '/auth' || this.$route.path == '/' ? true : false
+            },
+
+            userIsAuthenticated() {
+                return this.$store.getters.getUser !== null && this.$store.getters.getUser !== undefined
+            }
+        },
+        created() {
+            if (!this.userIsAuthenticated) {
+                this.$router.push('/auth')
+            }
         }
     }
 </script>
@@ -78,6 +70,12 @@
 
     .main {
         padding: 3*$spacer 0;
+
+        &_center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
 
 </style>

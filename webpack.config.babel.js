@@ -10,8 +10,11 @@ import ManifestPlugin from 'webpack-manifest-plugin'
 
 const isProd = (process.env.NODE_ENV === "production");
 const plugins = [
+	
 	new SpriteLoaderPlugin(),
+	
 	new webpack.HotModuleReplacementPlugin(),
+	
 	new ManifestPlugin({
 		fileName: 'manifest.json',
 		basePath: './build/',
@@ -19,34 +22,42 @@ const plugins = [
 		  name: 'Evona & Nysense App'
 		}
 	}),
+	
 	new webpack.optimize.CommonsChunkPlugin({
 		name: "manifest",
 		minChunks: Infinity
 	}),
+	
 	new webpack.optimize.CommonsChunkPlugin({
 		name: "commons",
 		filename: "js/commons.[hash].js",
 	}),
+	
 	new webpack.optimize.UglifyJsPlugin({
 		sourceMap: true,
 		compress: {warnings: false}
 	}),
+	
 	new webpack.NamedModulesPlugin(),
+	
 	new HtmlWebpackPlugin({
 		filename: "index.html",
 		chunks: ["app", "commons"],
 		template: path.join(__dirname, "./src/index.pug")
 	}),
+	
 	new HtmlWebpackPlugin({
 		filename: "b2b.html",
 		chunks: ["b2b", "commons"],
 		template: path.join(__dirname, "./src/b2b.pug")
 	}),
+	
 	new webpack.ProvidePlugin({
 		$: "jquery",
 		jQuery: "jquery",
 		_: "lodash"
 	}),
+	
 	new SpritesmithPlugin({
 		src: {
 			cwd: path.resolve(__dirname, "./src/assets/sprites/"),
@@ -62,7 +73,7 @@ const plugins = [
 	})
 ];
 
-isProd ? plugins.push(new ExtractTextPlugin("css/styles.[hash].css"), new CleanWebpackPlugin(["./build"])) : null;
+isProd ? plugins.push(new ExtractTextPlugin({filename:"css/style.[hash].css", allChunks: false}), new CleanWebpackPlugin(["./build"])) : null;
 
 export default {
 	entry: {
