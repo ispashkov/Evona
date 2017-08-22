@@ -1,7 +1,31 @@
 <template lang='pug'>
      div(:class="[ active ? 'form-group form-group_valid' : 'form-group' ]")
         label.form-group__label(:for='name') {{ label }}
-        input.form-group__field(:type='type' :id='name' :name='name' autocomplete='off' ref='field' @focus='onFocus()' @blur='onBlur()' @input='onInput()')
+        textarea.form-group__field(
+            :id='name'
+            :name='name'
+            :value='value'
+            autocomplete='off'
+            ref='field'
+            @focus='onFocus()'
+            @blur='onBlur()'
+            @input='onInput($event.target.value)'
+            :required='required'
+            v-if='textarea'
+        )
+        input.form-group__field(
+            :type='type'
+            :id='name'
+            :name='name'
+            :value='value'
+            autocomplete='off'
+            ref='field'
+            @focus='onFocus()'
+            @blur='onBlur()'
+            @input='onInput($event.target.value)'
+            :required='required'
+            v-else
+        )
 </template>
 
 <script>
@@ -9,13 +33,13 @@
         name: 'Field',
         data() {
             return {
-                active: false
+                active: false,
             }
         },
         props: {
             type: {
                 type: String,
-                required: true
+                required: false
             },
             name: {
                 type: String,
@@ -24,6 +48,16 @@
             label: {
                 type: String,
                 required: true
+            },
+            value: {
+                type: String,
+                required: true
+            },
+            required: {
+                required: false
+            },
+            textarea: {
+                required: false
             }
         },
         methods: {
@@ -36,7 +70,7 @@
             },
 
             onInput(value) {
-                this.$emit('input', event.target.value)
+                this.$emit('input', value)
             },
         }
     }

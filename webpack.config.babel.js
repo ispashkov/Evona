@@ -168,9 +168,9 @@ export default {
 							publicPath: '../'
 						}
 					},
-					{
-						loader: 'image-webpack-loader'
-					}
+					// {
+					// 	loader: 'image-webpack-loader'
+					// }
 				]
 			},
 			//--------------------Video--------------------//
