@@ -37,6 +37,4 @@
     }
 </script>
 
-<style src='./MobileMenu.scss' lang="scss"></style>
-
 

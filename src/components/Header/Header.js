@@ -1,5 +1,4 @@
 import './Header.pug'
-import './Header.scss'
 
 //ICONS
 import './icons/evona_white.svg'

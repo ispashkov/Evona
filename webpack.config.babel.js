@@ -6,7 +6,7 @@ import SpritesmithPlugin from "webpack-spritesmith";
 import CleanWebpackPlugin from "clean-webpack-plugin";
 import SpriteLoaderPlugin from 'svg-sprite-loader/plugin';
 import ManifestPlugin from 'webpack-manifest-plugin'
-
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const isProd = (process.env.NODE_ENV === "production");
 const plugins = [
@@ -30,7 +30,7 @@ const plugins = [
 	
 	new webpack.optimize.CommonsChunkPlugin({
 		name: "commons",
-		filename: "js/commons.[hash].js",
+		filename: "js/[name].[hash].js",
 	}),
 	
 	new webpack.optimize.UglifyJsPlugin({
@@ -73,7 +73,7 @@ const plugins = [
 	})
 ];
 
-isProd ? plugins.push(new ExtractTextPlugin({filename:"css/style.[hash].css", allChunks: false}), new CleanWebpackPlugin(["./build"])) : null;
+isProd ? plugins.push(new ExtractTextPlugin({filename:"css/[name].[hash].css", allChunks: false}), new CleanWebpackPlugin(["./build"]), new BundleAnalyzerPlugin()) : null;
 
 export default {
 	entry: {

@@ -10,3 +10,24 @@
 @import "uikit/b2b-heading";
 @import "uikit/popups";
 @import "uikit/sections";
+
+@import '../components/HeaderB2B/HeaderB2B';
+@import '../components/Shops/Shops';
+@import '../components/MobileMenu/MobileMenu';
+@import '../components/Footer/Footer';
+
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main {
+    padding: 3*$spacer 0;
+
+    &_center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

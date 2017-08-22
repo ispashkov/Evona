@@ -1,5 +1,4 @@
 import './InRussia.pug'
-import './InRussia.scss'
 
 import './icons/star.svg'
 import './icons/2003.svg'

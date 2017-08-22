@@ -46,5 +46,3 @@
     }
 </script>
 
-<style src='./HeaderB2B.scss' lang="scss"></style>
-

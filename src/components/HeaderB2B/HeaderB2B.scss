@@ -1,6 +1,3 @@
-@import '../../styles/tools/variables';
-@import '../../styles/tools/vendors';
-
 .header {
     position: sticky;
     top: 0;
@@ -14,7 +11,7 @@
 			padding: 0;
 			
 			background: {
-				image: url(./images/header-stick-bg.png);
+				image: url(../components/HeaderB2B/images/header-stick-bg.png);
 				color: $colorWhite;
 			};
 		}

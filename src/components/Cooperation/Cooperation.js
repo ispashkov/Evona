@@ -1,5 +1,4 @@
 import './Cooperation.pug'
-import './Cooperation.scss'
 
 import './icons/armchair.svg'
 import './icons/key.svg'

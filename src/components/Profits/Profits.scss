@@ -1,10 +1,6 @@
-@import '../../styles/tools/variables';
-@import '../../styles/tools/vendors';
-@import '../../styles/tools/sprite';
-
 .profits {
 	background: {
-		image: url('./bg-about-product.png');
+		image: url('../components/Profits/bg-about-product.png');
 		size: cover;
 		repeat: no-repeat;
 		position: center top;

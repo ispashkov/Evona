@@ -1,5 +1,4 @@
 import './Contacts.pug'
-import './Contacts.scss'
 
 
 // export const overlay = document.getElementById('js-overlay');

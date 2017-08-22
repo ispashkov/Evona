@@ -57,27 +57,4 @@
     }
 </script>
 
-<style lang="scss">
-
-    @import './styles/tools/variables';
-    @import './styles/tools/vendors';
-
-    .app {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
-
-    .main {
-        padding: 3*$spacer 0;
-
-        &_center {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    }
-
-</style>
-
 

@@ -1,6 +1,3 @@
-@import '../../styles/tools/variables';
-@import '../../styles/tools/vendors';
-
 .header {
 	position: relative;
 	
@@ -25,7 +22,7 @@
 			padding: 0;
 			
 			background: {
-				image: url(./images/header-stick-bg.png);
+				image: url(../components/Header/images/header-stick-bg.png);
 				color: $colorWhite;
 			};
 			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
@@ -163,7 +160,7 @@
 		z-index: -$z-index-base;
 		
 		background: {
-			image: url(./images/screen.jpg);
+			image: url(../components/Header/images/screen.jpg);
 			size: cover;
 			position: center top;
 		};
@@ -295,7 +292,7 @@
 		padding: 2*$spacer 0 0 0;
 		
 		background: {
-			image: url(./images/header-bg.png);
+			image: url(../components/Header/images/header-bg.png);
 			repeat: no-repeat;
 			position: center;
 		};

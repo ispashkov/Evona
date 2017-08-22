@@ -34,6 +34,5 @@
 </template>
 
 <script src='./Shops'></script>
-<style src='./Shops.scss' lang="scss"></style>
 
 
