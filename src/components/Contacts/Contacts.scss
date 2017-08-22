@@ -1,6 +1,3 @@
-@import '../../styles/tools/variables';
-@import '../../styles/tools/vendors';
-
 .contacts {
 	
 	.row {
@@ -20,7 +17,7 @@
 		display: block;
 		margin: 0 0 2*$spacer;
 
-		color: #bf9138;
+		color: $colorPrimary;
 		font-family: $font-family-second;
 		font-size: 1.625*$font-size-base;
 		font-weight: 100;

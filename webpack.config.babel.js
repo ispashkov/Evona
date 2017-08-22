@@ -5,7 +5,8 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import SpritesmithPlugin from "webpack-spritesmith";
 import CleanWebpackPlugin from "clean-webpack-plugin";
 import SpriteLoaderPlugin from 'svg-sprite-loader/plugin';
-import ManifestPlugin from 'webpack-manifest-plugin'
+import ManifestPlugin from 'webpack-manifest-plugin';
+
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const isProd = (process.env.NODE_ENV === "production");
@@ -73,7 +74,18 @@ const plugins = [
 	})
 ];
 
-isProd ? plugins.push(new ExtractTextPlugin({filename:"css/[name].[hash].css", allChunks: false}), new CleanWebpackPlugin(["./build"]), new BundleAnalyzerPlugin()) : null;
+isProd ? plugins.push(
+	
+	new ExtractTextPlugin({
+		filename:"css/[name].[hash].css",
+		allChunks: false
+	}),
+	
+	new CleanWebpackPlugin(["./build"]), 
+
+	new BundleAnalyzerPlugin()
+
+) : null;
 
 export default {
 	entry: {
@@ -135,17 +147,44 @@ export default {
 			//--------------------Fonts--------------------//
 			{
 				test: /\.(woff2|ttf|eot)$/,
-				use: "file-loader?name=assets/fonts/[name].[ext]&publicPath=../"
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: 'assets/fonts/[name].[ext]',
+							publicPath: '../'
+						}
+					}
+				]
 			},
 			//--------------------Images--------------------//
 			{
 				test: /\.(png|jpg|jpeg|gif)$/,
-				use: "file-loader?name=assets/images/[name].[ext]&publicPath=../"
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: 'assets/images/[name].[ext]',
+							publicPath: '../'
+						}
+					},
+					{
+						loader: 'image-webpack-loader'
+					}
+				]
 			},
 			//--------------------Video--------------------//
 			{
 				test: /\.mp4$/,
-				use: "file-loader?name=assets/video/[name].[ext]&publicPath=../"
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: 'assets/video/[name].[ext]',
+							publicPath: '../'
+						}
+					}
+				]
 			},
 			//---------------------SVG---------------------//
 			{
