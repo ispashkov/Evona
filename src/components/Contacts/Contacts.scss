@@ -24,7 +24,7 @@
 		line-height: 2*$font-size-base;
 		text-transform: uppercase;
 
-		@include media-breakpoint-down(hd) {
+		@include media-breakpoint-down(xl) {
 			font-size: 1.125*$font-size-base;
 			line-height: 1.5*$font-size-base;
 		}
@@ -44,7 +44,7 @@
 		font-weight: 400;
 		line-height: 1.875*$font-size-base;
 
-		@include media-breakpoint-down(hd) {
+		@include media-breakpoint-down(xl) {
 			font-size: $font-size-base;
 			line-height: 1.5*$font-size-base;
 		}

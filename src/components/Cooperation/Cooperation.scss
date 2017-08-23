@@ -22,7 +22,7 @@
 		line-height: 1.875*$font-size-base;
 		text-align: center;
 
-		@include media-breakpoint-down(hd) {
+		@include media-breakpoint-down(xl) {
 			font-size: $font-size-base;
 			line-height: 1.5*$font-size-base;
 		}

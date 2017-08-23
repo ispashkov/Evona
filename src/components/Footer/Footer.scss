@@ -1,6 +1,10 @@
 .footer {
 	background-color: $colorAccent;
 	padding: 2.5*$spacer 0;
+
+	@include media-breakpoint-down(xl) {
+		padding: 1.5*$spacer 0;
+	}
 	
 	&__cooperating {
 		display: block;
@@ -8,5 +12,10 @@
 		font-family: $font-family-base;
 		font-size: $font-size-base;
 		font-weight: 400;
+
+		@include media-breakpoint-down(xl) {
+			font-size: 0.75*$font-size-base;
+			line-height: 0.75*$font-size-base;
+		}
 	}
 }

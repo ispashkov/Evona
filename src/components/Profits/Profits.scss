@@ -10,7 +10,7 @@
 		display: block;
 		margin: 0 0 8*$spacer 0;
 
-		@include media-breakpoint-down(hd) {
+		@include media-breakpoint-down(xl) {
 			margin-bottom: 5*$spacer;
 		}
 		
@@ -26,7 +26,7 @@
 			font-weight: 500;
 			line-height: 2*$font-size-base;
 			text-transform: uppercase;
-			@include media-breakpoint-down(hd) {
+			@include media-breakpoint-down(xl) {
 				font-size: 1.25*$font-size-base;
 				line-height: 1.5*$font-size-base;
 			}
@@ -60,7 +60,7 @@
 				font-weight: 700;
 			}
 
-			@include media-breakpoint-down(hd) {
+			@include media-breakpoint-down(xl) {
 				font-size: 0.875*$font-size-base;
 				line-height: 1.25*$font-size-base;
 			}

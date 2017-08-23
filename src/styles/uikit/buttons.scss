@@ -26,7 +26,7 @@
 	appearance: none;
 	@include transition();
 	
-	@include media-breakpoint-down(hd) {
+	@include media-breakpoint-down(xl) {
 		height: 2.125*$spacer;
 		border-width: 1px;
 		font-size: 0.875*$font-size-base;
@@ -68,7 +68,7 @@
 		height: 4*$spacer;
 		font-size: 1.25*$font-size-base;
 
-		@include media-breakpoint-down(hd) {
+		@include media-breakpoint-down(xl) {
 			width: 15*$spacer;
 			height: 3*$spacer;
 			font-size: $font-size-base;

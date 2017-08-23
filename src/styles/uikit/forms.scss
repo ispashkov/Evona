@@ -50,7 +50,7 @@
 				font-size: 0.875*$font-size-base;
 				line-height: 0.875*$font-size-base;
 
-				@include media-breakpoint-down(hd) {
+				@include media-breakpoint-down(xl) {
 					font-size: 0.75*$font-size-base;
 					line-height: 0.75*$font-size-base;
 				}
@@ -74,7 +74,7 @@
 			line-height: 1.25*$font-size-base;
 			@include transition()
 
-			@include media-breakpoint-down(hd) {
+			@include media-breakpoint-down(xl) {
 				font-size: 0.875*$font-size-base;
 				line-height: 0.875*$font-size-base;
 			}
@@ -103,7 +103,7 @@
 			resize: none;
 			overflow: hidden;
 
-			@include media-breakpoint-down(hd) {
+			@include media-breakpoint-down(xl) {
 				font-size: 0.875*$font-size-base;
 				line-height: 0.875*$font-size-base;
 			}

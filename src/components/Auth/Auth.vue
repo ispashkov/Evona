@@ -1,7 +1,7 @@
 <template lang="pug">
     div.container
         div.row.justify-content-center
-            div.col-10.col-xl-8
+            div.col-6
                 div.row.no-gutters
                     div.col-6
                         div.page-section.page-section_wrap.page-section_light.page-section_angle-left
