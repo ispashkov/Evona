@@ -67,6 +67,9 @@
 	
 		& .header__button {
 			color: $colorAccent;
+			&:visited {
+				color: $colorAccent;
+			}
 		}
 		
 		& .header-logo {
@@ -134,6 +137,10 @@
 		
 		&_b2b {
 			margin-right: 3*$spacer;
+		}
+
+		&:visited {
+			color: $colorWhite;
 		}
 	}
 	
