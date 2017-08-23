@@ -11,17 +11,17 @@
 
                         div.row.mb-4
                             div.col-6
-                                field(type='text' name='userNameB2B' label='ФИО')
+                                field(type='text' name='userNameB2B' label='ФИО' v-model='name')
 
                             div.col-6
-                                field(type='text' name='userCityB2B' label='Город')
+                                field(type='text' name='userCityB2B' label='Город' v-model='city')
 
                         div.row.mb-5
                             div.col-6
-                                field(type='text' name='userCompanyB2B' label='Компания')
+                                field(type='text' name='userCompanyB2B' label='Компания' v-model='company')
 
                             div.col-6
-                                field(type='tel' name='userPhoneB2B' label='Телефон')
+                                field(type='tel' name='userPhoneB2B' label='Телефон' v-model='phone')
 
                         div.row.justify-content-center
                             button.button.button_primary.button_xl(type='submit') Отправить заявку

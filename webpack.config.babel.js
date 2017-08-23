@@ -1,4 +1,5 @@
 import path from "path";
+const glob = require('glob-all');
 import webpack from "webpack";
 import ExtractTextPlugin from "extract-text-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
@@ -6,6 +7,7 @@ import SpritesmithPlugin from "webpack-spritesmith";
 import CleanWebpackPlugin from "clean-webpack-plugin";
 import SpriteLoaderPlugin from 'svg-sprite-loader/plugin';
 import ManifestPlugin from 'webpack-manifest-plugin';
+const PurifyCSSPlugin = require('purifycss-webpack');
 
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
@@ -79,6 +81,18 @@ isProd ? plugins.push(
 	new ExtractTextPlugin({
 		filename:"css/[name].[hash].css",
 		allChunks: false
+	}),
+
+	new PurifyCSSPlugin({ 
+		paths: glob.sync([
+			path.join(__dirname, './src/**/*.pug'),
+			path.join(__dirname, './src/**/*.vue'),
+			path.join(__dirname, './src/**/*.js')
+		]),
+		purifyOptions: {
+			minify: true,
+			whitelist: ['*fade*', '*slide*']
+		}
 	}),
 	
 	new CleanWebpackPlugin(["./build"]), 

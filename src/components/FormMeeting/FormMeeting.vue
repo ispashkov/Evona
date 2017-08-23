@@ -6,11 +6,11 @@
                     form.form
                         div.row.mb-4
                             div.col
-                                field(type='text' name='userNameMeeting' label='ФИО')
+                                field(type='text' name='userNameMeeting' label='ФИО' v-model='name')
 
                         div.row.mb-5
                             div.col
-                                field(type='tel' name='userPhoneMeeting' label='Телефон')
+                                field(type='tel' name='userPhoneMeeting' label='Телефон' v-model='phone')
 
                         div.row.justify-content-center
                             button.button.button_primary.button_xl(type='submit') Назначить встречу
