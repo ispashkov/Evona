@@ -32,6 +32,11 @@
 		&:before {
 			left: calc(50% - 4.6875rem)
 		}
+
+		@include media-breakpoint-down(hd) {
+			font-size: 1.5*$font-size-base;
+			line-height: 1.5*$font-size-base;
+		}
 	}
 
 	&__page-title {

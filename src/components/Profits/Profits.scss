@@ -9,6 +9,10 @@
 	&-item {
 		display: block;
 		margin: 0 0 8*$spacer 0;
+
+		@include media-breakpoint-down(hd) {
+			margin-bottom: 5*$spacer;
+		}
 		
 		&__title {
 			position: relative;
@@ -22,7 +26,7 @@
 			font-weight: 500;
 			line-height: 2*$font-size-base;
 			text-transform: uppercase;
-			@include media-breakpoint-down(xl) {
+			@include media-breakpoint-down(hd) {
 				font-size: 1.25*$font-size-base;
 				line-height: 1.5*$font-size-base;
 			}
@@ -54,6 +58,11 @@
 			
 			&_bold {
 				font-weight: 700;
+			}
+
+			@include media-breakpoint-down(hd) {
+				font-size: 0.875*$font-size-base;
+				line-height: 1.25*$font-size-base;
 			}
 		}
 	}

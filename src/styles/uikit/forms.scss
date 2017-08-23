@@ -33,6 +33,11 @@
 		font-size: $font-size-base;
 		font-weight: 400;
 		text-align: center;
+
+		@include media-breakpoint-down(hd) {
+			font-size: 0.75*$font-size-base;
+			line-height: 0.75*$font-size-base;
+		}
 	}
 	
 	&-group {
@@ -44,6 +49,11 @@
 				top: 0;
 				font-size: 0.875*$font-size-base;
 				line-height: 0.875*$font-size-base;
+
+				@include media-breakpoint-down(hd) {
+					font-size: 0.75*$font-size-base;
+					line-height: 0.75*$font-size-base;
+				}
 			}
 			
 			.form-group__field {
@@ -63,6 +73,11 @@
 			font-weight: 400;
 			line-height: 1.25*$font-size-base;
 			@include transition()
+
+			@include media-breakpoint-down(hd) {
+				font-size: 0.875*$font-size-base;
+				line-height: 0.875*$font-size-base;
+			}
 		}
 		
 		&__field {
@@ -87,6 +102,11 @@
 			
 			resize: none;
 			overflow: hidden;
+
+			@include media-breakpoint-down(hd) {
+				font-size: 0.875*$font-size-base;
+				line-height: 0.875*$font-size-base;
+			}
 			
 			&:focus, &:active {
 				border-color: $colorPrimary;

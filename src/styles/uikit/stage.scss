@@ -13,6 +13,11 @@
 		font-size: 1.875*$font-size-base;
 		font-weight: 500;
 		line-height: 1.875*$font-size-base;
+
+		@include media-breakpoint-down(hd) {
+			font-size: 1.25*$font-size-base;
+			line-height: 1.25*$font-size-base;
+		}
 		
 		&:before {
 			position: absolute;

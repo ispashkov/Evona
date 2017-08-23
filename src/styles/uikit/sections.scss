@@ -71,6 +71,10 @@
 	&_wrap {
 		padding: 3*$spacer 4*$spacer;
 		height: 100%;
+		
+		@include media-breakpoint-down(hd) {
+			padding: 3*$spacer;
+		}
 	}
 
 	&_angle-left {
@@ -127,6 +131,10 @@
 			font-weight: 400;
 			text-transform: uppercase;
 			text-align: center;
+
+			@include media-breakpoint-down(hd) {
+				font-size: 2.5*$font-size-base;
+			}
 		}
 		
 		&__desc {
@@ -135,6 +143,10 @@
 			font-size: 2*$font-size-base;
 			font-weight: 100;
 			text-align: center;
+
+			@include media-breakpoint-down(hd) {
+				font-size: 1.5*$font-size-base;
+			}
 		}
 	}
 }

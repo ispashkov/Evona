@@ -142,6 +142,10 @@
 		&:visited {
 			color: $colorWhite;
 		}
+
+		&:hover {
+			color: $colorAccent;
+		}
 	}
 	
 	&__overlay {

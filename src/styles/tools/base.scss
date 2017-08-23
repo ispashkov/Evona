@@ -31,26 +31,26 @@ h1, h2, h3, h4, h5, h6, .heading {
 }
 
 h1, .heading_1 {
-	font-size: 1.5*$font-size-base;
-	
-	@include media-breakpoint-up(md) {
-		font-size: 2*$font-size-base;
+	font-size: 2*$font-size-base;
+
+	@include media-breakpoint-up(hd) {
+		font-size: 1.5*$font-size-base;
 	}
 }
 
 h2, .heading_2 {
-	font-size: 1.25*$font-size-base;
+	font-size: 1.75*$spacer;
 	
-	@include media-breakpoint-up(md) {
-		font-size: 1.75*$spacer;
+	@include media-breakpoint-up(hd) {
+		font-size: 1.25*$font-size-base;
 	}
 }
 
 h3, .heading_3 {
-	font-size: $font-size-base;
+	font-size: 1.5*$spacer;
 	
-	@include media-breakpoint-up(md) {
-		font-size: 1.5*$spacer;
+	@include media-breakpoint-up(hd) {
+		font-size: $font-size-base;
 	}
 }
 
