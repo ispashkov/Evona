@@ -15,12 +15,12 @@
     &:hover {
         box-shadow: $shadow;
 
-        & .catalog-item-overlay {
+        & .catalog-item__fast-view{
             opacity: 1;
         }
 
-        & .catalog-item__cart, .catalog-item__bookmark {
-            right: 1.25*$spacer;
+        & .catalog-item-action {
+            right: 0;
         }
 
     }
@@ -64,10 +64,14 @@
     }
 
     &__fast-view {
+        position: absolute;
+        top: calc(50% - 1.875rem);
+        left: 0;
+        right: 0;
+
         display: flex;
         align-items: center;
         justify-content: center;
-        
         width: 100%;
         height: 3.75*$spacer;
 
@@ -82,7 +86,10 @@
         text-transform: uppercase;
         
         appearance: none;
+        opacity: 0;
         cursor: pointer;
+
+        @include transition();
 
         & .icon {
             margin-right: 0.625*$spacer;
@@ -90,10 +97,6 @@
     }
 
     &__cart, &__bookmark {
-        position: absolute;
-        right: -100%;
-        
-
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -102,7 +105,7 @@
 
         background-color: transparent;
         border: none;
-        fill: lighten($colorGray, 10%);
+        fill: lighten($colorGray, 30%);
 
         appearance: none;
         cursor: pointer;
@@ -115,31 +118,28 @@
     }
 
     &__cart {
-        top: 1.25*$spacer;
+        margin-bottom: 1.25*$spacer;
     }
 
-    &__bookmark {
-        top: 3.75*$spacer;
+    &-action {
+        position: absolute;
+        top: 0;
+        right: -100%;
+
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        padding: 1.25*$spacer;
+
+        @include transition();
+
+        &_active {
+            right: 0;
+        }
     }
 
     &-wrapper {
         margin: 0 0 1.25*$spacer 0;
-    }
-
-    &-overlay {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-        align-items: center;
-
-        opacity: 0;
-        @include transition;
     }
 
     &-image {

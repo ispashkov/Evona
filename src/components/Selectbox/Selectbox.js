@@ -34,6 +34,7 @@ export default {
     methods: {
         clear() {
             this.selected = false;
+            this.selectItem = null;
         },
 
         toggle() {
@@ -44,11 +45,7 @@ export default {
             this.selected = true;
             this.active = false;
 
-            console.log(value)
-
             this.selectItem = value;
-
-            
         }
     }
 }

@@ -14,8 +14,8 @@
         include ./components/Footer/Footer
 
         transition(name='fade')
-            PopupWrapper(v-if="this.$store.getters.getShowPopupCallback")
-                PopupCallback
+            popup-wrapper(v-if="this.$store.getters.getShowPopupCallback")
+                popup-callback
 
 </template>
 
@@ -23,8 +23,6 @@
 
     import HeaderComponent from './components/HeaderB2B/HeaderB2B.vue'
     import MobileMenu from './components/MobileMenu/MobileMenu.vue'
-    import PopupWrapper from './components/PopupWrapper/PopupWrapper.vue'
-    import PopupCallback from './components/PopupCallback/PopupCallback.vue'
     import Auth from './components/Auth/Auth.vue'
 
     export default {
@@ -32,9 +30,9 @@
         components: {
             HeaderComponent,
             MobileMenu,
-            PopupWrapper,
-            PopupCallback,
-            Auth
+            Auth,
+            'popup-wrapper': () => import('./components/PopupWrapper/PopupWrapper.vue'),
+		    'popup-callback': () => import('./components/PopupCallback/PopupCallback.vue'),
         },
         computed: {
             menu() {

@@ -20,6 +20,8 @@
 </template>
 
 <script>
+    import './icons/close.svg'
+
     export default {
         name: 'MobileMenu',
         mounted: function () {

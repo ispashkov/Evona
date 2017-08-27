@@ -18,8 +18,9 @@ import './components/Footer/Footer'
 
 import Loading from './components/Loading/Loading.vue'
 import FormPartners from './components/FormPartners/FormPartners.vue'
-import PopupWrapper from './components/PopupWrapper/PopupWrapper.vue'
-import PopupCallback from './components/PopupCallback/PopupCallback.vue'
+import FormAccess from './components/FormAccess/FormAccess.vue'
+import FormMeeting from './components/FormMeeting/FormMeeting.vue'
+
 import MobileMenu from './components/MobileMenu/MobileMenu.vue'
 
 
@@ -28,12 +29,12 @@ new Vue ({
 	name: 'Application',
 	store,
 	components: {
-		PopupWrapper,
-		PopupCallback,
+		'popup-wrapper': () => import('./components/PopupWrapper/PopupWrapper.vue'),
+		'popup-callback': () => import('./components/PopupCallback/PopupCallback.vue'),
 		FormPartners,
 		MobileMenu,
-		'form-access': () => import('./components/FormAccess/FormAccess.vue'),
-		'form-meeting': () => import('./components/FormMeeting/FormMeeting.vue')
+		FormAccess,
+		FormMeeting
 	},
 	data() {
 		return {

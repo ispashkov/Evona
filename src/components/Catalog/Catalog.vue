@@ -12,7 +12,7 @@
                     h1.heading.heading_page Заказная сессия осень-зима 2017
             
             
-            div.row.justify-content-between.mb-5
+            div.row.mb-5
                 div.col-4.d-flex.align-items-center 
                     span.label Фильтр:
                     
@@ -22,6 +22,7 @@
 
                 div.col-4.d-flex.align-items-center
                     pagination
+                div.col
                 div.col-3
                     search
 
