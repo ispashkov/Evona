@@ -7,7 +7,7 @@
         transition(name='slideInLeft')
             MobileMenu(v-if='menu')
         
-        main(:class='[ auth ? "main main_center" : "main" ]')
+        main(:class='[ auth ? "main main_center" : "main" || catalog ? "main main_light" : "main" ]')
             router-view
 
 
@@ -47,6 +47,10 @@
 
             userIsAuthenticated() {
                 return this.$store.getters.getUser !== null && this.$store.getters.getUser !== undefined
+            },
+
+            catalog() {
+                return this.$route.path == '/catalog' ? true : false
             }
         },
         created() {

@@ -95,6 +95,18 @@ a {
 	}
 }
 
+.heading_page {
+	display: block;
+	margin: 0;
+	color: $colorAccent;
+	font-family: $font-family-accent;
+	font-size: 1.875*$font-size-base;
+	font-weight: 400;
+	line-height: 1.875*$font-size-base;
+	text-transform: uppercase;
+	text-align: center
+}
+
 .hr {
 	margin: 3.75*$spacer 0;
 	border: {
@@ -107,6 +119,40 @@ a {
 
 .link {
 	color: $colorAccent;
+
+	&-back {
+		display: inline-flex;
+		align-items: center;
+		justify-content: flex-start;
+
+		text-decoration: none;
+
+		&:hover {
+			.link-back__text {
+				color: $colorPrimary;
+			}
+		}
+
+		&__icon {
+			display: inline-block;
+			margin: 0 0.5*$spacer 0 0;
+
+			fill: $colorPrimary;
+
+			transform: rotate(-180deg)
+		}
+		
+		&__text {
+			color: $colorAccent;
+			font-family: $font-family-base;
+			font-size: 0.75*$font-size-base;
+			font-weight: 400;
+			line-height: 0.75*$font-size-base;
+			text-transform: uppercase;
+			@include transition();
+		}
+		
+	}
 }
 
 .overlay {
@@ -126,6 +172,16 @@ a {
 
 .icon path {
 	fill: inherit;
+}
+
+.label {
+	display: inline-block;
+	color: $colorGray;
+	font-family: $font-family-base;
+	font-size: 0.875*$font-size-base;
+	font-weight: 400;
+	line-height: 0.875*$font-size-base;
+	text-transform: uppercase;
 }
 
 .ajs-error {

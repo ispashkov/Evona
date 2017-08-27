@@ -16,6 +16,8 @@ $container-max-widths: (
 	hd: 1800px,
 );
 
+$grid-gutter-width: 1.25*$spacer;
+
 // Fonts
 $font-family-base: 'Ubuntu', -apple-system, system-ui, BlinkMacSystemFont, Arial, sans-serif;
 $font-family-second: 'Helvetica Neue', -apple-system, system-ui, BlinkMacSystemFont, Arial, sans-serif;
@@ -23,7 +25,7 @@ $font-family-accent: 'Bodoni', -apple-system, system-ui, BlinkMacSystemFont, Ari
 $font-size-base: 1rem;
 
 $colorPrimary: #bf9138;
-$colorAccent: #202020;
+$colorAccent: #252229;
 $colorWait: #778899;
 $colorBlack: #223344;
 $colorGray: #666666;
@@ -35,6 +37,8 @@ $colorGreen: #99bb11;
 $colorText: #667788;
 $colorTextDark: #bab9bf;
 $colorWhite: #fff;
+
+$shadow: 0 0.125rem 0.5rem rgba($colorBlack, 0.3);
 
 @mixin transition($x: .3s) {
 	transition: $x;
@@ -57,6 +61,7 @@ $colorWhite: #fff;
 
 //Z-INDEX
 $z-index-base: 10;
+$z-index-select: 20;
 $z-index-menu: 110;
 $z-index-overlay: 90;
 $z-index-modal: 100;

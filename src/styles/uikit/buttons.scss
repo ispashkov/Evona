@@ -42,6 +42,10 @@
 			border-color: lighten($colorPrimary, 8%);
 			color: $colorAccent;
 		}
+
+		&:visited {
+			color: $colorAccent;
+		}
 	}
 	
 	&_accent {
@@ -51,6 +55,10 @@
 		&:hover {
 			background-color: lighten($colorAccent, 8%);
 			border-color: lighten($colorAccent, 8%);
+			color: $colorPrimary;
+		}
+
+		&:visited {
 			color: $colorPrimary;
 		}
 	}

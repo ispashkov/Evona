@@ -1,0 +1,29 @@
+.search {
+    position: relative;
+
+    &__field {
+        @extend .form-group__field;
+        height: 2.25*$spacer;
+    }
+
+    &__submit {
+        position: absolute;
+        right: calc(0 - 0.5rem);
+        top: calc(50% - 1.25rem);
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 2.25*$spacer;
+        width: 2.25*$spacer;
+        padding: 0;
+
+        background-color: transparent;
+        border: none;
+        fill: $colorPrimary;
+
+        cursor: pointer;
+        
+        @include transition;
+    }
+}

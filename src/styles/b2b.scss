@@ -15,6 +15,11 @@
 @import '../components/Shops/Shops';
 @import '../components/MobileMenu/MobileMenu';
 @import '../components/Footer/Footer';
+@import '../components/Catalog/Catalog';
+@import '../components/Pagination/Pagination';
+@import '../components/CatalogItem/CatalogItem';
+@import '../components/Search/Search';
+@import '../components/Selectbox/Selectbox';
 
 .app {
     display: flex;
@@ -29,5 +34,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    &_light {
+        background-color: $colorLight;
     }
 }

@@ -13,7 +13,7 @@
                                 
                                 span.shop__number 1
 
-                                a.button.button_primary Перейти в каталог
+                                router-link.button.button_primary.shop__button(to='/catalog') Перейти в каталог
 
                             div.shop__footer
                             
@@ -27,7 +27,7 @@
                                 
                                 span.shop__number 2
 
-                                a.button.button_primary.shop__button Перейти в каталог
+                                router-link.button.button_primary.shop__button(to='/catalog') Перейти в каталог
 
                             div.shop__footer
                         

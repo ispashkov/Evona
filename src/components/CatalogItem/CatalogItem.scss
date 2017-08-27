@@ -1,0 +1,163 @@
+.catalog-item {
+    position: relative;
+
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+
+    background-color: $colorWhite;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+
+    @include transition;
+
+    &:hover {
+        box-shadow: $shadow;
+
+        & .catalog-item-overlay {
+            opacity: 1;
+        }
+
+        & .catalog-item__cart, .catalog-item__bookmark {
+            right: 1.25*$spacer;
+        }
+
+    }
+
+    &__photo {
+        width: auto;
+        height: 100%;
+    }
+
+    &__title {
+        display: block;
+        margin: 0 0 0.5*$spacer 0;
+
+        color: $colorAccent;
+        font-family: $font-family-second;
+        font-size: 0.875*$font-size-base;
+        font-weight: 700;
+        line-height: 1.25*$font-size-base;
+        text-transform: uppercase;
+    }
+
+    &__description {
+        display: block;
+        margin: 0 0 1.25*$spacer 0;
+
+        color: $colorGray;
+        font-family: $font-family-second;
+        font-size: 0.875*$font-size-base;
+        font-weight: 400;
+        line-height: 1.25*$font-size-base;
+    }
+
+    &__price {
+        display: block;
+
+        color: $colorAccent;
+        font-family: $font-family-second;
+        font-size: 1.25*$font-size-base;
+        font-weight: 700;
+        line-height: 30px;
+    }
+
+    &__fast-view {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        width: 100%;
+        height: 3.75*$spacer;
+
+        background-color: rgba($colorWhite, .9);
+        border: none;
+        color: $colorAccent;
+        fill: $colorPrimary;
+        
+        font-family: $font-family-second;
+        font-size: 0.875*$font-size-base;
+        font-weight: 700;
+        text-transform: uppercase;
+        
+        appearance: none;
+        cursor: pointer;
+
+        & .icon {
+            margin-right: 0.625*$spacer;
+        }
+    }
+
+    &__cart, &__bookmark {
+        position: absolute;
+        right: -100%;
+        
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 1.25*$spacer;
+        padding: 0;
+
+        background-color: transparent;
+        border: none;
+        fill: lighten($colorGray, 10%);
+
+        appearance: none;
+        cursor: pointer;
+
+        @include transition()
+
+        &:hover, &_active {
+            fill: $colorPrimary
+        }
+    }
+
+    &__cart {
+        top: 1.25*$spacer;
+    }
+
+    &__bookmark {
+        top: 3.75*$spacer;
+    }
+
+    &-wrapper {
+        margin: 0 0 1.25*$spacer 0;
+    }
+
+    &-overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+
+        opacity: 0;
+        @include transition;
+    }
+
+    &-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 32.5*$spacer;
+
+        overflow: hidden;
+    }
+
+    &-content {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        flex: 1;
+
+        padding: 2*$spacer;
+    }
+
+}

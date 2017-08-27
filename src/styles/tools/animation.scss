@@ -8,6 +8,16 @@
     }
 }
 
+.fadeUp {
+    &-enter-active {
+        animation: fadeInUp .3s;
+    }
+
+    &-leave-active {
+        animation: fadeOutDown .3s;
+    }
+}
+
 .slideInLeft {
     &-enter-active {
         animation: slideInLeft .5s;

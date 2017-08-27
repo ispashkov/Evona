@@ -28,6 +28,13 @@
                     this.$store.dispatch('closeMenu')
                 }
             });
+
+            document.addEventListener('mouseup', (e) => {
+            
+                if (!e.target.closest('.mobile-menu')) {
+                    this.closeMenu();
+                }
+            });
         },
         methods: {
             closeMenu() {
