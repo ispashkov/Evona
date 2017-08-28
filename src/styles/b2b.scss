@@ -20,6 +20,9 @@
 @import '../components/CatalogItem/CatalogItem';
 @import '../components/Search/Search';
 @import '../components/Selectbox/Selectbox';
+@import '../components/Carousel/Carousel';
+
+@import '../pages/Product';
 
 .app {
     display: flex;
@@ -38,5 +41,9 @@
 
     &_light {
         background-color: $colorLight;
+    }
+
+    &_white {
+        background-color: $colorWhite;
     }
 }

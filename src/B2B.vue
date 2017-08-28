@@ -49,7 +49,7 @@
 
             catalog() {
                 return this.$route.path == '/catalog' ? true : false
-            }
+            },
         },
         created() {
             if (!this.userIsAuthenticated) {

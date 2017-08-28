@@ -115,6 +115,18 @@ a {
 		right: none;
 		bottom: 1px solid $colorHr;
 	};
+
+	&_vertical {
+		height: 100%;
+		width: 1px;
+		margin: 0 2*$spacer;
+		border: {
+			top: none;
+			left: none;
+			right: 1px solid $colorHr;
+			bottom: none;
+		};
+	}
 }
 
 .link {

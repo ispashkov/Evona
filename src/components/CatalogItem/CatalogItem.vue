@@ -2,7 +2,7 @@
 
     include ../../layout/mixins
 
-    a.catalog-item
+    router-link.catalog-item(to='/product')
         div(:class='[ active ? "catalog-item-action catalog-item-action_active" : "catalog-item-action" ]')
             button(type='button' @click='inCart()' :class='[ cart ? "catalog-item__cart catalog-item__cart_active" : "catalog-item__cart" ]')
                 +svgIcon(22, 20, '', '#cart')
