@@ -16,7 +16,7 @@ html
 			include ../components/Header/Header
 
 			transition(name='slideInLeft')
-				mobile-menu(v-if='menu')
+				mobile-menu(v-if='getShowMenu')
 
 			main.main
 				block main

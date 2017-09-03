@@ -1,4 +1,4 @@
-export const MobileMenu = {
+export default {
 	state: {
 		show: false
 	},

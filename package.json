@@ -9,6 +9,7 @@
 		"lint:js": "eslint src --fix",
 		"lint:css": "stylelint './src/**/*.scss' --fix"
 	},
+	"eslintIgnore": ["webpack.config.babel.js", "postcss.config.js"],
 	"author": "Ilya Pashkov",
 	"license": "ISC",
 	"devDependencies": {

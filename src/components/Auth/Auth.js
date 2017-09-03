@@ -1,3 +1,5 @@
+import { mapGetters, mapActions } from 'vuex';
+
 import Field from '../Field.vue';
 
 export default {
@@ -12,20 +14,20 @@ export default {
 		};
 	},
 	computed: {
-		user() {
-			return this.$store.getters.getUser;
-		}
+		...mapGetters(['getUser'])
 	},
 	watch: {
-		user(value) {
+		getUser(value) {
 			if (value !== null && value !== undefined) {
 				this.$router.push('/');
 			}
 		}
 	},
 	methods: {
+		...mapActions(['singUp', 'singIn']),
+
 		onSingup() {
-			this.$store.dispatch('singUp', {
+			this.singUp({
 				email: this.email,
 				password: this.password
 			});
@@ -35,13 +37,18 @@ export default {
 		},
 
 		onSingin() {
-			this.$store.dispatch('singIn', {
+			this.singIn({
 				email: this.emailAuth,
 				password: this.passwordAuth
 			});
 
 			this.emailAuth = '';
 			this.passwordAuth = '';
+		}
+	},
+	created() {
+		if (this.getUser) {
+			this.$router.push('/');
 		}
 	}
 };

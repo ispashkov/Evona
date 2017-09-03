@@ -21,6 +21,8 @@ import FormMeeting from './components/FormMeeting/FormMeeting.vue';
 
 import MobileMenu from './components/MobileMenu/MobileMenu.vue';
 
+import { mapGetters, mapActions } from 'vuex';
+
 new Vue({
 	el: '#app',
 	name: 'Application',
@@ -40,24 +42,16 @@ new Vue({
 		};
 	},
 	computed: {
-		menu() {
-			return this.$store.state.MobileMenu.show;
-		}
+		...mapGetters(['getShowMenu'])
 	},
 	mounted: function() {
 		window.addEventListener('scroll', this.scroll);
 	},
 	methods: {
+		...mapActions(['showPopupCallback', 'showMenu']),
+
 		scroll() {
 			window.scrollY > 100 ? (this.active = true) : (this.active = false);
-		},
-
-		showPopupCallback() {
-			this.$store.dispatch('showPopupCallback');
-		},
-
-		showMenu() {
-			this.$store.dispatch('showMenu');
 		}
 	}
 });

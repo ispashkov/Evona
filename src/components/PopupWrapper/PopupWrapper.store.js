@@ -1,12 +1,12 @@
-export const PopupWrapper = {
+export default {
 	state: {
-		show: false,
+		show: false
 	},
 	actions: {
 		showPopupWrapper({ commit }) {
 			commit('SHOW_POPUP_WRAPPER');
 		},
-		
+
 		closePopupWRAPPER({ commit }) {
 			commit('CLOSE_POPUP_WRAPPER');
 		}
@@ -15,7 +15,7 @@ export const PopupWrapper = {
 		SHOW_POPUP_WRAPPER(state) {
 			state.show = true;
 		},
-		
+
 		CLOSE_POPUP_WRAPPER(state) {
 			state.show = false;
 		}
@@ -23,6 +23,6 @@ export const PopupWrapper = {
 	getters: {
 		getShowPopupWrapper(state) {
 			return state.show;
-		},
+		}
 	}
 };

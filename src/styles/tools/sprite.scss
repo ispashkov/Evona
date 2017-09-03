@@ -19,18 +19,7 @@ $angle-lb-height: 36px;
 $angle-lb-total-width: 72px;
 $angle-lb-total-height: 72px;
 $angle-lb-image: '~sprite.png';
-$angle-lb: (
-	0px,
-	0px,
-	0px,
-	0px,
-	36px,
-	36px,
-	72px,
-	72px,
-	'~sprite.png',
-	'angle-lb'
-);
+$angle-lb: (0px, 0px, 0px, 0px, 36px, 36px, 72px, 72px, '~sprite.png', 'angle-lb', );
 $angle-lt-name: 'angle-lt';
 $angle-lt-x: 36px;
 $angle-lt-y: 0px;
@@ -41,18 +30,7 @@ $angle-lt-height: 36px;
 $angle-lt-total-width: 72px;
 $angle-lt-total-height: 72px;
 $angle-lt-image: '~sprite.png';
-$angle-lt: (
-	36px,
-	0px,
-	-36px,
-	0px,
-	36px,
-	36px,
-	72px,
-	72px,
-	'~sprite.png',
-	'angle-lt'
-);
+$angle-lt: (36px, 0px, -36px, 0px, 36px, 36px, 72px, 72px, '~sprite.png', 'angle-lt', );
 $angle-rb-name: 'angle-rb';
 $angle-rb-x: 0px;
 $angle-rb-y: 36px;
@@ -63,18 +41,7 @@ $angle-rb-height: 36px;
 $angle-rb-total-width: 72px;
 $angle-rb-total-height: 72px;
 $angle-rb-image: '~sprite.png';
-$angle-rb: (
-	0px,
-	36px,
-	0px,
-	-36px,
-	36px,
-	36px,
-	72px,
-	72px,
-	'~sprite.png',
-	'angle-rb'
-);
+$angle-rb: (0px, 36px, 0px, -36px, 36px, 36px, 72px, 72px, '~sprite.png', 'angle-rb', );
 $angle-rt-name: 'angle-rt';
 $angle-rt-x: 36px;
 $angle-rt-y: 36px;
@@ -85,23 +52,12 @@ $angle-rt-height: 36px;
 $angle-rt-total-width: 72px;
 $angle-rt-total-height: 72px;
 $angle-rt-image: '~sprite.png';
-$angle-rt: (
-	36px,
-	36px,
-	-36px,
-	-36px,
-	36px,
-	36px,
-	72px,
-	72px,
-	'~sprite.png',
-	'angle-rt'
-);
+$angle-rt: (36px, 36px, -36px, -36px, 36px, 36px, 72px, 72px, '~sprite.png', 'angle-rt', );
 $spritesheet-width: 72px;
 $spritesheet-height: 72px;
 $spritesheet-image: '~sprite.png';
-$spritesheet-sprites: ($angle-lb, $angle-lt, $angle-rb, $angle-rt);
-$spritesheet: (72px, 72px, '~sprite.png', $spritesheet-sprites);
+$spritesheet-sprites: ($angle-lb, $angle-lt, $angle-rb, $angle-rt, );
+$spritesheet: (72px, 72px, '~sprite.png', $spritesheet-sprites, );
 
 // The provided mixins are intended to be used with the array-like variables
 //
@@ -128,29 +84,29 @@ $spritesheet: (72px, 72px, '~sprite.png', $spritesheet-sprites);
 // // HTML
 // <i class="icon icon-home"></i>
 @mixin sprite-width($sprite) {
-	width: nth($sprite, 5);
+  width: nth($sprite, 5);
 }
 
 @mixin sprite-height($sprite) {
-	height: nth($sprite, 6);
+  height: nth($sprite, 6);
 }
 
 @mixin sprite-position($sprite) {
-	$sprite-offset-x: nth($sprite, 3);
-	$sprite-offset-y: nth($sprite, 4);
-	background-position: $sprite-offset-x $sprite-offset-y;
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
 }
 
 @mixin sprite-image($sprite) {
-	$sprite-image: nth($sprite, 9);
-	background-image: url(#{$sprite-image});
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
 }
 
 @mixin sprite($sprite) {
-	@include sprite-image($sprite);
-	@include sprite-position($sprite);
-	@include sprite-width($sprite);
-	@include sprite-height($sprite);
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
 }
 
 // The `sprites` mixin generates identical output to the CSS template
@@ -158,10 +114,10 @@ $spritesheet: (72px, 72px, '~sprite.png', $spritesheet-sprites);
 //
 // @include sprites($spritesheet-sprites);
 @mixin sprites($sprites) {
-	@each $sprite in $sprites {
-		$sprite-name: nth($sprite, 10);
-		.#{$sprite-name} {
-			@include sprite($sprite);
-		}
-	}
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
 }

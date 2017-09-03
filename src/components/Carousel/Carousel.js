@@ -83,6 +83,11 @@ export default {
 			}
 
 			this.$emit('currentSlide', this.dataIndex);
+		},
+
+		itemClick(key) {
+			this.dataIndex = key;
+			this.$emit('currentSlide', this.dataIndex);
 		}
 	}
 };

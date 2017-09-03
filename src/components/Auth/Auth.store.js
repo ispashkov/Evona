@@ -1,7 +1,7 @@
 import * as firebase from 'firebase';
 import alertify from 'alertifyjs';
 
-export const Auth = {
+export default {
 	state: {
 		user: null
 	},
