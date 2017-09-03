@@ -6,11 +6,8 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import SpritesmithPlugin from 'webpack-spritesmith';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 import SpriteLoaderPlugin from 'svg-sprite-loader/plugin';
-import ManifestPlugin from 'webpack-manifest-plugin';
-const PurifyCSSPlugin = require('purifycss-webpack');
-
-var BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-	.BundleAnalyzerPlugin;
+import PurifyCSSPlugin from 'purifycss-webpack';
+import BundleAnalyzerPlugin from 'webpack-bundle-analyzer';
 
 const isProd = process.env.NODE_ENV === 'production';
 const plugins = [
@@ -43,7 +40,7 @@ const plugins = [
 
 	new HtmlWebpackPlugin({
 		filename: 'b2b.html',
-		chunks: ['b2b', 'commons'],
+		chunks: ['b2b', 'commons', 'manifest'],
 		template: path.join(__dirname, './src/b2b.pug')
 	}),
 
@@ -86,14 +83,14 @@ isProd
 				}
 			}),
 			new CleanWebpackPlugin(['./build']),
-			new BundleAnalyzerPlugin()
+			new BundleAnalyzerPlugin.BundleAnalyzerPlugin()
 		)
 	: null;
 
 export default {
 	entry: {
-		app: './src/app.js',
-		b2b: './src/b2b.js'
+		app: ['babel-polyfill', './src/app.js'],
+		b2b: ['babel-polyfill', './src/b2b.js']
 	},
 	output: {
 		path: path.join(__dirname, './build/'),
@@ -103,7 +100,6 @@ export default {
 	devServer: {
 		contentBase: path.join(__dirname, './build/'),
 		port: 3000,
-		noInfo: true,
 		overlay: true,
 		hot: true
 	},
