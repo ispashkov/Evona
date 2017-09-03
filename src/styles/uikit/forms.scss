@@ -104,6 +104,14 @@
 				line-height: 0.875*$font-size-base;
 			}
 
+			&_textarea {
+				line-height: 3rem;
+
+				@include media-breakpoint-down(xl) {
+					line-height: 3rem;
+				}
+			}
+
 			&:focus,
 			&:active {
 				border-color: $colorPrimary;

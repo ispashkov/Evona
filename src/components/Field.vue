@@ -1,31 +1,31 @@
 <template lang='pug'>
-     div(:class="[ active ? 'form-group form-group_valid' : 'form-group' ]")
-        label.form-group__label(:for='name') {{ label }}
-        textarea.form-group__field(
-            :id='name'
-            :name='name'
-            :value='value'
-            autocomplete='off'
-            ref='field'
-            @focus='onFocus()'
-            @blur='onBlur()'
-            @input='onInput($event.target.value)'
-            :required='required'
-            v-if='textarea'
-        )
-        input.form-group__field(
-            :type='type'
-            :id='name'
-            :name='name'
-            :value='value'
-            autocomplete='off'
-            ref='field'
-            @focus='onFocus()'
-            @blur='onBlur()'
-            @input='onInput($event.target.value)'
-            :required='required'
-            v-else
-        )
+	div(:class="[ active ? 'form-group form-group_valid' : 'form-group' ]")
+		label.form-group__label(:for='name') {{ label }}
+		textarea.form-group__field.form-group__field_textarea(
+				:id='name'
+				:name='name'
+				:value='value'
+				autocomplete='off'
+				ref='field'
+				@focus='onFocus()'
+				@blur='onBlur()'
+				@input='onInput($event.target.value)'
+				:required='required'
+				v-if='textarea'
+		)
+		input.form-group__field(
+				:type='type'
+				:id='name'
+				:name='name'
+				:value='value'
+				autocomplete='off'
+				ref='field'
+				@focus='onFocus()'
+				@blur='onBlur()'
+				@input='onInput($event.target.value)'
+				:required='required'
+				v-else
+		)
 </template>
 
 <script>
