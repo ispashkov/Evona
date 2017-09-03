@@ -18,14 +18,6 @@ const plugins = [
 
 	new webpack.HotModuleReplacementPlugin(),
 
-	new ManifestPlugin({
-		fileName: 'manifest.json',
-		basePath: './build/',
-		seed: {
-			name: 'Evona & Nysense App'
-		}
-	}),
-
 	new webpack.optimize.CommonsChunkPlugin({
 		name: 'manifest',
 		minChunks: Infinity
@@ -45,7 +37,7 @@ const plugins = [
 
 	new HtmlWebpackPlugin({
 		filename: 'index.html',
-		chunks: ['app', 'commons'],
+		chunks: ['app', 'commons', 'manifest'],
 		template: path.join(__dirname, './src/index.pug')
 	}),
 
