@@ -1,5 +1,5 @@
-import './icons/search.svg'
+import './icons/search.svg';
 
 export default {
-    name: 'Search'
-}
+	name: 'Search'
+};

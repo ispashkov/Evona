@@ -1,4 +1,4 @@
-import '../../assets/icons/close.svg'
+import '../../assets/icons/close.svg';
 
 export default {
 	name: 'PopupWrapper',
@@ -10,4 +10,4 @@ export default {
 			this.$store.dispatch('closePopupCallback');
 		}
 	}
-}
+};

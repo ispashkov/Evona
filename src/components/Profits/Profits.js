@@ -1,3 +1,3 @@
-import './Profits.pug'
+import './Profits.pug';
 
-import './bg-about-product.png'
+import './bg-about-product.png';

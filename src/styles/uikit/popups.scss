@@ -2,35 +2,34 @@
 	position: relative;
 	width: 55*$spacer;
 	z-index: $z-index-modal;
-	
+
 	background-color: $colorLight;
 	box-shadow: 0 0.5*$spacer 1.25*$spacer rgba($colorAccent, 0.2);
-	
+
 	&__close {
 		position: absolute;
 		left: 100%;
 		bottom: 100%;
 		z-index: $z-index-modal-close;
-		
+
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		padding: 0;
 		margin: 0;
-		
-		
+
 		border: none;
 		background-color: transparent;
 		fill: $colorPrimary;
-		
+
 		appearance: none;
 		cursor: pointer;
 	}
-	
+
 	&__title {
 		display: block;
 		margin: 0;
-		
+
 		color: $colorAccent;
 		font-family: $font-family-accent;
 		font-size: 2.5*$font-size-base;
@@ -39,47 +38,49 @@
 		text-align: center;
 		text-transform: uppercase;
 	}
-	
+
 	&-header {
 		padding: 3*$spacer;
 		position: relative;
-		&:before, &:after {
+		&:before,
+		&:after {
 			position: absolute;
 			top: 0;
 			content: '';
 		}
-		
+
 		&:before {
 			left: 0;
-			@include sprite($angle-lt)
+			@include sprite($angle-lt);
 		}
-		
+
 		&:after {
 			right: 0;
-			@include sprite($angle-rt)
+			@include sprite($angle-rt);
 		}
 	}
-	
+
 	&-footer {
 		position: relative;
 		padding: 3*$spacer 3*$spacer 0;
-		&:before, &:after {
+		&:before,
+		&:after {
 			position: absolute;
 			bottom: 0;
 			content: '';
 		}
-		
+
 		&:before {
 			left: 0;
-			@include sprite($angle-lb)
+			@include sprite($angle-lb);
 		}
-		
+
 		&:after {
 			right: 0;
-			@include sprite($angle-rb)
+			@include sprite($angle-rb);
 		}
 	}
-	
+
 	&-content {
 		padding: 0 3*$spacer $spacer;
 	}

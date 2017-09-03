@@ -5,38 +5,38 @@
 	height: 2.375rem;
 	padding: 0 0.75*$spacer;
 	margin: 0;
-	
+
 	background-color: transparent;
 	border: 2px solid $colorPrimary;
 	border-radius: 0;
 	color: $colorAccent;
-	
+
 	font: {
 		family: $font-family-base;
 		size: $font-size-base;
 		weight: 700;
 	}
-	
+
 	line-height: $spacer;
 	text-transform: uppercase;
 	text-decoration: none;
 	white-space: nowrap;
-	
+
 	cursor: pointer;
 	appearance: none;
 	@include transition();
-	
+
 	@include media-breakpoint-down(xl) {
 		height: 2.125*$spacer;
 		border-width: 1px;
 		font-size: 0.875*$font-size-base;
 	}
-	
+
 	&_primary {
 		background-color: $colorPrimary;
 		border-color: $colorPrimary;
 		color: $colorAccent;
-		
+
 		&:hover {
 			background-color: lighten($colorPrimary, 8%);
 			border-color: lighten($colorPrimary, 8%);
@@ -47,7 +47,7 @@
 			color: $colorAccent;
 		}
 	}
-	
+
 	&_accent {
 		background-color: $colorAccent;
 		border-color: $colorAccent;
@@ -62,15 +62,15 @@
 			color: $colorPrimary;
 		}
 	}
-	
+
 	&_inverse {
 		background-color: transparent;
 	}
-	
+
 	&_lg {
 		width: 13.75*$spacer;
 	}
-	
+
 	&_xl {
 		width: 18.75*$spacer;
 		height: 4*$spacer;
@@ -82,7 +82,7 @@
 			font-size: $font-size-base;
 		}
 	}
-	
+
 	&_wide {
 		width: 100%;
 	}

@@ -1,34 +1,34 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-import Auth from '../components/Auth/Auth.vue'
-import Shops from '../components/Shops/Shops.vue'
-import Catalog from '../components/Catalog/Catalog.vue'
+import Auth from '../components/Auth/Auth.vue';
+import Shops from '../components/Shops/Shops.vue';
+import Catalog from '../components/Catalog/Catalog.vue';
 
-import ProductPage from '../pages/Product.vue'
+import ProductPage from '../pages/Product.vue';
 
 export const router = new VueRouter({
-    routes: [
-        {
-            path: '/',
-            component: Shops
-        },
+	routes: [
+		{
+			path: '/',
+			component: Shops
+		},
 
-        {
-            path: '/auth',
-            component: Auth
-        },
+		{
+			path: '/auth',
+			component: Auth
+		},
 
-        {
-            path: '/catalog',
-            component: Catalog
-        },
+		{
+			path: '/catalog',
+			component: Catalog
+		},
 
-        {
-            path: '/product',
-            component: ProductPage
-        }
-    ]
-})
+		{
+			path: '/product',
+			component: ProductPage
+		}
+	]
+});

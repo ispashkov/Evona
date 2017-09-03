@@ -1,99 +1,99 @@
 .mobile-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    z-index: $z-index-menu;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	z-index: $z-index-menu;
 
-    width: 25*$spacer;
-    height: 100%;
-    padding: 2*$spacer 2*$spacer 2*$spacer 4*$spacer;
+	width: 25*$spacer;
+	height: 100%;
+	padding: 2*$spacer 2*$spacer 2*$spacer 4*$spacer;
 
-    background-color: $colorWhite;
-    box-shadow: 0.25rem -0.062rem 0.313rem rgba(0, 0, 0, 0.06);
+	background-color: $colorWhite;
+	box-shadow: 0.25rem -0.062rem 0.313rem rgba(0, 0, 0, 0.06);
 
-    overflow: hidden;
+	overflow: hidden;
 
-    &__close {
-        position: absolute;
-        top: 2*$spacer;
-        right: 2*$spacer;
+	&__close {
+		position: absolute;
+		top: 2*$spacer;
+		right: 2*$spacer;
 
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
-        margin: 0;
-        height: 1.875*$spacer;
-        width: 1.875*$spacer;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+		margin: 0;
+		height: 1.875*$spacer;
+		width: 1.875*$spacer;
 
-        border: none;
-        background-color: transparent;
-        appearance: none;
+		border: none;
+		background-color: transparent;
+		appearance: none;
 
-        cursor: pointer;
-        fill: $colorPrimary;
+		cursor: pointer;
+		fill: $colorPrimary;
 
-        svg {
-            height: auto
-        }
-    }
+		svg {
+			height: auto
+		}
+	}
 
-    &-nav {
-        display: block;
-        padding: 2*$spacer 0 0 0;
+	&-nav {
+		display: block;
+		padding: 2*$spacer 0 0 0;
 
-        &__link {
-            display: block;
-            margin: 0 0 $spacer 0;
+		&__link {
+			display: block;
+			margin: 0 0 $spacer 0;
 
-            color: $colorAccent;
-            font-family: $font-family-second;
-            font-size: 1.5*$font-size-base;
-            font-weight: 100;
+			color: $colorAccent;
+			font-family: $font-family-second;
+			font-size: 1.5*$font-size-base;
+			font-weight: 100;
             
-            text-decoration: none;
+			text-decoration: none;
             
-            opacity: 0;
-            animation: menuLinks forwards .5s;
+			opacity: 0;
+			animation: menuLinks forwards .5s;
 
-            &:hover {
-                color: $colorAccent;
-                text-decoration: underline;
-            }
+			&:hover {
+				color: $colorAccent;
+				text-decoration: underline;
+			}
 
-            &_active {
-                color: $colorPrimary
-            }
+			&_active {
+				color: $colorPrimary
+			}
 
-            &:nth-child(1) {
-                animation-delay: .3s
-            }
+			&:nth-child(1) {
+				animation-delay: .3s
+			}
 
-            &:nth-child(2) {
-                animation-delay: .4s
-            }
+			&:nth-child(2) {
+				animation-delay: .4s
+			}
 
-            &:nth-child(3) {
-                animation-delay: .5s
-            }
+			&:nth-child(3) {
+				animation-delay: .5s
+			}
 
-            &:nth-child(4) {
-                animation-delay: .6s
-            }
+			&:nth-child(4) {
+				animation-delay: .6s
+			}
 
-            &:nth-child(5) {
-                animation-delay: .7s
-            }
+			&:nth-child(5) {
+				animation-delay: .7s
+			}
 
-            &:nth-child(6) {
-                animation-delay: .8s
-            }
+			&:nth-child(6) {
+				animation-delay: .8s
+			}
 
-            &:nth-child(7) {
-                animation-delay: .9s
-            }
-        }
-    }
+			&:nth-child(7) {
+				animation-delay: .9s
+			}
+		}
+	}
 
 }

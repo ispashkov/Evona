@@ -1,42 +1,41 @@
 .fade {
-    &-enter-active {
-        animation: fadeIn .3s;
-    }
+	&-enter-active {
+		animation: fadeIn 0.3s;
+	}
 
-    &-leave-active {
-        animation: fadeOut .3s;
-    }
+	&-leave-active {
+		animation: fadeOut 0.3s;
+	}
 }
 
 .fadeUp {
-    &-enter-active {
-        animation: fadeInUp .3s;
-    }
+	&-enter-active {
+		animation: fadeInUp 0.3s;
+	}
 
-    &-leave-active {
-        animation: fadeOutDown .3s;
-    }
+	&-leave-active {
+		animation: fadeOutDown 0.3s;
+	}
 }
 
 .slideInLeft {
-    &-enter-active {
-        animation: slideInLeft .5s;
-    }
+	&-enter-active {
+		animation: slideInLeft 0.5s;
+	}
 
-    &-leave-active {
-        animation: slideOutLeft .5s;
-    }
+	&-leave-active {
+		animation: slideOutLeft 0.5s;
+	}
 }
 
 @keyframes menuLinks {
-    0% {
-        opacity: 0;
-        transform: translate(-1rem, 0);
-    }
+	0% {
+		opacity: 0;
+		transform: translate(-1rem, 0);
+	}
 
-    100% {
-        opacity: 1;
-        transform: translate(0, 0);
-    }
+	100% {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
 }
-

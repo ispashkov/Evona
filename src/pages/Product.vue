@@ -29,27 +29,27 @@
                                 span.label.product-properties__label Коллекция:
                                 =" "
                                 span.product-properties__value FW2017
-                            
+
                             div.product-properties-item
                                 span.label.product-properties__label Состав:
                                 =" "
                                 span.product-properties__value 100% шелк, 20% вискоза, 5%
-                            
+
                             div.product-properties-item
                                 span.label.product-properties__label Цвет:
                                 =" "
                                 span.product-properties__value белый
 
 
-                        
+
                         hr.hr.product__hr
 
                         div.product-colors
                             span.label.mb-2 Цвета:
-                            
+
                             div.product-colors__slider
                                 carousel(:step='0' :images='images' :items='5' @currentSlide='')
-                            
+
                         div.product-price
                             div.row
                                 div.col-auto
@@ -62,23 +62,23 @@
                                     span.label.product-price__label Цена опт:
                                     span.product-price__value {{ priceRecommended }}
 
-                        
-                        
+
+
                         div.product-sizes
                             span.label.mb-1 Размеры и количество:
-                            
+
                             div.product-sizes-row
 
                                 div.product-sizes-item(v-for='size in sizes')
                                     label.product-sizes__label {{ size.name }}
                                     input(
-                                        type='text' 
-                                        :class='[ size.value ? "product-sizes__field product-sizes__field_active" : "product-sizes__field"]' v-model='size.value' 
-                                        :readonly="readonly" 
-                                        :disabled='disabled' 
+                                        type='text'
+                                        :class='[ size.value ? "product-sizes__field product-sizes__field_active" : "product-sizes__field"]' v-model='size.value'
+                                        :readonly="readonly"
+                                        :disabled='disabled'
                                         @keypress='isNumber($event)'
                                         )
-                                
+
                                 div.product-sizes-result
 
                                     div.product-sizes-item
@@ -99,117 +99,117 @@
 
 <script>
 
-    import Carousel from '../components/Carousel/Carousel.vue'
-    import './images/product.jpg';
-    import './images/product-2.jpg';
-    import './images/product-3.jpg';
-    import './images/product-4.jpg';
+import Carousel from '../components/Carousel/Carousel.vue'
+import './images/product.jpg';
+import './images/product-2.jpg';
+import './images/product-3.jpg';
+import './images/product-4.jpg';
 
-    export default {
-        name: 'ProductPage',
-        components: {
-            Carousel
-        },
-        data() {
-            return {
-                currentPhoto: 0,
-                images: [
-                    'assets/images/product.jpg',
-                    'assets/images/product-2.jpg',
-                    'assets/images/product-3.jpg',
-                    'assets/images/product.jpg',
-                    'assets/images/product.jpg',
-                    'assets/images/product.jpg',
-                    'assets/images/product.jpg',
-                    'assets/images/product.jpg',
-                    'assets/images/product.jpg',
-                    'assets/images/product.jpg'
-                ],
-                price: {
-                    opt: '75',
-                    recommended: '10750'
-                },
-                readonly: false,
-                disabled: false,
-                sizes: [
-                    {
-                        name: 'xs',
-                        value: '1'
-                    },
-                    {
-                        name: 's',
-                        value: ''
-                    },
-                    {
-                        name: 'm',
-                        value: ''
-                    },
-                    {
-                        name: 'l',
-                        value: ''
-                    },
-                    {
-                        name: 'xl',
-                        value: ''
-                    }
-                ]
-                
-            }
-        },
-        computed: {
-            
-            priceOpt() {
-                return new Intl.NumberFormat('ru-IN', { 
-                    style: 'currency', 
-                    currency: 'EUR' 
-                }).format(parseInt(this.price.opt))
-            },
+export default {
+	name: 'ProductPage',
+	components: {
+		Carousel
+	},
+	data() {
+		return {
+			currentPhoto: 0,
+			images: [
+				'assets/images/product.jpg',
+				'assets/images/product-2.jpg',
+				'assets/images/product-3.jpg',
+				'assets/images/product.jpg',
+				'assets/images/product.jpg',
+				'assets/images/product.jpg',
+				'assets/images/product.jpg',
+				'assets/images/product.jpg',
+				'assets/images/product.jpg',
+				'assets/images/product.jpg'
+			],
+			price: {
+				opt: '75',
+				recommended: '10750'
+			},
+			readonly: false,
+			disabled: false,
+			sizes: [
+				{
+					name: 'xs',
+					value: '1'
+				},
+				{
+					name: 's',
+					value: ''
+				},
+				{
+					name: 'm',
+					value: ''
+				},
+				{
+					name: 'l',
+					value: ''
+				},
+				{
+					name: 'xl',
+					value: ''
+				}
+			]
 
-            priceRecommended() {
-                return new Intl.NumberFormat('ru-IN', { 
-                    style: 'currency', 
-                    currency: 'RUB' 
-                }).format(parseInt(this.price.recommended))
-            },
+		}
+	},
+	computed: {
 
-            result() {
-                var total = 0;
+		priceOpt() {
+			return new Intl.NumberFormat('ru-IN', {
+				style: 'currency',
+				currency: 'EUR'
+			}).format(parseInt(this.price.opt))
+		},
 
-                this.sizes.forEach(size => {
-                    if (!size.value.length) {
-                        return
-                    }
-                    
-                    total += parseInt(size.value); 
+		priceRecommended() {
+			return new Intl.NumberFormat('ru-IN', {
+				style: 'currency',
+				currency: 'RUB'
+			}).format(parseInt(this.price.recommended))
+		},
 
-                })
-                
-                return total;
-            },
+		result() {
+			var total = 0;
 
-            sum() { 
-                return new Intl.NumberFormat('ru-IN', {
-                    style: 'currency',
-                    currency: 'EUR'
-                }).format(parseInt(this.price.opt) * this.result)
-            }
-        },
-        methods: {
-            isNumber(event) {
-                const charCode = (event.which) ? event.which : event.keyCode;
-                
-                if (charCode < 48 || charCode > 57) {
-                    event.preventDefault();
-                } else {
-                    return true;
-                }
-            },
+			this.sizes.forEach(size => {
+				if (!size.value.length) {
+					return
+				}
 
-            currentSlide(val) {
-                this.currentPhoto = val
-            }
-        }
-    }
+				total += parseInt(size.value);
+
+			})
+
+			return total;
+		},
+
+		sum() {
+			return new Intl.NumberFormat('ru-IN', {
+				style: 'currency',
+				currency: 'EUR'
+			}).format(parseInt(this.price.opt) * this.result)
+		}
+	},
+	methods: {
+		isNumber(event) {
+			const charCode = (event.which) ? event.which : event.keyCode;
+
+			if (charCode < 48 || charCode > 57) {
+				event.preventDefault();
+			} else {
+				return true;
+			}
+		},
+
+		currentSlide(val) {
+			this.currentPhoto = val
+		}
+	}
+}
 </script>
 
 

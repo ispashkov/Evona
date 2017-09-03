@@ -4,11 +4,11 @@ export const PopupCallback = {
 	},
 	actions: {
 		showPopupCallback({ commit }) {
-			commit('SHOW_POPUP_CALLBACK')
+			commit('SHOW_POPUP_CALLBACK');
 		},
 		
 		closePopupCallback({ commit }) {
-			commit('CLOSE_POPUP_CALLBACK')
+			commit('CLOSE_POPUP_CALLBACK');
 		}
 	},
 	mutations: {
@@ -22,7 +22,7 @@ export const PopupCallback = {
 	},
 	getters: {
 		getShowPopupCallback(state) {
-			return state.show
+			return state.show;
 		},
 	}
 };

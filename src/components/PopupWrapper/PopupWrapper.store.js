@@ -4,11 +4,11 @@ export const PopupWrapper = {
 	},
 	actions: {
 		showPopupWrapper({ commit }) {
-			commit('SHOW_POPUP_WRAPPER')
+			commit('SHOW_POPUP_WRAPPER');
 		},
 		
 		closePopupWRAPPER({ commit }) {
-			commit('CLOSE_POPUP_WRAPPER')
+			commit('CLOSE_POPUP_WRAPPER');
 		}
 	},
 	mutations: {
@@ -22,7 +22,7 @@ export const PopupWrapper = {
 	},
 	getters: {
 		getShowPopupWrapper(state) {
-			return state.show
+			return state.show;
 		},
 	}
 };

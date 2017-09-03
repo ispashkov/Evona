@@ -1,100 +1,100 @@
 .shop {
-    position: relative;
-    height: 100%;
-    padding: 5*$spacer 2*$spacer;
-    background-color: $colorLight;
+	position: relative;
+	height: 100%;
+	padding: 5*$spacer 2*$spacer;
+	background-color: $colorLight;
 
-    &__header {
-        &:before, &:after {
-            position: absolute;
-            top: 0;
-            content: '';
+	&__header {
+		&:before, &:after {
+			position: absolute;
+			top: 0;
+			content: '';
+		}
+
+		&:before {
+			left: 0;
+			@include sprite($angle-lt)
         }
 
-        &:before {
-            left: 0;
-            @include sprite($angle-lt)
+		&:after {
+			right: 0;
+			@include sprite($angle-rt)
+        }
+	}
+
+	&__footer {
+		&:before, &:after {
+			position: absolute;
+			bottom: 0;
+			content: '';
+		}
+
+		&:before {
+			left: 0;
+			@include sprite($angle-lb)
         }
 
-        &:after {
-            right: 0;
-            @include sprite($angle-rt)
+		&:after {
+			right: 0;
+			@include sprite($angle-rb)
         }
-    }
+	}
 
-    &__footer {
-        &:before, &:after {
-            position: absolute;
-            bottom: 0;
-            content: '';
-        }
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		height: 100%
+	}
 
-        &:before {
-            left: 0;
-            @include sprite($angle-lb)
-        }
+	&__title {
+		margin: 0 0 $spacer 0;
 
-        &:after {
-            right: 0;
-            @include sprite($angle-rb)
-        }
-    }
+		font-family: $font-family-accent;
+		font-size: 2.25*$spacer;
+		font-weight: 400;
+		line-height: 2.25*$spacer;
 
-    &__content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        height: 100%
-    }
+		white-space: nowrap;
+	}
 
-    &__title {
-        margin: 0 0 $spacer 0;
+	&__collection {
+		display: block;
+		color: $colorAccent;
+		font-family: $font-family-second;
+		font-size: 1.125*$font-size-base;
+		font-weight: 100;
+		text-transform: uppercase;
+		text-align: center;
+	}
 
-        font-family: $font-family-accent;
-        font-size: 2.25*$spacer;
-        font-weight: 400;
-        line-height: 2.25*$spacer;
+	&__number {
+		position: relative;
 
-        white-space: nowrap;
-    }
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
-    &__collection {
-        display: block;
-        color: $colorAccent;
-        font-family: $font-family-second;
-        font-size: 1.125*$font-size-base;
-        font-weight: 100;
-        text-transform: uppercase;
-        text-align: center;
-    }
+		color: $colorWhite;
+		font-family: $font-family-accent;
+		font-size: 9*$font-size-base;
+		font-weight: 400;
+		line-height: 9*$font-size-base;
+		text-transform: uppercase;
+		text-align: center;
 
-    &__number {
-        position: relative;
+		&:before {
+			content: '';
+			position: absolute;
+			display: block;
+			width: 6.875*$spacer;
+			height: 1px;
+			background-color: $colorPrimary;
+		}
+	}
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        color: $colorWhite;
-        font-family: $font-family-accent;
-        font-size: 9*$font-size-base;
-        font-weight: 400;
-        line-height: 9*$font-size-base;
-        text-transform: uppercase;
-        text-align: center;
-
-        &:before {
-            content: '';
-            position: absolute;
-            display: block;
-            width: 6.875*$spacer;
-            height: 1px;
-            background-color: $colorPrimary;
-        }
-    }
-
-    &__button {
-        margin-top: auto;
-    }
+	&__button {
+		margin-top: auto;
+	}
 }

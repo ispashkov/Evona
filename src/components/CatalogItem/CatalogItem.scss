@@ -1,163 +1,160 @@
 .catalog-item {
-    position: relative;
+	position: relative;
 
-    display: flex;
-    flex-flow: column nowrap;
-    height: 100%;
+	display: flex;
+	flex-flow: column nowrap;
+	height: 100%;
 
-    background-color: $colorWhite;
-    text-decoration: none;
-    overflow: hidden;
-    cursor: pointer;
+	background-color: $colorWhite;
+	text-decoration: none;
+	overflow: hidden;
+	cursor: pointer;
 
-    @include transition;
+	@include transition;
 
-    &:hover {
-        box-shadow: $shadow;
+	&:hover {
+		box-shadow: $shadow;
 
-        & .catalog-item__fast-view{
-            opacity: 1;
-        }
+		& .catalog-item__fast-view {
+			opacity: 1;
+		}
 
-        & .catalog-item-action {
-            right: 0;
-        }
+		& .catalog-item-action {
+			right: 0;
+		}
+	}
 
-    }
+	&__photo {
+		width: auto;
+		height: 100%;
+	}
 
-    &__photo {
-        width: auto;
-        height: 100%;
-    }
+	&__title {
+		display: block;
+		margin: 0 0 0.5*$spacer 0;
 
-    &__title {
-        display: block;
-        margin: 0 0 0.5*$spacer 0;
+		color: $colorAccent;
+		font-family: $font-family-second;
+		font-size: 0.875*$font-size-base;
+		font-weight: 700;
+		line-height: 1.25*$font-size-base;
+		text-transform: uppercase;
+	}
 
-        color: $colorAccent;
-        font-family: $font-family-second;
-        font-size: 0.875*$font-size-base;
-        font-weight: 700;
-        line-height: 1.25*$font-size-base;
-        text-transform: uppercase;
-    }
+	&__description {
+		display: block;
+		margin: 0 0 1.25*$spacer 0;
 
-    &__description {
-        display: block;
-        margin: 0 0 1.25*$spacer 0;
+		color: $colorGray;
+		font-family: $font-family-second;
+		font-size: 0.875*$font-size-base;
+		font-weight: 400;
+		line-height: 1.25*$font-size-base;
+	}
 
-        color: $colorGray;
-        font-family: $font-family-second;
-        font-size: 0.875*$font-size-base;
-        font-weight: 400;
-        line-height: 1.25*$font-size-base;
-    }
+	&__price {
+		display: block;
 
-    &__price {
-        display: block;
+		color: $colorAccent;
+		font-family: $font-family-second;
+		font-size: 1.25*$font-size-base;
+		font-weight: 700;
+		line-height: 30px;
+	}
 
-        color: $colorAccent;
-        font-family: $font-family-second;
-        font-size: 1.25*$font-size-base;
-        font-weight: 700;
-        line-height: 30px;
-    }
+	&__fast-view {
+		position: absolute;
+		top: calc(50% - 1.875rem);
+		left: 0;
+		right: 0;
 
-    &__fast-view {
-        position: absolute;
-        top: calc(50% - 1.875rem);
-        left: 0;
-        right: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 3.75*$spacer;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 3.75*$spacer;
+		background-color: rgba($colorWhite, 0.9);
+		border: none;
+		color: $colorAccent;
+		fill: $colorPrimary;
 
-        background-color: rgba($colorWhite, .9);
-        border: none;
-        color: $colorAccent;
-        fill: $colorPrimary;
-        
-        font-family: $font-family-second;
-        font-size: 0.875*$font-size-base;
-        font-weight: 700;
-        text-transform: uppercase;
-        
-        appearance: none;
-        opacity: 0;
-        cursor: pointer;
+		font-family: $font-family-second;
+		font-size: 0.875*$font-size-base;
+		font-weight: 700;
+		text-transform: uppercase;
 
-        @include transition();
+		appearance: none;
+		opacity: 0;
+		cursor: pointer;
 
-        & .icon {
-            margin-right: 0.625*$spacer;
-        }
-    }
+		@include transition();
 
-    &__cart, &__bookmark {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        height: 1.25*$spacer;
-        padding: 0;
+		& .icon {
+			margin-right: 0.625*$spacer;
+		}
+	}
 
-        background-color: transparent;
-        border: none;
-        fill: lighten($colorGray, 30%);
+	&__cart,
+	&__bookmark {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		height: 1.25*$spacer;
+		padding: 0;
 
-        appearance: none;
-        cursor: pointer;
+		background-color: transparent;
+		border: none;
+		fill: lighten($colorGray, 30%);
 
-        @include transition()
+		appearance: none;
+		cursor: pointer;
 
-        &:hover, &_active {
-            fill: $colorPrimary
-        }
-    }
+		@include transition() &:hover, &_active {
+			fill: $colorPrimary;
+		}
+	}
 
-    &__cart {
-        margin-bottom: 1.25*$spacer;
-    }
+	&__cart {
+		margin-bottom: 1.25*$spacer;
+	}
 
-    &-action {
-        position: absolute;
-        top: 0;
-        right: -100%;
+	&-action {
+		position: absolute;
+		top: 0;
+		right: -100%;
 
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-        padding: 1.25*$spacer;
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		padding: 1.25*$spacer;
 
-        @include transition();
+		@include transition();
 
-        &_active {
-            right: 0;
-        }
-    }
+		&_active {
+			right: 0;
+		}
+	}
 
-    &-wrapper {
-        margin: 0 0 1.25*$spacer 0;
-    }
+	&-wrapper {
+		margin: 0 0 1.25*$spacer 0;
+	}
 
-    &-image {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 32.5*$spacer;
+	&-image {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 32.5*$spacer;
 
-        overflow: hidden;
-    }
+		overflow: hidden;
+	}
 
-    &-content {
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-        flex: 1;
+	&-content {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		flex: 1;
 
-        padding: 2*$spacer;
-    }
-
+		padding: 2*$spacer;
+	}
 }

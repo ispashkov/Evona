@@ -1,4 +1,4 @@
-import Field from '../Field.vue'
+import Field from '../Field.vue';
 
 export default {
 	name: 'PopupCallback',
@@ -8,6 +8,6 @@ export default {
 			name: '',
 			phone: '',
 			message: ''
-		}
+		};
 	}
-}
+};

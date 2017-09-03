@@ -1,6 +1,4 @@
-
 .form {
-	
 	&_singup,
 	&_singin {
 		& .form__title {
@@ -18,16 +16,16 @@
 		line-height: 2*$font-size-base;
 		text-transform: uppercase;
 		text-align: center;
-		
+
 		&_dark {
 			color: $colorAccent;
 		}
 	}
-	
+
 	&__description {
 		display: block;
 		margin: 2.5*$spacer 0 0 0;
-		
+
 		color: lighten($colorGray, 10%);
 		font-family: $font-family-second;
 		font-size: $font-size-base;
@@ -39,11 +37,11 @@
 			line-height: 0.75*$font-size-base;
 		}
 	}
-	
+
 	&-group {
 		position: relative;
 		padding: 0.875*$spacer 0 0 0;
-		
+
 		&_valid {
 			.form-group__label {
 				top: 0;
@@ -55,51 +53,49 @@
 					line-height: 0.75*$font-size-base;
 				}
 			}
-			
+
 			.form-group__field {
 				border-color: $colorPrimary;
 			}
 		}
-		
+
 		&__label {
 			position: absolute;
 			top: calc(50% - 2px);
 			left: 0;
-			
+
 			display: block;
 			color: lighten($colorGray, 10%);
 			font-family: $font-family-second;
 			font-size: 1.125*$font-size-base;
 			font-weight: 400;
 			line-height: 1.25*$font-size-base;
-			@include transition()
-
-			@include media-breakpoint-down(xl) {
+			@include transition() @include media-breakpoint-down(xl) {
 				font-size: 0.875*$font-size-base;
 				line-height: 0.875*$font-size-base;
 			}
 		}
-		
+
 		&__field {
 			display: block;
 			height: 3*$spacer;
 			width: 100%;
 			padding: 0;
-			
+
 			background-color: transparent;
 			border: {
 				top: none;
 				left: none;
 				right: none;
 				bottom: 1px solid $colorGray;
-			};
+			}
 			color: lighten($colorGray, 15%);
-			
+
 			font-family: $font-family-second;
 			font-size: $font-size-base;
 			font-weight: 400;
 			line-height: 3*$spacer;
-			
+
 			resize: none;
 			overflow: hidden;
 
@@ -107,13 +103,11 @@
 				font-size: 0.875*$font-size-base;
 				line-height: 0.875*$font-size-base;
 			}
-			
-			&:focus, &:active {
+
+			&:focus,
+			&:active {
 				border-color: $colorPrimary;
 			}
 		}
 	}
 }
-
-
-

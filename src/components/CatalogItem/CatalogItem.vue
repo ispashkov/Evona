@@ -8,11 +8,11 @@
                 +svgIcon(22, 20, '', '#cart')
             button(type='button' @click='inBookmark()' :class='[ bookmark ? "catalog-item__bookmark catalog-item__bookmark_active" : "catalog-item__bookmark" ]')
                 +svgIcon(22, 20, '', '#bookmark')
-        
+
         button.catalog-item__fast-view(type='button')
             +svgIcon(24, 16, 'icon', '#eye')
             | Быстрый просмотр
-                
+
         div.catalog-item-image
             img.catalog-item__photo(src='./catalog-image2.png')
         div.catalog-item-content

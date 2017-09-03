@@ -5,11 +5,11 @@
 @import 'tools/sprite';
 @import 'tools/animation';
 
-@import "uikit/buttons";
-@import "uikit/forms";
-@import "uikit/b2b-heading";
-@import "uikit/popups";
-@import "uikit/sections";
+@import 'uikit/buttons';
+@import 'uikit/forms';
+@import 'uikit/b2b-heading';
+@import 'uikit/popups';
+@import 'uikit/sections';
 
 @import '../components/HeaderB2B/HeaderB2B';
 @import '../components/Shops/Shops';
@@ -25,25 +25,25 @@
 @import '../pages/Product';
 
 .app {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
 .main {
-    padding: 3*$spacer 0;
+	padding: 3*$spacer 0;
 
-    &_center {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+	&_center {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 
-    &_light {
-        background-color: $colorLight;
-    }
+	&_light {
+		background-color: $colorLight;
+	}
 
-    &_white {
-        background-color: $colorWhite;
-    }
+	&_white {
+		background-color: $colorWhite;
+	}
 }

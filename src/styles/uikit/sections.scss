@@ -1,15 +1,15 @@
 .page-section {
 	position: relative;
-	
+
 	padding: 5*$spacer 0;
 	overflow: hidden;
-	
+
 	&:before {
 		position: absolute;
 		left: 0;
 		right: 0;
 		bottom: -8*$spacer;
-		
+
 		content: attr(data-place);
 		display: block;
 		color: $colorWhite;
@@ -18,28 +18,28 @@
 		font-weight: 400;
 		line-height: 22*$font-size-base;
 		text-transform: uppercase;
-		
+
 		text-align: center;
 	}
-	
+
 	&_dark {
 		background-color: $colorAccent;
-		
+
 		.page-section-heading__title,
 		.page-section-heading__desc {
 			color: $colorWhite;
 		}
-		
+
 		.step__text,
 		.list__item {
 			color: $colorTextDark;
 		}
-		
+
 		.hr {
 			border-color: $colorPrimary;
 		}
 	}
-	
+
 	&_light {
 		background-color: $colorLight;
 	}
@@ -47,21 +47,22 @@
 	&_gray {
 		background-color: $colorGrayForm;
 	}
-	
+
 	&_white {
 		background-color: $colorWhite;
 	}
-	
-	&_light, &_white {
+
+	&_light,
+	&_white {
 		.page-section-heading__title,
 		.page-section-heading__desc {
 			color: $colorAccent;
 		}
 	}
-	
+
 	&_form {
 		background: {
-			image: url("../assets/images/bg-form.png");
+			image: url(../assets/images/bg-form.png);
 			size: cover;
 			repeat: no-repeat;
 			position: center top;
@@ -71,7 +72,7 @@
 	&_wrap {
 		padding: 3*$spacer 4*$spacer;
 		height: 100%;
-		
+
 		@include media-breakpoint-down(xl) {
 			padding: 3*$spacer;
 		}
@@ -80,49 +81,51 @@
 	&_angle-left {
 		position: relative;
 
-		&:before, &:after {
+		&:before,
+		&:after {
 			position: absolute;
 			left: 0;
 			right: auto;
 			content: '';
 		}
-		
+
 		&:before {
 			top: 0;
-			@include sprite($angle-lt)
+			@include sprite($angle-lt);
 		}
 
 		&:after {
 			bottom: 0;
-			@include sprite($angle-lb)
+			@include sprite($angle-lb);
 		}
 	}
 
 	&_angle-right {
 		position: relative;
 
-		&:before, &:after {
+		&:before,
+		&:after {
 			position: absolute;
 			right: 0;
 			left: auto;
 			content: '';
 		}
-		
+
 		&:before {
 			top: 0;
-			@include sprite($angle-rt)
+			@include sprite($angle-rt);
 		}
 
 		&:after {
 			bottom: 0;
-			@include sprite($angle-rb)
+			@include sprite($angle-rb);
 		}
 	}
-	
+
 	&-heading {
 		display: block;
 		margin: 0 0 5*$spacer 0;
-		
+
 		&__title {
 			display: block;
 			margin: 0 0 $spacer 0;
@@ -136,7 +139,7 @@
 				font-size: 2.5*$font-size-base;
 			}
 		}
-		
+
 		&__desc {
 			display: block;
 			font-family: $font-family-second;

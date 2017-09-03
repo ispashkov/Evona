@@ -1,16 +1,16 @@
-import Field from '../Field.vue'
+import Field from '../Field.vue';
 
 export default {
-    name: 'FormAccess',
-    components: {
-        Field
-    },
-    data() {
-        return {
-            name: '',
-            city: '',
-            company: '',
-            phone: ''
-        }
-    }
-}
+	name: 'FormAccess',
+	components: {
+		Field
+	},
+	data() {
+		return {
+			name: '',
+			city: '',
+			company: '',
+			phone: ''
+		};
+	}
+};

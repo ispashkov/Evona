@@ -1,1 +1,1 @@
-import './Footer.pug'
+import './Footer.pug';

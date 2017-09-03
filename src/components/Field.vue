@@ -29,51 +29,51 @@
 </template>
 
 <script>
-    export default {
-        name: 'Field',
-        data() {
-            return {
-                active: false,
-            }
-        },
-        props: {
-            type: {
-                type: String,
-                required: false
-            },
-            name: {
-                type: String,
-                required: true
-            },
-            label: {
-                type: String,
-                required: true
-            },
-            value: {
-                type: String,
-                required: true
-            },
-            required: {
-                required: false
-            },
-            textarea: {
-                required: false
-            }
-        },
-        methods: {
-            onFocus() {
-                this.active = true;
-            },
+export default {
+	name: 'Field',
+	data() {
+		return {
+			active: false,
+		}
+	},
+	props: {
+		type: {
+			type: String,
+			required: false
+		},
+		name: {
+			type: String,
+			required: true
+		},
+		label: {
+			type: String,
+			required: true
+		},
+		value: {
+			type: String,
+			required: true
+		},
+		required: {
+			required: false
+		},
+		textarea: {
+			required: false
+		}
+	},
+	methods: {
+		onFocus() {
+			this.active = true;
+		},
 
-            onBlur() {
-                this.$refs.field.value ? this.active = true : this.active = false
-            },
+		onBlur() {
+			this.$refs.field.value ? this.active = true : this.active = false
+		},
 
-            onInput(value) {
-                this.$emit('input', value)
-            },
-        }
-    }
+		onInput(value) {
+			this.$emit('input', value)
+		},
+	}
+}
 </script>
 
 

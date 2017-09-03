@@ -1,18 +1,17 @@
 .contacts {
-	
 	.row {
 		height: 40*$spacer;
 		margin: 0;
 	}
-	
+
 	&__map {
 		height: 100%;
 	}
-	
+
 	&-info {
 		padding: 3*$spacer;
 	}
-	
+
 	&-target {
 		display: block;
 		margin: 0 0 2*$spacer;
@@ -28,13 +27,13 @@
 			font-size: 1.125*$font-size-base;
 			line-height: 1.5*$font-size-base;
 		}
-		
+
 		&__name {
 			display: block;
 			font-weight: 500;
 		}
 	}
-	
+
 	&-adres {
 		display: block;
 		margin: 0 0 2.5*$spacer;

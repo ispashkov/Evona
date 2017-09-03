@@ -1,71 +1,71 @@
 .pagination {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-    margin: 0;
-    padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+	margin: 0;
+	padding: 0;
 
-    &__item {
-        display: inline-flex;
-        align-items: stretch;
-        justify-content: center;
-        width: 2.25*$spacer;
-        height: 2*$spacer;
-        margin: 0 0.5*$spacer;
+	&__item {
+		display: inline-flex;
+		align-items: stretch;
+		justify-content: center;
+		width: 2.25*$spacer;
+		height: 2*$spacer;
+		margin: 0 0.5*$spacer;
 
-        border: 2px solid transparent;
-        cursor: pointer;
-        @include transition();
+		border: 2px solid transparent;
+		cursor: pointer;
+		@include transition();
 
-        &_active {
-            border-color: $colorPrimary;
+		&_active {
+			border-color: $colorPrimary;
 
-            &:hover {
-                background-color: $colorPrimary;
-            }
+			&:hover {
+				background-color: $colorPrimary;
+			}
 
-            & .pagination__link {
-                color: $colorAccent;
-            }
-        }
+			& .pagination__link {
+				color: $colorAccent;
+			}
+		}
 
-        &_prev, &_next {
-            align-items: center;
-            fill: $colorAccent;
+		&_prev, &_next {
+			align-items: center;
+			fill: $colorAccent;
             
-            &:hover {
-                fill: $colorPrimary;
-            }
-        }
+			&:hover {
+				fill: $colorPrimary;
+			}
+		}
 
-        &_prev {
-            margin: 0 auto 0 0;
-            transform: rotate(-180deg);
-        }
+		&_prev {
+			margin: 0 auto 0 0;
+			transform: rotate(-180deg);
+		}
 
-        &_next {
-            margin: 0 0 0 auto;
-        }
+		&_next {
+			margin: 0 0 0 auto;
+		}
 
-        &_inactive {
-            fill: $colorGray;
-        }
+		&_inactive {
+			fill: $colorGray;
+		}
         
-    }
+	}
 
-    &__link {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        flex: 1;
+	&__link {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex: 1;
 
-        color: $colorGray;
-        font-family: $font-family-second;
-        font-size: $font-size-base;
-        font-weight: 700;
-        line-height: $font-size-base;
+		color: $colorGray;
+		font-family: $font-family-second;
+		font-size: $font-size-base;
+		font-weight: 700;
+		line-height: $font-size-base;
 
-        text-decoration: none;
-    }
+		text-decoration: none;
+	}
 }

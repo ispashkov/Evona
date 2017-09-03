@@ -1,93 +1,93 @@
 .selectbox {
-    position: relative;
-    display: inline-flex;
-    margin: 0 0 0 $spacer;
-    @include transition();
+	position: relative;
+	display: inline-flex;
+	margin: 0 0 0 $spacer;
+	@include transition();
 
-    &_selected {
-        background-color: lighten($colorGray, 45%);
-    }
+	&_selected {
+		background-color: lighten($colorGray, 45%);
+	}
 
-    &__icon {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        background-color: transparent;
-        border: none;
-        margin: 0 0 0 0.5*$spacer;
-        padding: 0.125*$spacer;
-        fill: $colorPrimary;
-        cursor: pointer;
-        appearance: none;
-    }
+	&__icon {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background-color: transparent;
+		border: none;
+		margin: 0 0 0 0.5*$spacer;
+		padding: 0.125*$spacer;
+		fill: $colorPrimary;
+		cursor: pointer;
+		appearance: none;
+	}
 
-    &-heading {
-        display: inline-flex;
-        align-items: center;
-        justify-content: flex-start;
-        height: 2*$spacer;
-        padding: 0 0.875*$spacer;
+	&-heading {
+		display: inline-flex;
+		align-items: center;
+		justify-content: flex-start;
+		height: 2*$spacer;
+		padding: 0 0.875*$spacer;
 
-        color: $colorAccent;
-        font-family: $font-family-base;
-        font-size: 0.875*$font-size-base;
-        font-weight: 700;
-        line-height:  0.875*$font-size-base;
-        text-transform: uppercase;
+		color: $colorAccent;
+		font-family: $font-family-base;
+		font-size: 0.875*$font-size-base;
+		font-weight: 700;
+		line-height:  0.875*$font-size-base;
+		text-transform: uppercase;
 
-        cursor: pointer;
+		cursor: pointer;
 
-        &_active {
-            background-color: $colorGray;
-        }
-    }
+		&_active {
+			background-color: $colorGray;
+		}
+	}
 
-    &-dropdown {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: $z-index-select;
+	&-dropdown {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		z-index: $z-index-select;
 
-        display: block;
-        margin: 0.75*$spacer 0 0 0;
-        padding: 1.25*$spacer 2*$spacer;
-        min-width: 15*$spacer;
+		display: block;
+		margin: 0.75*$spacer 0 0 0;
+		padding: 1.25*$spacer 2*$spacer;
+		min-width: 15*$spacer;
 
-        background-color: $colorWhite;
-        box-shadow: $shadow;
+		background-color: $colorWhite;
+		box-shadow: $shadow;
 
-        list-style-type: none;
+		list-style-type: none;
 
-        &::after {
-            content: '';
-            position: absolute;
-            top: -0.5*$spacer;
-            left: 1.25*$spacer;
+		&::after {
+			content: '';
+			position: absolute;
+			top: -0.5*$spacer;
+			left: 1.25*$spacer;
 
-            display: block;
-            height: 1*$spacer;
-            width: 1*$spacer;
+			display: block;
+			height: 1*$spacer;
+			width: 1*$spacer;
 
-            background-color: $colorWhite;
-            // box-shadow: $shadow;
-            transform: rotate(45deg);
-        }
+			background-color: $colorWhite;
+			// box-shadow: $shadow;
+			transform: rotate(45deg);
+		}
 
-        &__item {
-            display: block;
-            padding: 0.25*$spacer 0;
+		&__item {
+			display: block;
+			padding: 0.25*$spacer 0;
             
-            color: $colorAccent;
-            font-family: $font-family-base;
-            font-size: $font-size-base;
-            font-weight: 400;
-            line-height: $font-size-base;
-            cursor: pointer;
-            @include transition();
+			color: $colorAccent;
+			font-family: $font-family-base;
+			font-size: $font-size-base;
+			font-weight: 400;
+			line-height: $font-size-base;
+			cursor: pointer;
+			@include transition();
 
-            &:hover {
-                color: $colorPrimary;
-            }
-        }
-    }
+			&:hover {
+				color: $colorPrimary;
+			}
+		}
+	}
 }

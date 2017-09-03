@@ -2,48 +2,49 @@ import * as firebase from 'firebase';
 import alertify from 'alertifyjs';
 
 export const Auth = {
-    state: {
-        user: null
-    },
+	state: {
+		user: null
+	},
 
-    actions: {
-        singUp({commit}, payload) {
+	actions: {
+		singUp({ commit }, payload) {
+			firebase
+				.auth()
+				.createUserWithEmailAndPassword(payload.email, payload.password)
+				.then(user => {
+					const newUser = {
+						id: user.uid
+					};
 
-            firebase.auth().createUserWithEmailAndPassword(payload.email, payload.password)
-                .then(user => {
-                    const newUser = {
-                        id: user.uid,
-                    }
+					commit('SET_USER', newUser);
+				})
+				.catch(error => alertify.error(error.message));
+		},
 
-                    commit('SET_USER', newUser)
-                })
-                .catch(error => alertify.error(error.message));
-        },
+		singIn({ commit }, payload) {
+			firebase
+				.auth()
+				.signInWithEmailAndPassword(payload.email, payload.password)
+				.then(user => {
+					const newUser = {
+						id: user.uid
+					};
 
-        singIn({commit}, payload) {
-            firebase.auth().signInWithEmailAndPassword(payload.email, payload.password)
-                .then(user => {
-                    const newUser = {
-                        id: user.uid,
-                    }
+					commit('SET_USER', newUser);
+				})
+				.catch(error => alertify.error(error.message));
+		}
+	},
 
-                    commit('SET_USER', newUser)
-                })
-                .catch(error => alertify.error(error.message));
-        }
-    },
+	mutations: {
+		SET_USER(state, payload) {
+			state.user = payload;
+		}
+	},
 
-    mutations: {
-        
-        SET_USER(state, payload) {
-            state.user = payload
-        }
-
-    },
-
-    getters: {
-        getUser(state) {
-            return state.user;
-        }
-    }
-}
+	getters: {
+		getUser(state) {
+			return state.user;
+		}
+	}
+};
