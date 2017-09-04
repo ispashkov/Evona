@@ -9,7 +9,7 @@ import Catalog from '../components/Catalog/Catalog.vue';
 
 import ProductPage from '../pages/Product.vue';
 
-export const router = new VueRouter({
+export default new VueRouter({
 	routes: [
 		{
 			path: '/',
@@ -27,7 +27,8 @@ export const router = new VueRouter({
 		},
 
 		{
-			path: '/product',
+			name: 'product',
+			path: '/product/:id',
 			component: ProductPage
 		}
 	]

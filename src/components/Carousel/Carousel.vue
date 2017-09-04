@@ -2,7 +2,7 @@
 	include ../../layout/mixins
 
 	div(:class='[ vertical ? "carousel carousel_vertical" : "carousel" ]')
-		button(type='button' class='carousel__navigation carousel__navigation_prev' @click='carouselPrev()')
+		button(type='button' class='carousel__navigation carousel__navigation_prev' v-if='items >= 5' @click='carouselPrev()')
 			+svgIcon(24, 13, 'icon', '#arrow-slider')
 
 		div.carousel-slides(v-if='vertical' :style='{ height: carouselWidth + "px" }')
@@ -30,7 +30,7 @@
 						)
 							img.carousel-item__photo(:src='item' alt='Evona&Nysense')
 
-		button(type='button' class='carousel__navigation carousel__navigation_next' @click='carouselNext()')
+		button(type='button' class='carousel__navigation carousel__navigation_next' v-if='items >= 5' @click='carouselNext()')
 				+svgIcon(24, 13, 'icon', '#arrow-slider')
 
 </template>

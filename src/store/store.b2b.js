@@ -7,8 +7,9 @@ import PopupWrapper from '../components/PopupWrapper/PopupWrapper.store';
 import PopupCallback from '../components/PopupCallback/PopupCallback.store';
 import MobileMenu from '../components/MobileMenu/MobileMenu.store';
 import Auth from '../components/Auth/Auth.store';
+import Catalog from '../components/Catalog/Catalog.store';
 
-export const store = new Vuex.Store({
+export default new Vuex.Store({
 	strict: true,
-	modules: { PopupWrapper, PopupCallback, MobileMenu, Auth }
+	modules: { PopupWrapper, PopupCallback, MobileMenu, Auth, Catalog }
 });

@@ -188,6 +188,19 @@ export default {
 					}
 				]
 			},
+			//--------------------Fonts--------------------//
+			{
+				test: /\.json$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: 'fakedata/[name].[ext]',
+							publicPath: '../'
+						}
+					}
+				]
+			},
 			//---------------------SVG---------------------//
 			{
 				test: /\.svg$/,

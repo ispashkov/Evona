@@ -39,11 +39,12 @@
 		font-weight: 700;
 		line-height: 1.25*$font-size-base;
 		text-transform: uppercase;
+		text-align: center;
 	}
 
 	&__description {
 		display: block;
-		margin: 0 0 1.25*$spacer 0;
+		margin: auto 0 1.25*$spacer 0;
 
 		color: $colorGray;
 		font-family: $font-family-second;
@@ -110,7 +111,10 @@
 		appearance: none;
 		cursor: pointer;
 
-		@include transition() &:hover, &_active {
+		@include transition();
+
+		&:hover,
+		&_active {
 			fill: $colorPrimary;
 		}
 	}

@@ -1,3 +1,5 @@
+import { mapActions, mapGetters } from 'vuex';
+
 import Pagination from '../Pagination/Pagination.vue';
 import CatalogItem from '../CatalogItem/CatalogItem.vue';
 import Search from '../Search/Search.vue';
@@ -12,5 +14,14 @@ export default {
 		Search,
 		CatalogItem,
 		Selectbox
+	},
+	created() {
+		this.getProducts();
+	},
+	computed: {
+		...mapGetters(['products'])
+	},
+	methods: {
+		...mapActions(['getProducts'])
 	}
 };

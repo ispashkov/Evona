@@ -1,5 +1,3 @@
-import './catalog-image2.png';
-
 import './icons/bookmark.svg';
 import './icons/cart.svg';
 import './icons/eye.svg';
@@ -12,6 +10,40 @@ export default {
 			bookmark: false,
 			active: false
 		};
+	},
+	props: {
+		id: {
+			type: String,
+			require: true
+		},
+		title: {
+			type: String,
+			require: true,
+			default: 'Название товара'
+		},
+		description: {
+			type: String,
+			require: true,
+			default: 'Описание товара'
+		},
+		price: {
+			type: String,
+			require: true,
+			default: '0'
+		},
+		image: {
+			type: String,
+			require: false,
+			default: 'http://via.placeholder.com/285x520'
+		}
+	},
+	computed: {
+		priceFormat() {
+			return new Intl.NumberFormat('ru-IN', {
+				style: 'currency',
+				currency: 'EUR'
+			}).format(parseInt(this.price));
+		}
 	},
 	methods: {
 		inCart() {

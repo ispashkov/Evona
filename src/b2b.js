@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import * as firebase from 'firebase';
-import { store } from './store/store.b2b';
-import { router } from './router';
+import store from './store/store.b2b';
+import router from './router';
 
 import './components/assets';
 import './styles/b2b.scss';
