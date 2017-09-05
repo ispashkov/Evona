@@ -5,14 +5,12 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import SpritesmithPlugin from 'webpack-spritesmith';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
-import SpriteLoaderPlugin from 'svg-sprite-loader/plugin';
+import SpriteLoaderPlugin from 'svg-sprite-loader/lib/plugin';
 import PurifyCSSPlugin from 'purifycss-webpack';
 import BundleAnalyzerPlugin from 'webpack-bundle-analyzer';
 
 const isProd = process.env.NODE_ENV === 'production';
 const plugins = [
-	new SpriteLoaderPlugin(),
-
 	new webpack.HotModuleReplacementPlugin(),
 
 	new webpack.optimize.CommonsChunkPlugin({
@@ -71,6 +69,7 @@ isProd
 				filename: 'css/[name].[hash].css',
 				allChunks: false
 			}),
+			new SpriteLoaderPlugin(),
 			new PurifyCSSPlugin({
 				paths: glob.sync([
 					path.join(__dirname, './src/**/*.pug'),
@@ -115,7 +114,12 @@ export default {
 			//---------------------VUE----------------------//
 			{
 				test: /\.vue$/,
-				use: 'vue-loader',
+				use: {
+					loader: 'vue-loader',
+					options: {
+						extractCSS: true
+					}
+				},
 				include: path.join(__dirname, './src')
 			},
 			//--------------------PUG--------------------//
@@ -205,17 +209,20 @@ export default {
 			{
 				test: /\.svg$/,
 				use: [
-					'svg-sprite-loader?' +
-						JSON.stringify({
+					{
+						loader: 'svg-sprite-loader',
+						options: {
 							name: '[name]',
 							prefixize: true,
 							options: {
 								extract: true,
 								spriteFilename: 'svg-sprite.svg'
 							}
-						}),
-					'svgo-loader?' +
-						JSON.stringify({
+						}
+					},
+					{
+						loader: 'svgo-loader',
+						options: {
 							plugins: [
 								{
 									addClassesToSVGElement: {
@@ -223,10 +230,11 @@ export default {
 									}
 								},
 								{ removeTitle: true },
-								{ convertPathData: false },
+								{ convertPathData: true },
 								{ removeUselessStrokeAndFill: true }
 							]
-						})
+						}
+					}
 				]
 			}
 		]
