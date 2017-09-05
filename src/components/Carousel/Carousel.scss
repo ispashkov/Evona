@@ -49,12 +49,14 @@
 		width: 4*$spacer;
 
 		border: 1px solid $colorHr;
+		opacity: 0.6;
 		cursor: pointer;
 		@include transition();
 
 		&:hover,
 		&_active {
 			border-color: $colorPrimary;
+			opacity: 1;
 		}
 
 		&__photo {

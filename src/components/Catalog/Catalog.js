@@ -16,7 +16,7 @@ export default {
 		Selectbox
 	},
 	created() {
-		this.getProducts();
+		!this.products.length ? this.getProducts() : false;
 	},
 	computed: {
 		...mapGetters(['products'])
