@@ -7,9 +7,11 @@ export default {
 
 	actions: {
 		getProducts({ commit }) {
-			fetch('../fakedata/products.json')
+			fetch('/api/products')
 				.then(res => res.json())
-				.then(data => commit('GET_PRODUCTS', data));
+				// .then(data => console.log(data))
+				.then(data => commit('GET_PRODUCTS', data))
+				.catch(err => console.log(err.message));
 		}
 	},
 

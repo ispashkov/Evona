@@ -10,6 +10,16 @@
 		justify-content: space-between;
 		height: 100%;
 
+		& .carousel-item {
+			&:first-child {
+				margin-top: 0 !important;
+			}
+
+			&:last-child {
+				margin-bottom: 0 !important;
+			}
+		}
+
 		& .carousel-inner {
 			flex-direction: column;
 		}
@@ -48,15 +58,27 @@
 		height: 4*$spacer;
 		width: 4*$spacer;
 
-		border: 1px solid $colorHr;
+		border: 2px solid $colorHr;
 		opacity: 0.6;
 		cursor: pointer;
 		@include transition();
+
+		@include media-breakpoint-down(xl) {
+			border-width: 1px;
+		}
 
 		&:hover,
 		&_active {
 			border-color: $colorPrimary;
 			opacity: 1;
+		}
+
+		&:first-child {
+			margin-left: 0 !important;
+		}
+
+		&:last-child {
+			margin-right: 0 !important;
 		}
 
 		&__photo {

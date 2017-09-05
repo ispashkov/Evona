@@ -19,7 +19,7 @@ export default {
 	watch: {
 		getUser(value) {
 			if (value !== null && value !== undefined) {
-				this.$router.push('/');
+				this.$router.push('/btb');
 			}
 		}
 	},
@@ -48,7 +48,7 @@ export default {
 	},
 	created() {
 		if (this.getUser) {
-			this.$router.push('/');
+			this.$router.push('/btb');
 		}
 	}
 };

@@ -4,11 +4,11 @@ import store from './store/store.b2b';
 import router from './router';
 
 import './components/assets';
-import './styles/b2b.scss';
+import './styles/btb.scss';
 
 import './components/Footer/Footer';
 
-import App from './B2B.vue';
+import App from './Btb.vue';
 
 new Vue({
 	el: '#app',

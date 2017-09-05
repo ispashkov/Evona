@@ -46,29 +46,35 @@ export default {
 		},
 
 		item() {
-			return this.$route.params.id;
+			var el;
+
+			this.products.filter(item => {
+				if (item['_id'] === this.$route.params.id) el = item;
+			});
+
+			return el;
 		},
 
 		images() {
-			return this.products[this.item].photos;
+			return this.item.photos;
 		},
 
-		imageLength() {
-			return this.images.length;
+		imagesLength() {
+			return !this.images.length >= 5 ? this.images.length : 5;
 		},
 
 		priceOpt() {
 			return new Intl.NumberFormat('ru-IN', {
 				style: 'currency',
 				currency: 'EUR'
-			}).format(parseInt(this.products[this.item].price.opt));
+			}).format(parseInt(this.item.price.opt));
 		},
 
 		priceRecommended() {
 			return new Intl.NumberFormat('ru-IN', {
 				style: 'currency',
 				currency: 'RUB'
-			}).format(parseInt(this.products[this.item].price.recommended));
+			}).format(parseInt(this.item.price.recommended));
 		},
 
 		result() {
@@ -89,7 +95,7 @@ export default {
 			return new Intl.NumberFormat('ru-IN', {
 				style: 'currency',
 				currency: 'EUR'
-			}).format(parseInt(this.products[this.item].price.opt) * this.result);
+			}).format(parseInt(this.item.price.opt) * this.result);
 		}
 	},
 	methods: {

@@ -41,7 +41,7 @@ export default {
 
 		main() {
 			switch (this.$route.path) {
-				case '/':
+				case '/btb':
 				case '/auth':
 					return 'main main_center';
 					break;
@@ -57,7 +57,7 @@ export default {
 		},
 
 		auth() {
-			return this.$route.path == '/auth' || this.$route.path == '/' ? true : false
+			return this.$route.path == '/auth' || this.$route.path == '/btb' ? true : false
 		},
 
 		userIsAuthenticated() {

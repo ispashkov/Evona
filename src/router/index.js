@@ -10,9 +10,10 @@ import Catalog from '../components/Catalog/Catalog.vue';
 import ProductPage from '../pages/Product.vue';
 
 export default new VueRouter({
+	mode: 'history',
 	routes: [
 		{
-			path: '/',
+			path: '/btb',
 			component: Shops
 		},
 

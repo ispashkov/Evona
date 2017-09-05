@@ -8,19 +8,40 @@ import CleanWebpackPlugin from 'clean-webpack-plugin';
 import SpriteLoaderPlugin from 'svg-sprite-loader/lib/plugin';
 import PurifyCSSPlugin from 'purifycss-webpack';
 import BundleAnalyzerPlugin from 'webpack-bundle-analyzer';
+import WebpackPwaManifest from 'webpack-pwa-manifest';
+import ManifestPlugin from 'webpack-manifest-plugin';
 
 const isProd = process.env.NODE_ENV === 'production';
 const plugins = [
 	new webpack.HotModuleReplacementPlugin(),
 
-	new webpack.optimize.CommonsChunkPlugin({
-		name: 'manifest',
-		minChunks: Infinity
+	new ManifestPlugin({
+		fileName: 'build-manifest.json'
+	}),
+
+	new WebpackPwaManifest({
+		filename: 'manifest.json',
+		name: 'Evona & Nysense Online Store',
+		orientation: 'portrait',
+		display: 'standalone',
+		short_name: 'Evona&Nysense',
+		description: 'Evona & Nysense Online Store Application',
+		background_color: '#ffffff'
+		// icons: [
+		// 	{
+		// 		src: path.resolve('src/assets/icon.png'),
+		// 		sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
+		// 	},
+		// 	{
+		// 		src: path.resolve('src/assets/large-icon.png'),
+		// 		size: '1024x1024' // you can also use the specifications pattern
+		// 	}
+		// ]
 	}),
 
 	new webpack.optimize.CommonsChunkPlugin({
 		name: 'commons',
-		filename: 'js/[name].[hash].js'
+		filename: 'js/[name].js'
 	}),
 
 	new webpack.optimize.UglifyJsPlugin({
@@ -30,17 +51,17 @@ const plugins = [
 
 	new webpack.NamedModulesPlugin(),
 
-	new HtmlWebpackPlugin({
-		filename: 'index.html',
-		chunks: ['app', 'commons', 'manifest'],
-		template: path.join(__dirname, './src/index.pug')
-	}),
+	// new HtmlWebpackPlugin({
+	// 	filename: 'index.html',
+	// 	chunks: ['app', 'commons', 'manifest'],
+	// 	template: path.join(__dirname, './src/index.pug')
+	// }),
 
-	new HtmlWebpackPlugin({
-		filename: 'b2b.html',
-		chunks: ['b2b', 'commons', 'manifest'],
-		template: path.join(__dirname, './src/b2b.pug')
-	}),
+	// new HtmlWebpackPlugin({
+	// 	filename: 'btb.html',
+	// 	chunks: ['btb', 'commons', 'manifest'],
+	// 	template: path.join(__dirname, './src/btb.pug')
+	// }),
 
 	new webpack.ProvidePlugin({
 		$: 'jquery',
@@ -66,7 +87,7 @@ const plugins = [
 isProd
 	? plugins.push(
 			new ExtractTextPlugin({
-				filename: 'css/[name].[hash].css',
+				filename: 'css/[name].css',
 				allChunks: false
 			}),
 			new SpriteLoaderPlugin(),
@@ -89,18 +110,21 @@ isProd
 export default {
 	entry: {
 		app: ['babel-polyfill', './src/app.js'],
-		b2b: ['babel-polyfill', './src/b2b.js']
+		btb: ['babel-polyfill', './src/btb.js']
 	},
 	output: {
 		path: path.join(__dirname, './build/'),
-		filename: 'js/[name].[hash].js'
+		filename: 'js/[name].js'
 	},
 	plugins,
 	devServer: {
 		contentBase: path.join(__dirname, './build/'),
 		port: 3000,
 		overlay: true,
-		hot: true
+		hot: true,
+		proxy: {
+			'/api': 'http://localhost:8080/api'
+		}
 	},
 	devtool: 'source-map',
 	module: {

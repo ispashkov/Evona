@@ -10,7 +10,7 @@
 						div.product-image
 							img.product-image__photo(:src='images[currentPhoto]' alt='Evona & Nysense')
 
-						carousel(:step='0' :images='images' :items='imageLength' @currentSlide='currentSlide' :vertical='true')
+						carousel(:step='0' :images='images' :items='imagesLength' @currentSlide='currentSlide' :vertical='true')
 
 					div.col-1
 
@@ -19,28 +19,28 @@
 							+svgIcon(12, 12, 'link-back__icon', '#two-arrow')
 							span.link-back__text Вернуться в каталог
 
-						h1.heading.heading_h2.product__title {{ products[item].title }}
+						h1.heading.heading_h2.product__title {{ item.title }}
 
 						div.product-properties
 							div.product-properties-item
 								span.label.product-properties__label Бренд:
 								=" "
-								span.product-properties__value {{ products[item].brand }}
+								span.product-properties__value {{ item.brand }}
 
 							div.product-properties-item
 								span.label.product-properties__label Коллекция:
 								=" "
-								span.product-properties__value {{ products[item].collection }}
+								span.product-properties__value {{ item.collection }}
 
 							div.product-properties-item
 								span.label.product-properties__label Состав:
 								=" "
-								span.product-properties__value {{ products[item].composition }}
+								span.product-properties__value {{ item.composition }}
 
 							div.product-properties-item
 								span.label.product-properties__label Цвет:
 								=" "
-								span.product-properties__value {{ products[item].color }}
+								span.product-properties__value {{ item.color }}
 
 
 
@@ -50,7 +50,7 @@
 								span.label.mb-2 Цвета:
 
 								div.product-colors__slider
-									carousel(:step='0' :images='images' :items='imageLength' @currentSlide='' :style='left')
+									carousel(:step='0' :images='images' :items='imagesLength' @currentSlide='' :style='left')
 
 							div.product-price
 								div.row

@@ -3,13 +3,16 @@ include mixins
 doctype html
 html
 	head
+		block title
 		meta(charset='utf-8')
 		meta(name='description' content='')
 		meta(name='keywords' content='')
 		meta(name='robots' content='')
 		meta(name='viewport', content="initial-scale=1.0, width=device-width")
 		link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Ubuntu:300,400,700&amp;subset=cyrillic')
-		block title
+		link(rel='stylesheet' href=cssApp)
+		script(src=jsCommon defer)
+		script(src=jsApp defer)
 
 	body
 		div#app.app
