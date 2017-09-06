@@ -4,20 +4,15 @@
 	"description": "Evona & Nysense Online Store",
 	"main": "src/app.js",
 	"scripts": {
+		"bd": "mongod --dbpath data/db",
 		"dev": "NODE_ENV=development webpack-dev-server",
 		"build": "NODE_ENV=production webpack --watch --progress --color",
 		"server": "nodemon --watch server --exec babel-node -- server/index.js",
 		"lint:js": "eslint src --fix",
 		"lint:css": "stylelint './src/**/*.scss' --fix"
 	},
-	"pre-commit": [
-		"lint:js",
-		"lint:css"
-	],
-	"eslintIgnore": [
-		"webpack.config.babel.js",
-		"postcss.config.js"
-	],
+	"pre-commit": ["lint:js", "lint:css"],
+	"eslintIgnore": ["webpack.config.babel.js", "postcss.config.js"],
 	"author": "Ilya Pashkov",
 	"license": "ISC",
 	"devDependencies": {

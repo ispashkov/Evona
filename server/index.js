@@ -15,7 +15,7 @@ const compiler = webpack(webpackConfig);
 import routes from './routes';
 
 app.use(cors());
-app.use(morgan('tiny'));
+app.use(morgan('dev'));
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, '../src'));
 
