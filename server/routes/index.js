@@ -46,14 +46,4 @@ router.get('/catalog', (req, res) => {
 	});
 });
 
-router.get('/product/:id', (req, res) => {
-	res.send(req.params.id);
-
-	// res.render('btb', {
-	// 	jsBtb,
-	// 	cssBtb,
-	// 	jsCommon
-	// });
-});
-
 export default router;

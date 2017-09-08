@@ -40,7 +40,7 @@ export default {
 		...mapGetters(['products']),
 
 		left() {
-			if (this.imageLength <= 5) {
+			if (this.imagesLength <= 5) {
 				return 'left: 0';
 			}
 		},
@@ -60,7 +60,7 @@ export default {
 		},
 
 		imagesLength() {
-			return !this.images.length >= 5 ? this.images.length : 5;
+			return this.item.photos.length >= 5 ? 5 : this.item.photos.length;
 		},
 
 		priceOpt() {

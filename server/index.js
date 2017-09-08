@@ -53,4 +53,11 @@ app.get('/api/products', (req, res) => {
 	});
 });
 
+app.get('/product/:id', (req, res) => {
+	Products.find({ _id: req.params.id }).then(data => {
+		res.send(`id товара: ${req.params.id} данные товара: ${data}`);
+		// res.json(data);
+	});
+});
+
 app.listen(PORT, () => console.log(`Running on localhost: ${PORT}`));
