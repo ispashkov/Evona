@@ -2,7 +2,19 @@ import express from 'express';
 import path from 'path';
 import cors from 'cors';
 import morgan from 'morgan';
-import mongoose from 'mongoose';
+import mysql from 'mysql';
+
+const connection = mysql.createConnection({
+	host: 'localhost',
+	port: 4000,
+	user: 'root',
+	password: 'root',
+	database: 'evona'
+});
+
+connection.connect(error => {
+	!!error ? console.log('error') : console.log('Connected');
+});
 
 import webpack from 'webpack';
 import webpackMiddleware from 'webpack-dev-middleware';
@@ -21,6 +33,7 @@ app.set('views', path.join(__dirname, '../src'));
 
 app.use(
 	webpackMiddleware(compiler, {
+		contentBase: path.resolve(__dirname, '../build'),
 		hot: true,
 		publicPath: webpackConfig.output.publicPath,
 		noInfo: true
@@ -28,36 +41,98 @@ app.use(
 );
 
 app.use(webpackHotMiddleware(compiler));
-app.use(express.static(path.join(__dirname, '../build')));
+app.use('', express.static(path.join(__dirname, '../build')));
 
-mongoose.connect('mongodb://localhost/evona');
+function fetchProducts(query) {
+	return new Promise((resolve, reject) => {
+		connection.query(query, (error, rows) => {
+			let products = JSON.parse(JSON.stringify(rows));
 
-const Schema = mongoose.Schema;
+			products = products.filter(product => {
+				product.price = {};
+				product.price.opt = product.price_opt;
+				product.price.recommended = product.price_recommended;
+				delete product.price_recommended;
+				delete product.price_opt;
 
-const ProductsSchema = new Schema(
-	{
-		title: String
-	},
-	{ collection: 'products-data' }
-);
+				return product;
+			});
+			resolve(products);
+		});
+	});
+}
 
-const Products = mongoose.model('ProductsModel', ProductsSchema);
+function fetchPhotos(products, query) {
+	return new Promise((resolve, reject) => {
+		connection.query(query, (error, rows) => {
+			let photos = JSON.parse(JSON.stringify(rows));
+
+			let data = [];
+
+			data.push(products, photos);
+
+			resolve(data);
+		});
+	});
+}
 
 app.get('*', routes);
 
 app.get('/db', (req, res) => {});
 
 app.get('/api/products', (req, res) => {
-	Products.find().then(data => {
-		res.json(data);
-	});
+	fetchProducts('SELECT * FROM products')
+		.then(data => fetchPhotos(data, 'SELECT * FROM product_photos'))
+		.then(data => {
+			var products = data[0],
+				photos = data[1],
+				productPhoto = [];
+
+			products.filter(product => {
+				photos.filter(photo => {
+					if (photo['photo_id'] === product.photo_id) {
+						productPhoto.push(photo.photo);
+					}
+				});
+
+				product.photos = productPhoto;
+
+				return product;
+			});
+
+			res.json(products);
+		})
+		.catch(error => res.send(error));
 });
 
-app.get('/product/:id', (req, res) => {
-	Products.find({ _id: req.params.id }).then(data => {
-		res.send(`id товара: ${req.params.id} данные товара: ${data}`);
-		// res.json(data);
-	});
+app.get('/product/:id', (req, res, next) => {
+	fetchProducts(`SELECT * FROM products WHERE id = ${req.params.id.toString()}`)
+		.then(data =>
+			fetchPhotos(
+				data,
+				`SELECT * FROM product_photos WHERE photo_id = ${data[0].photo_id}`
+			)
+		)
+		.then(data => {
+			var products = data[0],
+				photos = data[1],
+				productPhoto = [];
+
+			products.filter(product => {
+				photos.filter(photo => {
+					if (photo['photo_id'] === product.photo_id) {
+						productPhoto.push(photo.photo);
+					}
+				});
+
+				product.photos = productPhoto;
+
+				return product;
+			});
+
+			res.json(products);
+		})
+		.catch(error => res.send(error));
 });
 
 app.listen(PORT, () => console.log(`Running on localhost: ${PORT}`));

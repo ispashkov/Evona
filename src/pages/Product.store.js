@@ -1,28 +1,27 @@
-export const Product = {
+export default {
 	state: {
-		show: false
+		item: {}
 	},
+
 	actions: {
-		showPopupWrapper({ commit }) {
-			commit('SHOW_POPUP_WRAPPER');
-		},
-
-		closePopupWRAPPER({ commit }) {
-			commit('CLOSE_POPUP_WRAPPER');
+		fetchProduct({ commit }, payload) {
+			fetch(`/api/products/?id=${payload}`)
+				.then(res => res.json())
+				// .then(data => console.log(...data));
+				.then(data => commit('GET_ITEM', ...data))
+				.catch(err => console.log(err.message));
 		}
 	},
+
 	mutations: {
-		SHOW_POPUP_WRAPPER(state) {
-			state.show = true;
-		},
-
-		CLOSE_POPUP_WRAPPER(state) {
-			state.show = false;
+		GET_ITEM(state, payload) {
+			state.item = payload;
 		}
 	},
+
 	getters: {
-		getShowPopupWrapper(state) {
-			return state.show;
+		productItem(state) {
+			return state.item;
 		}
 	}
 };

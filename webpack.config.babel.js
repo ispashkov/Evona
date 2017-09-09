@@ -16,6 +16,7 @@ const plugins = [
 	new webpack.HotModuleReplacementPlugin(),
 
 	new ManifestPlugin({
+		basePath: '/',
 		fileName: 'build-manifest.json'
 	}),
 
@@ -51,17 +52,17 @@ const plugins = [
 
 	new webpack.NamedModulesPlugin(),
 
-	// new HtmlWebpackPlugin({
-	// 	filename: 'index.html',
-	// 	chunks: ['app', 'commons', 'manifest'],
-	// 	template: path.join(__dirname, './src/index.pug')
-	// }),
+	new HtmlWebpackPlugin({
+		filename: 'index.html',
+		chunks: ['app', 'commons', 'manifest'],
+		template: path.join(__dirname, './src/index.pug')
+	}),
 
-	// new HtmlWebpackPlugin({
-	// 	filename: 'btb.html',
-	// 	chunks: ['btb', 'commons', 'manifest'],
-	// 	template: path.join(__dirname, './src/btb.pug')
-	// }),
+	new HtmlWebpackPlugin({
+		filename: 'btb.html',
+		chunks: ['btb', 'commons', 'manifest'],
+		template: path.join(__dirname, './src/btb.pug')
+	}),
 
 	new webpack.ProvidePlugin({
 		$: 'jquery',
@@ -109,12 +110,14 @@ isProd
 
 export default {
 	entry: {
-		app: ['babel-polyfill', './src/app.js'],
-		btb: ['babel-polyfill', './src/btb.js']
+		app: './src/app.js',
+		btb: './src/btb.js',
+		commons: ['babel-polyfill', 'vue', 'vuex']
 	},
 	output: {
 		path: path.join(__dirname, './build/'),
-		filename: 'js/[name].js'
+		filename: 'js/[name].js',
+		publicPath: '/'
 	},
 	plugins,
 	devServer: {
@@ -195,7 +198,7 @@ export default {
 						loader: 'file-loader',
 						options: {
 							name: 'assets/images/[name].[ext]',
-							publicPath: '../'
+							publicPath: '/'
 						}
 					}
 					// {
@@ -211,20 +214,7 @@ export default {
 						loader: 'file-loader',
 						options: {
 							name: 'assets/video/[name].[ext]',
-							publicPath: '../'
-						}
-					}
-				]
-			},
-			//--------------------Fonts--------------------//
-			{
-				test: /\.json$/,
-				use: [
-					{
-						loader: 'file-loader',
-						options: {
-							name: 'fakedata/[name].[ext]',
-							publicPath: '../'
+							publicPath: '/'
 						}
 					}
 				]

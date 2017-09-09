@@ -28,7 +28,7 @@
 
 					div.row.mb-5
 							div.col.col-lg-4.col-xl-3.col-hd-2.catalog-item-wrapper(v-for='(item, index) in products' )
-									catalog-item(:id='item._id' :title='item.title' :image='item.photos[0]' :description='item.composition' :price='item.price.opt' :key='index')
+									catalog-item(:id='item.id' :title='item.title' :image='item.photos[0]' :description='item.composition' :price='item.price.opt' :key='index')
 
 					div.row.justify-content-center.mb-5
 							div.col-4

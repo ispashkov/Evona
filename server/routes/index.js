@@ -5,12 +5,12 @@ import { readFileSync } from 'jsonfile';
 const manifestPath = `${process.cwd()}/build/build-manifest.json`;
 const manifest = readFileSync(manifestPath);
 
-const cssApp = manifest['app.css'];
-const cssBtb = manifest['btb.css'];
+const cssApp = manifest['/app.css'];
+const cssBtb = manifest['/btb.css'];
 
-const jsApp = manifest['app.js'];
-const jsCommon = manifest['commons.js'];
-const jsBtb = manifest['btb.js'];
+const jsApp = manifest['/app.js'];
+const jsCommon = manifest['/commons.js'];
+const jsBtb = manifest['/btb.js'];
 
 const router = express.Router();
 
@@ -39,6 +39,14 @@ router.get('/auth', (req, res) => {
 });
 
 router.get('/catalog', (req, res) => {
+	res.render('btb', {
+		jsBtb,
+		cssBtb,
+		jsCommon
+	});
+});
+
+router.get('/product/:id', (req, res) => {
 	res.render('btb', {
 		jsBtb,
 		cssBtb,

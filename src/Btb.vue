@@ -65,9 +65,9 @@ export default {
 		},
 	},
 	created() {
-		if (!this.getUser) {
-			this.$router.push('/auth')
-		}
+		// if (!this.getUser) {
+		// 	this.$router.push('/auth')
+		// }
 	}
 }
 </script>

@@ -39,28 +39,24 @@ export default {
 	computed: {
 		...mapGetters(['products']),
 
-		left() {
-			if (this.imagesLength <= 5) {
-				return 'left: 0';
-			}
-		},
-
 		item() {
 			var el;
 
-			this.products.filter(item => {
-				if (item['_id'] === this.$route.params.id) el = item;
-			});
+			if (this.products.length) {
+				this.products.filter(item => {
+					if (item['id'] === this.$route.params.id) el = item;
+				});
+			}
 
-			return el;
-		},
-
-		images() {
-			return this.item.photos;
+			return !this.products.length ? this.$store.getters.productItem : el;
 		},
 
 		imagesLength() {
 			return this.item.photos.length >= 5 ? 5 : this.item.photos.length;
+		},
+
+		left() {
+			return this.imagesLength > 5 ? 'left: 0' : '';
 		},
 
 		priceOpt() {
@@ -97,6 +93,11 @@ export default {
 				currency: 'EUR'
 			}).format(parseInt(this.item.price.opt) * this.result);
 		}
+	},
+	created() {
+		!this.products.length
+			? this.$store.dispatch('fetchProduct', this.$route.params.id)
+			: null;
 	},
 	methods: {
 		isNumber(event) {

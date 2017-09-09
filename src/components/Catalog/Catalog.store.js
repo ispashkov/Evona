@@ -1,5 +1,3 @@
-import '../../fakedata/products.json';
-
 export default {
 	state: {
 		products: []

@@ -13,7 +13,7 @@ export default {
 	},
 	props: {
 		id: {
-			type: String,
+			type: Number,
 			require: true
 		},
 		title: {
@@ -27,7 +27,7 @@ export default {
 			default: 'Описание товара'
 		},
 		price: {
-			type: String,
+			type: Number,
 			require: true,
 			default: '0'
 		},
