@@ -81,12 +81,11 @@ app.get('*', routes);
 app.get('/db', (req, res) => {});
 
 app.get('/api/products', (req, res) => {
-	fetchProducts('SELECT * FROM products')
+	fetchProducts(`SELECT * FROM products LIMIT ${req.headers.limit}`)
 		.then(data => fetchPhotos(data, 'SELECT * FROM product_photos'))
 		.then(data => {
 			var products = data[0],
-				photos = data[1],
-				productPhoto = [];
+				photos = data[1];
 
 			products.filter(product => {
 				product.photos = [];
@@ -103,7 +102,7 @@ app.get('/api/products', (req, res) => {
 		.catch(error => res.send(error));
 });
 
-app.get('/api/product', (req, res, next) => {
+app.get('/api/product', (req, res) => {
 	fetchProducts(`SELECT * FROM products WHERE id = ${req.headers.id}`)
 		.then(data =>
 			fetchPhotos(

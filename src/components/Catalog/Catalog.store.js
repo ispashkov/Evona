@@ -4,8 +4,10 @@ export default {
 	},
 
 	actions: {
-		getProducts({ commit }) {
-			fetch('/api/products')
+		getProducts({ commit }, payload) {
+			fetch('/api/products', {
+				headers: { limit: payload }
+			})
 				.then(res => res.json())
 				// .then(data => console.log(data))
 				.then(data => commit('GET_PRODUCTS', data))
