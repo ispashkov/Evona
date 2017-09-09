@@ -55,8 +55,12 @@ export default {
 			return this.item.photos.length >= 5 ? 5 : this.item.photos.length;
 		},
 
+		carouselItems() {
+			return this.item.photos.length >= 5 ? 5 : this.item.photos.length;
+		},
+
 		left() {
-			return this.imagesLength > 5 ? 'left: 0' : '';
+			return this.imagesLength <= 5 ? 'left: 0' : '';
 		},
 
 		priceOpt() {

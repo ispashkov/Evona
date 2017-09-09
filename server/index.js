@@ -89,24 +89,22 @@ app.get('/api/products', (req, res) => {
 				productPhoto = [];
 
 			products.filter(product => {
+				product.photos = [];
 				photos.filter(photo => {
 					if (photo['photo_id'] === product.photo_id) {
-						productPhoto.push(photo.photo);
+						product.photos.push(photo.photo);
 					}
 				});
 
-				product.photos = productPhoto;
-
 				return product;
 			});
-
 			res.json(products);
 		})
 		.catch(error => res.send(error));
 });
 
-app.get('/product/:id', (req, res, next) => {
-	fetchProducts(`SELECT * FROM products WHERE id = ${req.params.id.toString()}`)
+app.get('/api/product', (req, res, next) => {
+	fetchProducts(`SELECT * FROM products WHERE id = ${req.headers.id}`)
 		.then(data =>
 			fetchPhotos(
 				data,

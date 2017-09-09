@@ -8,9 +8,9 @@
 				div.row
 					div.col.d-flex.justify-content-between
 						div.product-image
-							img.product-image__photo(:src='images[currentPhoto]' alt='Evona & Nysense')
+							img.product-image__photo(:src='item.photos[currentPhoto]' alt='Evona & Nysense')
 
-						carousel(:step='0' :images='item.photos' :items='imagesLength' @currentSlide='currentSlide' :vertical='true')
+						carousel(:step='0' :images='item.photos' :items='carouselItems' @currentSlide='currentSlide' :vertical='true')
 
 					div.col-1
 
@@ -50,7 +50,7 @@
 								span.label.mb-2 Цвета:
 
 								div.product-colors__slider
-									carousel(:step='0' :images='item.photos' :items='imagesLength' @currentSlide='' :style='left')
+									carousel(:step='0' :images='item.photos' :items='carouselItems' @currentSlide='' :style='left')
 
 							div.product-price
 								div.row

@@ -5,7 +5,11 @@ export default {
 
 	actions: {
 		fetchProduct({ commit }, payload) {
-			fetch(`/api/products/?id=${payload}`)
+			fetch('/api/product', {
+				headers: {
+					id: payload
+				}
+			})
 				.then(res => res.json())
 				// .then(data => console.log(...data));
 				.then(data => commit('GET_ITEM', ...data))
