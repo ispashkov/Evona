@@ -9,6 +9,12 @@ import './icons/two-arrow.svg';
 
 export default {
 	name: 'Catalog',
+	data() {
+		return {
+			perPage: 2,
+			currentPage: 1
+		};
+	},
 	components: {
 		Pagination,
 		Search,
@@ -16,12 +22,19 @@ export default {
 		Selectbox
 	},
 	created() {
-		!this.products.length ? this.getProducts(9) : false;
+		!this.products.length
+			? this.getProducts({ limit: this.perPage, page: this.currentPage })
+			: false;
 	},
 	computed: {
-		...mapGetters(['products'])
+		...mapGetters(['products', 'totalProducts'])
 	},
 	methods: {
-		...mapActions(['getProducts'])
+		...mapActions(['getProducts']),
+
+		change(payload) {
+			this.currentPage = payload;
+			this.getProducts({ limit: this.perPage, page: payload });
+		}
 	}
 };

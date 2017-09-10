@@ -11,8 +11,14 @@
 		"lint:js": "eslint src --fix",
 		"lint:css": "stylelint './src/**/*.scss' --fix"
 	},
-	"pre-commit": ["lint:js", "lint:css"],
-	"eslintIgnore": ["webpack.config.babel.js", "postcss.config.js"],
+	"pre-commit": [
+		"lint:js",
+		"lint:css"
+	],
+	"eslintIgnore": [
+		"webpack.config.babel.js",
+		"postcss.config.js"
+	],
 	"author": "Ilya Pashkov",
 	"license": "ISC",
 	"devDependencies": {
@@ -75,11 +81,13 @@
 	"dependencies": {
 		"alertifyjs": "^1.11.0",
 		"animate.css": "^3.5.2",
+		"async-mysql": "^1.0.1",
 		"body-parser": "^1.17.2",
 		"bootstrap": "4.0.0-beta",
 		"cors": "^2.8.4",
 		"express": "^4.15.4",
 		"firebase": "^4.3.0",
+		"forever": "^0.15.3",
 		"jquery": "^3.2.1",
 		"lodash": "^4.17.4",
 		"mongoose": "^4.11.10",

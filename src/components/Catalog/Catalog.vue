@@ -21,7 +21,7 @@
 									selectbox(placeholder='Товарная группа')
 
 							div.col-4.d-flex.align-items-center
-									pagination
+									pagination(:current="currentPage" :total='totalProducts' :perPage="perPage" @page-changed="change")
 							div.col
 							div.col-3
 									search
@@ -32,7 +32,7 @@
 
 					div.row.justify-content-center.mb-5
 							div.col-4
-									pagination
+									pagination(:current="currentPage" :total='totalProducts' :perPage="perPage" @page-changed="change")
 
 
 </template>

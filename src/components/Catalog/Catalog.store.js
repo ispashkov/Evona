@@ -1,12 +1,16 @@
 export default {
 	state: {
+		total: 0,
 		products: []
 	},
 
 	actions: {
 		getProducts({ commit }, payload) {
 			fetch('/api/products', {
-				headers: { limit: payload }
+				headers: {
+					limit: payload.limit,
+					page: payload.page
+				}
 			})
 				.then(res => res.json())
 				// .then(data => console.log(data))
@@ -17,13 +21,19 @@ export default {
 
 	mutations: {
 		GET_PRODUCTS(state, payload) {
-			state.products.push(...payload);
+			let total = payload[0];
+			state.total = total[0].total;
+			state.products = payload[1];
 		}
 	},
 
 	getters: {
 		products(state) {
 			return state.products;
+		},
+
+		totalProducts(state) {
+			return state.total;
 		}
 	}
 };

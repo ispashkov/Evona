@@ -1,17 +1,24 @@
 <template lang="pug">
 
-    include ../../layout/mixins
-    
-    ul.pagination
-        li.pagination__item.pagination__item_prev.pagination__item_inactive
-            +svgIcon(25, 15, '', '#pagination__arrow')
-        li.pagination__item.pagination__item_active: a.pagination__link(href='javascript:void(0)') 1
-        li.pagination__item: a.pagination__link(href='javascript:void(0)') 2
-        li.pagination__item: a.pagination__link(href='javascript:void(0)') 3
-        li.pagination__item: a.pagination__link(href='javascript:void(0)') 4
-        li.pagination__item: a.pagination__link(href='javascript:void(0)') 5
-        li.pagination__item.pagination__item_next
-            +svgIcon(25, 15, '', '#pagination__arrow')
+	include ../../layout/mixins
+
+	ul.pagination
+		li.pagination__item.pagination__item_prev(@click='changePage(pagePrev)' :class='[ pagePrev <= 0 ? "pagination__item_inactive" : "" ]' :disabled="pagePrev <= 0")
+			+svgIcon(25, 15, '', '#pagination__arrow')
+
+		li.pagination__item(v-if="hasFirst")
+				a.pagination__link(@click.prevent='changePage(1)') 1
+		li.pagination__item(v-if='hasFirst') ...
+
+		li(v-for='page in pages' :class='[ current == page ? "pagination__item pagination__item_active" : "pagination__item" ]')
+			a.pagination__link(@click.prevent='changePage(page)') {{ page }}
+
+		li.pagination__item(v-if='hasLast') ...
+		li.pagination__item(v-if="hasLast")
+				a.pagination__link(@click.prevent='changePage(totalPages)') {{ totalPages }}
+
+		li.pagination__item.pagination__item_next(@click='changePage(pageNext)' :class='[ pageNext >= totalPages ? "pagination__item_inactive" : "" ]' :disabled="pageNext >= totalPages")
+			+svgIcon(25, 15, '', '#pagination__arrow')
 
 </template>
 
