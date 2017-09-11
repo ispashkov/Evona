@@ -74,8 +74,9 @@ app.get('/api/products', (req, res) => {
 	var query;
 
 	if (!!req.headers.limit && !!req.headers.page) {
-		let offset = parseInt(req.headers.page) * parseInt(req.headers.limit) - 1;
-		query = `SELECT * FROM products LIMIT ${offset - 1}, ${req.headers.limit}`;
+		let offset = parseInt(req.headers.page - 1) * parseInt(req.headers.limit);
+
+		query = `SELECT * FROM products ORDER BY id DESC LIMIT ${offset}, ${req.headers.limit}`;
 	} else {
 		query = 'SELECT * FROM products';
 	}

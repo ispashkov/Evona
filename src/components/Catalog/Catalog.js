@@ -11,7 +11,7 @@ export default {
 	name: 'Catalog',
 	data() {
 		return {
-			perPage: 2,
+			perPage: 9,
 			currentPage: 1
 		};
 	},

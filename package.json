@@ -50,6 +50,7 @@
 		"node-sass": "^4.5.3",
 		"postcss": "^6.0.9",
 		"postcss-loader": "^2.0.6",
+		"pre-commit": "^1.2.2",
 		"precss": "^2.0.0",
 		"prettier-eslint": "^7.1.0",
 		"pug": "^2.0.0-rc.3",

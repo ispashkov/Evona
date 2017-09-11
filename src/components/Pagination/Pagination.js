@@ -35,19 +35,19 @@ export default {
 			return this.current - 1;
 		},
 
-		rangeStart: function(e) {
+		rangeStart() {
 			let start = this.current - this.pageRange;
 
 			return start > 0 ? start : 1;
 		},
 
-		rangeEnd: function() {
+		rangeEnd() {
 			let end = this.current + this.pageRange;
 
 			return end < this.totalPages ? end : this.totalPages;
 		},
 
-		pages: function() {
+		pages() {
 			let pages = [];
 
 			for (let i = this.rangeStart; i <= this.rangeEnd; i++) {
@@ -77,7 +77,6 @@ export default {
 		...mapActions(['getProducts']),
 
 		changePage(page) {
-			console.log(page);
 			if (page >= this.totalPages + 1 || page <= 0) return false;
 			this.$emit('page-changed', page);
 		}

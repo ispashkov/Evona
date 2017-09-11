@@ -13,7 +13,7 @@ export default {
 				.then(res => res.json())
 				// .then(data => console.log(...data));
 				.then(data => commit('GET_ITEM', ...data))
-				.catch(err => console.log(err.message));
+				.catch(err => new Error(err));
 		}
 	},
 
