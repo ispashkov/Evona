@@ -11,14 +11,8 @@
 		"lint:js": "eslint src --fix",
 		"lint:css": "stylelint './src/**/*.scss' --fix"
 	},
-	"pre-commit": [
-		"lint:js",
-		"lint:css"
-	],
-	"eslintIgnore": [
-		"webpack.config.babel.js",
-		"postcss.config.js"
-	],
+	"pre-commit": ["lint:js", "lint:css"],
+	"eslintIgnore": ["webpack.config.babel.js", "postcss.config.js"],
 	"author": "Ilya Pashkov",
 	"license": "ISC",
 	"devDependencies": {

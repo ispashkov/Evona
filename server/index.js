@@ -46,7 +46,10 @@ app.get('*', routes);
 app.get('/api/product', (req, res) => {
 	fetchProducts(`SELECT * FROM products WHERE id = ${req.headers.id}`)
 		.then(data =>
-			fetchPhotos(data, `SELECT * FROM product_photos WHERE photo_id = ${data[0].photo_id}`)
+			fetchPhotos(
+				data,
+				`SELECT * FROM product_photos WHERE photo_id = ${data[0].photo_id}`
+			)
 		)
 		.then(data => {
 			var products = data[0],
@@ -76,7 +79,8 @@ app.get('/api/products', (req, res) => {
 	if (!!req.headers.limit && !!req.headers.page) {
 		let offset = parseInt(req.headers.page - 1) * parseInt(req.headers.limit);
 
-		query = `SELECT * FROM products ORDER BY id DESC LIMIT ${offset}, ${req.headers.limit}`;
+		query = `SELECT * FROM products ORDER BY id DESC LIMIT ${offset}, ${req
+			.headers.limit}`;
 	} else {
 		query = 'SELECT * FROM products';
 	}

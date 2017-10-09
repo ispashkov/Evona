@@ -12,9 +12,8 @@ import WebpackPwaManifest from 'webpack-pwa-manifest';
 import ManifestPlugin from 'webpack-manifest-plugin';
 
 const isProd = process.env.NODE_ENV === 'production';
-const plugins = [
-	new webpack.HotModuleReplacementPlugin(),
 
+const plugins = [
 	new ManifestPlugin({
 		basePath: '/',
 		fileName: 'build-manifest.json'
@@ -106,7 +105,7 @@ isProd
 			new CleanWebpackPlugin(['./build']),
 			new BundleAnalyzerPlugin.BundleAnalyzerPlugin()
 		)
-	: null;
+	: plugins.push(new webpack.HotModuleReplacementPlugin());
 
 export default {
 	entry: {
